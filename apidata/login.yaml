@@ -1,0 +1,36 @@
+用户名错误:
+  method: POST
+  route: /apis/login
+  data:
+    account: anhui20201
+    grant_type: password
+    password: a111111
+    type: account
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult: '{"code":401,"msg":"账号或密码错误","data":null}'
+
+用户名正确，密码错误:
+  method: POST
+  route: /apis/login
+  data:
+    account: anhui2020
+    grant_type: password
+    password: a1111112
+    type: account
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult: '{"code":401,"msg":"账号或密码错误","data":null}'
+
+用户名正确，密码正确:
+  method: POST
+  route: /apis/login
+  data:
+    account: anhui2020
+    grant_type: password
+    password: a111111
+    type: account
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult: 0
+

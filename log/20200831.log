@@ -1,0 +1,796 @@
+[2020-08-31 10:10:56,690][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 10:10:56,713][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 10:10:56,713][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 10:11:00,429][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 10:11:00,443][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 10:11:00,444][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 10:11:00,491][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm/apis/login
+[2020-08-31 10:11:00,492][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:11:00,492][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:11:00,493][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:11:00,493][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:11:00,494][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 10:11:00,494][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:11:00,494][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:11:03,734][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm/apis/login
+[2020-08-31 10:11:03,734][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:11:03,734][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:11:03,734][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:11:03,734][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:11:03,734][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 10:11:03,734][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:11:03,734][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:11:06,488][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm/apis/login
+[2020-08-31 10:11:06,488][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:11:06,488][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:11:06,488][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:11:06,488][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:11:06,489][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 10:11:06,489][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:11:06,489][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:13:02,478][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 10:13:02,482][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 10:13:02,482][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 10:13:02,774][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 10:13:02,778][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 10:13:02,778][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 10:13:02,783][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 10:13:02,783][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:13:02,783][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:13:02,783][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:13:02,784][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:13:02,784][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 10:13:02,784][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:13:02,784][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:13:03,323][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 10:13:03,343][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 10:13:03,348][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 10:13:03,349][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:13:03,349][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:13:03,349][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:13:03,350][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:13:03,350][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 10:13:03,350][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:13:03,350][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:13:03,422][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 10:13:03,437][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 10:13:03,441][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 10:13:03,442][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 10:13:03,442][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 10:13:03,442][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 10:13:03,443][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 10:13:03,443][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 10:13:03,443][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 10:13:03,443][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 10:13:03,614][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:11:43,185][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:11:43,192][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:11:43,193][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:11:43,207][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:11:43,208][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:11:43,208][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:11:43,208][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:11:43,208][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:11:43,208][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:11:43,208][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:11:43,208][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:11:43,365][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:11:43,370][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:11:43,373][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:11:43,373][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:11:43,373][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:11:43,373][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:11:43,374][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:11:43,374][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:11:43,374][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:11:43,374][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:11:43,425][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:11:43,430][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:11:43,432][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:11:43,432][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:11:43,432][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:11:43,432][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:11:43,432][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:11:43,432][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:11:43,432][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:11:43,433][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:11:43,602][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:12:58,157][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:12:58,161][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:12:58,161][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:12:58,180][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:12:58,180][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:12:58,180][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:12:58,181][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:12:58,181][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:12:58,181][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:12:58,181][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:12:58,181][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:12:58,369][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:12:58,376][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:12:58,393][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:12:58,393][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:12:58,393][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:12:58,393][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:12:58,393][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:12:58,393][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:12:58,393][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:12:58,394][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:12:58,449][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:12:58,463][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:12:58,490][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:12:58,490][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:12:58,490][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:12:58,490][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:12:58,490][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:12:58,490][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:12:58,491][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:12:58,491][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:12:58,662][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:15:46,423][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:15:46,428][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:15:46,428][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:15:46,440][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:15:46,440][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:15:46,440][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:15:46,440][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:15:46,440][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:15:46,441][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:15:46,441][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:15:46,441][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:15:46,577][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:15:46,601][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:15:46,608][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:15:46,608][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:15:46,609][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:15:46,609][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:15:46,609][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:15:46,609][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:15:46,609][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:15:46,609][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:15:46,670][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:15:46,677][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:15:46,720][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:15:46,720][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:15:46,720][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:15:46,720][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:15:46,720][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:15:46,721][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:15:46,721][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:15:46,721][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:15:46,893][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:16:32,723][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:16:32,727][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:16:32,727][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:16:32,734][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:16:32,734][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:16:32,735][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:16:32,735][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:16:32,735][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:16:32,735][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:16:32,735][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:16:32,735][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:16:32,860][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:16:32,868][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:16:32,877][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:16:32,877][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:16:32,877][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:16:32,877][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:16:32,877][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:16:32,877][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:16:32,877][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:16:32,878][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:16:32,997][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:16:33,005][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:16:33,013][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:16:33,013][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:16:33,014][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:16:33,014][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:16:33,014][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:16:33,014][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:16:33,014][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:16:33,014][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:16:33,206][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:22:02,107][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:22:02,112][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:22:02,112][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:22:02,119][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:22:02,119][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:22:02,119][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:22:02,119][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:22:02,119][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:22:02,120][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:22:02,120][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:22:02,120][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:22:02,319][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:22:02,326][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:22:02,334][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:22:02,334][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:22:02,334][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:22:02,335][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:22:02,335][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:22:02,335][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:22:02,335][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:22:02,335][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:22:02,384][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:22:02,392][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:22:02,407][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:22:02,407][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:22:02,407][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:22:02,407][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:22:02,407][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:22:02,407][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:22:02,407][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:22:02,408][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:22:02,577][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:45:21,738][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 15:45:21,742][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 15:45:21,742][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 15:45:21,749][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:45:21,749][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:45:21,749][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:45:21,749][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:45:21,749][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:45:21,749][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:45:21,750][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:45:21,750][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:45:21,994][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:45:22,002][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:45:22,010][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:45:22,010][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:45:22,010][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:45:22,010][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:45:22,010][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:45:22,010][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 15:45:22,010][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:45:22,011][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:45:22,064][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 15:45:22,072][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 15:45:22,078][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 15:45:22,078][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 15:45:22,078][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 15:45:22,079][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 15:45:22,079][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 15:45:22,079][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 15:45:22,079][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 15:45:22,079][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 15:45:22,249][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:56:12,872][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 16:56:12,891][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 16:56:12,891][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 16:56:12,898][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:56:12,898][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:56:12,898][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:56:12,898][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:56:12,899][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:56:12,899][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 16:56:12,899][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:56:12,899][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:56:13,092][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:56:13,099][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 16:56:13,107][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:56:13,107][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:56:13,107][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:56:13,107][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:56:13,107][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:56:13,107][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 16:56:13,107][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:56:13,108][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:56:13,197][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:56:13,205][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 16:56:13,213][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:56:13,213][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:56:13,214][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:56:13,214][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:56:13,214][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:56:13,214][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 16:56:13,214][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:56:13,214][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:56:13,423][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:58:36,823][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 16:58:36,827][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 16:58:36,827][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 16:58:36,836][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:58:36,836][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:58:36,836][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:58:36,836][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:58:36,836][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:58:36,836][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 16:58:36,837][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:58:36,837][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:58:37,074][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:58:37,084][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 16:58:37,092][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:58:37,092][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:58:37,092][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:58:37,092][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:58:37,092][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:58:37,093][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 16:58:37,093][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:58:37,093][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:58:37,252][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 16:58:37,263][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 16:58:37,289][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 16:58:37,290][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 16:58:37,290][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 16:58:37,290][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 16:58:37,290][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 16:58:37,290][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 16:58:37,290][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 16:58:37,290][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 16:58:37,465][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:03:46,369][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 17:03:46,373][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 17:03:46,374][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 17:03:46,382][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:03:46,382][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:03:46,382][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:03:46,383][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:03:46,383][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:03:46,383][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:03:46,383][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:03:46,383][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:03:46,543][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:03:46,553][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:03:46,564][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:03:46,564][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:03:46,564][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:03:46,564][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:03:46,564][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:03:46,565][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 17:03:46,565][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:03:46,565][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:03:46,618][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:03:46,629][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:03:46,640][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:03:46,640][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:03:46,640][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:03:46,640][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:03:46,640][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:03:46,640][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:03:46,640][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:03:46,640][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:03:46,807][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:19:50,338][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 17:19:50,342][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 17:19:50,342][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 17:19:50,349][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:19:50,349][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:19:50,350][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:19:50,350][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:19:50,350][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:19:50,350][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:19:50,350][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:19:50,350][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:19:50,527][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:19:50,537][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:19:50,547][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:19:50,547][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:19:50,547][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:19:50,547][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:19:50,548][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:19:50,548][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 17:19:50,548][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:19:50,548][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:19:50,598][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:19:50,606][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:19:50,614][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:19:50,614][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:19:50,615][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:19:50,615][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:19:50,615][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:19:50,615][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:19:50,615][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:19:50,615][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:19:50,827][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:20:55,879][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 17:20:55,884][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 17:20:55,884][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 17:20:55,892][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:20:55,892][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:20:55,892][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:20:55,892][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:20:55,892][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:20:55,892][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:20:55,892][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:20:55,892][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:20:56,028][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:20:56,037][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:20:56,044][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:20:56,045][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:20:56,045][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:20:56,045][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:20:56,045][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:20:56,045][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 17:20:56,045][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:20:56,045][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:20:56,096][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:20:56,104][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:20:56,111][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:20:56,111][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:20:56,111][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:20:56,111][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:20:56,111][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:20:56,111][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:20:56,111][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:20:56,112][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:20:56,280][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:31:39,498][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 17:31:39,505][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 17:31:39,505][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 17:31:39,515][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:31:39,518][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:31:39,518][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:31:39,519][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:31:39,520][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:31:39,520][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:31:39,520][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:31:39,520][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:31:39,748][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:31:39,760][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:31:39,771][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:31:39,771][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:31:39,771][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:31:39,772][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:31:39,772][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:31:39,772][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 17:31:39,772][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:31:39,772][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:31:39,866][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 17:31:39,880][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 17:31:39,892][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 17:31:39,892][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 17:31:39,893][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 17:31:39,893][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 17:31:39,893][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 17:31:39,893][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 17:31:39,893][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 17:31:39,893][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 17:31:40,106][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 18:03:50,586][read_data.py 28][INFO]: 加载 D:\apistest\apidata\login.yaml 文件......
+[2020-08-31 18:03:50,590][read_data.py 31][INFO]: 读到数据 ==>>  {'用户名错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui20201', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码错误': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a1111112', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': '{"code":401,"msg":"账号或密码错误","data":null}'}, '用户名正确，密码正确': {'method': 'POST', 'route': '/apis/login', 'data': {'account': 'anhui2020', 'grant_type': 'password', 'password': 'a111111', 'type': 'account'}, 'headers': {'Content-Type': 'application/json'}, 'expectcode': 200, 'expectresult': 0}} 
+[2020-08-31 18:03:50,591][read_data.py 42][INFO]: 加载 D:\apistest\config\setting.ini 文件......
+[2020-08-31 18:03:50,598][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 18:03:50,598][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 18:03:50,598][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 18:03:50,598][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 18:03:50,599][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 18:03:50,599][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui20201",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 18:03:50,599][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 18:03:50,599][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 18:03:50,761][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 18:03:50,769][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 18:03:50,776][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 18:03:50,776][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 18:03:50,776][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 18:03:50,776][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 18:03:50,776][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 18:03:50,776][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a1111112",
+    "type": "account"
+}
+[2020-08-31 18:03:50,776][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 18:03:50,776][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 18:03:50,828][checkresult.py 17][INFO]: expect:200,actual:200
+[2020-08-31 18:03:50,835][checkresult.py 23][INFO]: expect:{"code":401,"msg":"账号或密码错误","data":null},actual:{"code":401,"msg":"账号或密码错误","data":null}
+[2020-08-31 18:03:50,849][rest_client.py 56][INFO]: 接口请求地址 ==>> http://crm.yunzhangfang.com/apis/login
+[2020-08-31 18:03:50,850][rest_client.py 57][INFO]: 接口请求方式 ==>> POST
+[2020-08-31 18:03:50,850][rest_client.py 59][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2020-08-31 18:03:50,850][rest_client.py 60][INFO]: 接口请求 params 参数 ==>> null
+[2020-08-31 18:03:50,850][rest_client.py 61][INFO]: 接口请求体 data 参数 ==>> null
+[2020-08-31 18:03:50,850][rest_client.py 62][INFO]: 接口请求体 json 参数 ==>> {
+    "account": "anhui2020",
+    "grant_type": "password",
+    "password": "a111111",
+    "type": "account"
+}
+[2020-08-31 18:03:50,850][rest_client.py 63][INFO]: 接口上传附件 files 参数 ==>> None
+[2020-08-31 18:03:50,850][rest_client.py 64][INFO]: 接口 cookies 参数 ==>> null
+[2020-08-31 18:03:51,075][checkresult.py 17][INFO]: expect:200,actual:200

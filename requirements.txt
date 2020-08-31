@@ -1,0 +1,9 @@
+urllib3
+requests
+pytest
+pymysql
+allure-pytest
+pytest-html
+pytest-assume
+configparser
+pyyaml
