@@ -6,6 +6,7 @@ import pytest
 import allure
 from requests import Response
 from common.logger import logger
+import json
 
 
 def check_results(r: Response, case_info):
@@ -19,5 +20,8 @@ def check_results(r: Response, case_info):
         with allure.step("校验响应预期值"):
             allure.attach(name='预期值', body=str(case_info['expectresult']))
             allure.attach(name='实际值', body=r.text)
-        pytest.assume(case_info['expectresult'] == r.text)
+        rjson = json.loads(r.text)
+        pytest.assume(case_info['expectresult']['code'] == rjson['code'])
+        pytest.assume(case_info['expectresult']['msg'] == rjson['msg'])
+        pytest.assume(str(case_info['expectresult']['data']) in str(rjson['data']))
         logger.info("expect:" + str(case_info['expectresult']) + "," + "actual:" + str(r.text))

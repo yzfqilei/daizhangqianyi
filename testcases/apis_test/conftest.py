@@ -5,10 +5,13 @@ import pytest
 import os
 from common.read_data import ReadFileData
 import requests
+from common.write_data import WriteFileData
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 data = ReadFileData()
+
+wd = WriteFileData()
 
 
 def get_data_ini(ini_file_name):
@@ -21,7 +24,7 @@ def get_data_ini(ini_file_name):
         return ini_data
 
 
-# @pytest.fixture(scope='session')
+@pytest.fixture(scope='session')
 def is_login():
     """登录"""
     inidata = get_data_ini("setting.ini")
@@ -30,9 +33,15 @@ def is_login():
     lgurl = inidata['logininfo']['loginurl']
     login_url = root_url + lgurl
     hd = {"Content-Type": "application/json"}
-    r = requests.post(login_url, json=login_data,headers=hd)
+    r = requests.post(login_url, json=login_data, headers=hd)
     result = json.loads(r.text)
-    print(result)
+    # 获取token，写入setting.pip
+    r_dir_data = result['data']
+    access_token = r_dir_data['access_token']
+    refresh_token = r_dir_data['refresh_token']
+    data_file_path = os.path.join(BASE_PATH, "config", 'setting.ini')
+    wd.write_ini(data_file_path, 'logininfo', 'access_token', access_token)
+    wd.write_ini(data_file_path, 'logininfo', 'refresh_token', refresh_token)
 
 
 if __name__ == '__main__':
