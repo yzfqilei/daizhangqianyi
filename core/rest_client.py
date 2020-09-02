@@ -39,14 +39,14 @@ class RestClient:
             return self.session.get(url, **kwargs)
         if method == 'post' or method == 'POST' or method == 'Post':
             return requests.post(url, data, json, **kwargs)
-        if method == "PUT":
+        if method == "put" or method == 'PUT' or method == 'Put':
             if json:
                 # PUT 和 PATCH 中没有提供直接使用json参数的方法，因此需要用data来传入
                 data = complexjson.dumps(json)
             return self.session.put(url, data, **kwargs)
-        if method == "DELETE":
+        if method == "delete" or method == 'DELETE' or method == 'Delete':
             return self.session.delete(url, **kwargs)
-        if method == "PATCH":
+        if method == "patch" or method == 'patch' or method == 'Patch':
             if json:
                 data = complexjson.dumps(json)
             return self.session.patch(url, data, **kwargs)
