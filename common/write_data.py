@@ -1,7 +1,7 @@
-import yaml
 import json
 from configparser import ConfigParser
 from common.logger import logger
+from ruamel import yaml
 
 
 class MyConfigParser(ConfigParser):
@@ -20,16 +20,13 @@ class MyConfigParser(ConfigParser):
 
 
 class WriteFileData:
-
-    # def __init__(self):
-    #     pass
-
-    def write_yaml(self, file_path, key_testcase, key, value):  # 目前只支持写入data中，key_testcase为函数名
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = yaml.load(f, Loader=yaml.FullLoader)
-        content[key_testcase][key]['name'] = value
+    def write_yaml(self, file_path, key_testcase, key, value):
+        with open(file_path, encoding="utf-8") as f:
+            content = yaml.load(f, Loader=yaml.RoundTripLoader)
+            # 修改yml文件中的参数
+            content[key_testcase][key] = value
         with open(file_path, 'w', encoding="utf-8") as nf:
-            yaml.dump(content, nf)
+            yaml.dump(content, nf, Dumper=yaml.RoundTripDumper,allow_unicode=True,width=1000)
 
     def write_ini(self, file_path, section, option, value):
         logger.info(f'加载 {file_path}文件......')
@@ -43,4 +40,4 @@ class WriteFileData:
 
 if __name__ == '__main__':
     data = WriteFileData()
-    data.write_yaml('D:\\PycharmProjects\\crm_apitest\\apidata\\modules.yaml', 'test_creat_module001', 'data', 'qwer')
+    data.write_yaml('D:\\apistest_crm\\apidata\\123.yaml', '删除导航菜单(关联模块，范围全部)', 'data', 222)
