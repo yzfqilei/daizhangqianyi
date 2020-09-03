@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # coding:utf-8
-
-from core.checkresult import check_results
+from core.checkresult import check_datas,check_codes_msg
 from core.rest_client import RestClient
 from common.read_data import ReadFileData
 from common import path_conf
@@ -31,8 +30,7 @@ class TestLogin(object):
         hd = case['headers']
         a = RestClient(rooturl)
         r = a.request(loginurl, method, json=data, headers=hd)
-        check_results(r, case)
-
+        check_codes_msg(r, case)
 
 if __name__ == '__main__':
     pytest.main(["login_test.py", "--html=" + reportpath + "report.html", "--self-contained-html"])
