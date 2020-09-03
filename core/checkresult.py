@@ -7,6 +7,7 @@ import allure
 from requests import Response
 from common.logger import logger
 import json
+import jsonpath
 
 
 def check_codes_msg(r: Response, case_info):
@@ -16,24 +17,28 @@ def check_codes_msg(r: Response, case_info):
         allure.attach(name='实际响应码', body=str(r.status_code))
     pytest.assume(case_info['expectcode'] == r.status_code)
     logger.info("expect:" + str(case_info['expectcode']) + "," + "actual:" + str(r.status_code))
+    rjson = json.loads(r.text)
     if case_info['expectresult']:
         with allure.step("校验响应预期值"):
             allure.attach(name='预期值', body=str(case_info['expectresult']))
             allure.attach(name='实际值', body=r.text)
-        rjson = json.loads(r.text)
-        pytest.assume(case_info['expectresult']['code'] == rjson['code'])
-        pytest.assume(case_info['expectresult']['msg'] == rjson['msg'])
-        # pytest.assume(str(case_info['expectresult']['data']) in str(rjson['data']))
+        pytest.assume(str(case_info['expectresult']['code']) == str(rjson['code']))
+        pytest.assume(str(case_info['expectresult']['msg']) == str(rjson['msg']))
         logger.info("expect:" + str(case_info['expectresult']) + "," + "actual:" + str(r.text))
 
 
 def check_datas(r, case_info, listname=None):
-    rjson = json.loads(r.text)
-    adata = rjson['data']
     case_info_data = case_info['expectresult']['data']
+    rjson = json.loads(r.text)
     if listname:
-        for ss in listname:
-            pytest.assume(str(case_info_data[ss]) == str(adata[ss]))
-            logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(adata[ss]))
+        if isinstance(rjson['data'], list):
+            for listdata in rjson['data']:
+                for ss in listname:
+                    pytest.assume(str(case_info_data[ss]) == str(listdata[ss]))
+                    logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(listdata[ss]))
+        else:
+            for ss in listname:
+                pytest.assume(str(case_info_data[ss]) == str(rjson['data'][ss]))
+                logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(rjson['data'][ss]))
     else:
-        pytest.assume(str(case_info_data) == str(adata))
+        pytest.assume(str(case_info_data) == str(rjson['data']))
