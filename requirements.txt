@@ -7,3 +7,4 @@ pytest-html
 pytest-assume
 configparser
 pyyaml
+ruamel.yaml
