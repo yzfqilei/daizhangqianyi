@@ -1,4 +1,5 @@
 import logging, time, os
+import logging.handlers
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # 定义日志文件路径
@@ -16,8 +17,10 @@ class Logger():
 
         self.formater = logging.Formatter(
             '[%(asctime)s][%(filename)s %(lineno)d][%(levelname)s]: %(message)s')
-
-        self.filelogger = logging.FileHandler(self.logname, mode='a', encoding="UTF-8")
+        self.filelogger = logging.handlers.TimedRotatingFileHandler(self.logname, when='d', interval=1, backupCount=5,
+                                                                    encoding="UTF-8")  # 每 1(interval) 天(when)
+        # 重写1个文件,保留7(backupCount) 个旧文件；when还可以是Y/m/H/M/S
+        # self.filelogger = logging.FileHandler(self.logname, mode='a', encoding="UTF-8")
         self.console = logging.StreamHandler()
         self.console.setLevel(logging.DEBUG)
         self.filelogger.setLevel(logging.DEBUG)
