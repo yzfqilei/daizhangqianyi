@@ -17,13 +17,14 @@ def get_common_params(filename, mainkey):
     refresh_token = ini_data['logininfo']['refresh_token']
     rooturl = ini_data['host']['api_root_url']
     yamlvalue = yaml_data[mainkey]
+    checkkeys = yamlvalue['expectresult']['data'].keys()
     csurl = yamlvalue['route']
     method = yamlvalue['method']
     head = yamlvalue['headers']
     head['access_token'] = access_token
     head['refresh_token'] = refresh_token
 
-    return rooturl, csurl, method, head, yamlvalue, yaml_path
+    return rooturl, csurl, method, head, yamlvalue, yaml_path, checkkeys
 
 
 if __name__ == '__main__':
