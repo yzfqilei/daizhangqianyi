@@ -17,7 +17,10 @@ def get_common_params(filename, mainkey):
     refresh_token = ini_data['logininfo']['refresh_token']
     rooturl = ini_data['host']['api_root_url']
     yamlvalue = yaml_data[mainkey]
-    checkkeys = yamlvalue['expectresult']['data'].keys()
+    if yamlvalue['expectresult']['data'] is not None:
+        checkkeys = yamlvalue['expectresult']['data'].keys()
+    else:
+        checkkeys = None
     csurl = yamlvalue['route']
     method = yamlvalue['method']
     head = yamlvalue['headers']
