@@ -15,5 +15,8 @@ LOG_PATH = os.path.join(BASE_DIR, 'log\\')
 # 报告目录
 REPORT_PATH = os.path.join(BASE_DIR, 'report\\')
 
+# ini目录
+INI_PATH = os.path.join(BASE_DIR, 'config\\')
+
 if __name__ == "__main__":
     print(BASE_DIR)
