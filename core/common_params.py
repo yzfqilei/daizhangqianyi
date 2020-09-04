@@ -17,7 +17,7 @@ def get_common_params(filename, mainkey):
     refresh_token = ini_data['logininfo']['refresh_token']
     rooturl = ini_data['host']['api_root_url']
     yamlvalue = yaml_data[mainkey]
-    if yamlvalue['expectresult']['data'] is not None:
+    if isinstance(yamlvalue['expectresult']['data'], dict):
         checkkeys = yamlvalue['expectresult']['data'].keys()
     else:
         checkkeys = None
