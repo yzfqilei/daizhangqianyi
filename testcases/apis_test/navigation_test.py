@@ -8,16 +8,14 @@ from core.common_params import get_common_params
 import json
 import allure
 import pytest
-import os
-from common.read_data import ReadFileData
 from common import path_conf
+from core import result_base
+from common import get_root_url
 
-datass = ReadFileData()
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
-ini_path = os.path.join(path_conf.BASE_DIR, "config", "setting.ini")
-ini_data = datass.load_ini(ini_path)
-rooturl = ini_data['host']['api_root_url']
+result = result_base.ResultBase()
+rooturl = get_root_url
 
 
 @pytest.mark.usefixtures('is_login')
@@ -28,7 +26,7 @@ class TestNavigation(object):
     def test01(self, is_login):
         """导航菜单内-自定义菜单为空"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "导航菜单内-自定义菜单为空")
+                                                                                  "导航菜单内-自定义菜单为空")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         token = is_login[0]
@@ -40,7 +38,7 @@ class TestNavigation(object):
     def test02(self):
         """导航菜单外-自定义菜单为空"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "导航菜单外-自定义菜单为空")
+                                                                                  "导航菜单外-自定义菜单为空")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -50,7 +48,7 @@ class TestNavigation(object):
     def test03(self):
         """新增导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "新增导航菜单(关联模块，范围全部)")
+                                                                                  "新增导航菜单(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         dataid = json.loads(r.text)['data']
@@ -62,7 +60,7 @@ class TestNavigation(object):
     def test04(self):
         """新增重复的导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "新增重复的导航菜单(关联模块，范围全部)")
+                                                                                  "新增重复的导航菜单(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue)
@@ -71,7 +69,7 @@ class TestNavigation(object):
     def test05(self):
         """导航菜单内-自定义菜单展示(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "导航菜单内-自定义菜单展示(关联模块，范围全部)")
+                                                                                  "导航菜单内-自定义菜单展示(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -81,7 +79,7 @@ class TestNavigation(object):
     def test06(self):
         """导航菜单外-自定义菜单展示(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "导航菜单外-自定义菜单展示(关联模块，范围全部)")
+                                                                                  "导航菜单外-自定义菜单展示(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -91,7 +89,7 @@ class TestNavigation(object):
     def test07(self):
         """导航菜单详情查看(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "导航菜单详情查看(关联模块，范围全部)")
+                                                                                  "导航菜单详情查看(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl, method, params=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue)
@@ -101,7 +99,7 @@ class TestNavigation(object):
     def test08(self):
         """删除导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("navigation_menu.yaml",
-                                                                                           "删除导航菜单(关联模块，范围全部)")
+                                                                                  "删除导航菜单(关联模块，范围全部)")
         a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue)

@@ -38,4 +38,4 @@ def generate_case(feature, yaml_name):
 
 
 if __name__ == '__main__':
-    generate_case('首页卡片测试', 'component.yaml')
+    generate_case('统计模块测试', 'statistics.yaml')

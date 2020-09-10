@@ -8,18 +8,15 @@ from core.common_params import get_common_params
 import json
 import allure
 import pytest
-import os
-from common.read_data import ReadFileData
 from common import path_conf
 from core import result_base
+from common import get_root_url
 
-datass = ReadFileData()
+
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
-ini_path = os.path.join(path_conf.BASE_DIR, "config", "setting.ini")
-ini_data = datass.load_ini(ini_path)
-rooturl = ini_data['host']['api_root_url']
 result = result_base.ResultBase()
+rooturl = get_root_url
 
 
 @pytest.mark.usefixtures('is_login')
@@ -147,4 +144,4 @@ class TestPanel(object):
 
 
 if __name__ == '__main__':
-    pytest.main(["-s", "panel_component_test.py", "-m=aaa"])
+    pytest.main(["-s", "panel_component_test.py"])

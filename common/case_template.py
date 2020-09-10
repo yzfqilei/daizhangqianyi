@@ -16,15 +16,20 @@ class Case_Templates:
 
 from core.checkresult import check_codes_msg, check_datas
 from core.rest_client import RestClient
-from common import path_conf
 from common.write_data import WriteFileData
 from core.common_params import get_common_params
 import json
 import allure
 import pytest
+from common import path_conf
+from core import result_base
+from common import get_root_url
+
 
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
+result = result_base.ResultBase()
+rooturl = get_root_url
 
 
 @pytest.mark.usefixtures('is_login')
@@ -39,7 +44,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue)
@@ -50,7 +55,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -61,7 +66,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -72,7 +77,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue)
@@ -82,7 +87,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -92,7 +97,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     @allure.story("{yaml_title}")
     def test{n}(self):
         \"""{yaml_title}\"""
-        rooturl, csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
+        csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("{self.yaml_name}", "{yaml_title}")
         a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue)
