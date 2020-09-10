@@ -1,0 +1,125 @@
+导航菜单内-自定义菜单为空:
+  method: GET
+  route: /apis/crm-web/nav/allList
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: []
+
+导航菜单外-自定义菜单为空:
+  method: GET
+  route: /apis/crm-web/nav/userMenuList
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: []
+
+
+新增导航菜单(关联模块，范围全部):
+  method: POST
+  route: /apis/crm-web/nav/saveOrUpdate
+  data:
+    menuName: 测试菜单
+    menuType: 0
+    moduleCode: order
+    moduleId: '750307180682620928'
+    scopeIds: []
+    scopeType: 0
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+新增重复的导航菜单(关联模块，范围全部):
+  method: POST
+  route: /apis/crm-web/nav/saveOrUpdate
+  data:
+    menuName: 测试菜单
+    menuType: 0
+    moduleCode: order
+    moduleId: '750307180682620928'
+    scopeIds: []
+    scopeType: 0
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: -1
+    msg: 菜单名称重复
+    data:
+
+
+导航菜单内-自定义菜单展示(关联模块，范围全部):
+  method: GET
+  route: /apis/crm-web/nav/allList
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      menuName: 测试菜单
+      menuType: 0
+      moduleCode: order
+      menuUrl:
+      parentId: 0
+      scopeType: 0
+
+
+导航菜单外-自定义菜单展示(关联模块，范围全部):
+  method: GET
+  route: /apis/crm-web/nav/userMenuList
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      menuName: 测试菜单
+      menuType: 0
+      moduleCode: order
+      menuUrl:
+      parentId: 0
+      scopeType: 0
+
+
+导航菜单详情查看(关联模块，范围全部):
+  method: GET
+  route: /apis/crm-web/nav/info
+  data:
+    menuId: '751474137368801280'
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      menuName: 测试菜单
+      menuType: 0
+      moduleCode: order
+      menuUrl:
+      parentId: 0
+      scopeType: 0
+      scopeIds: []
+
+
+删除导航菜单(关联模块，范围全部):
+  method: DELETE
+  route: /apis/crm-web/nav/delete/
+  data: '751474137368801280'
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    data:
+    msg:
+

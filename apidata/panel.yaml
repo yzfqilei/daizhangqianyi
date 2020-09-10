@@ -1,0 +1,72 @@
+首页新增面板:
+  method: POST
+  route: /apis/crm-web/panel/addOrEdit
+  data:
+    crmPanelAddOrEditDtoList:
+    - id: ''
+      panelName: 测试面板
+      sequence: 0
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      panelName:
+      panelCode:
+      sequence:
+      components: []
+      sequenceCode:
+      sequenceMsg:
+
+
+首页查看面板:
+  method: GET
+  route: /apis/crm-web/panel/list
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      panelName: 测试面板
+      panelCode: csmb
+      sequence: 0
+      components: []
+      sequenceCode:
+      sequenceMsg:
+
+首页修改面板:
+  method: POST
+  route: /apis/crm-web/panel/addOrEdit
+  data:
+    crmPanelAddOrEditDtoList:
+    - id: '753282840728350720'
+      panelName: 测试面板
+      sequence: 0
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      panelName:
+      panelCode:
+      sequence:
+      components: []
+      sequenceCode:
+      sequenceMsg:
+
+首页删除面板:
+  method: DELETE
+  route: /apis/crm-web/panel/
+  data: '753282840728350720'
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+

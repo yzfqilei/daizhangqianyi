@@ -6,6 +6,7 @@ import os
 from common.read_data import ReadFileData
 import requests
 from common.write_data import WriteFileData
+from common.logger import logger
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
@@ -35,13 +36,14 @@ def is_login():
     hd = {"Content-Type": "application/json"}
     r = requests.post(login_url, json=login_data, headers=hd)
     result = json.loads(r.text)
-    # 获取token，写入setting.pip
+    # 获取token，写入setting.ini
     r_dir_data = result['data']
     access_token = r_dir_data['access_token']
     refresh_token = r_dir_data['refresh_token']
     data_file_path = os.path.join(BASE_PATH, "config", 'setting.ini')
     wd.write_ini(data_file_path, 'logininfo', 'access_token', access_token)
     wd.write_ini(data_file_path, 'logininfo', 'refresh_token', refresh_token)
+    yield access_token, refresh_token  # 返回token
 
 
 if __name__ == '__main__':

@@ -1,0 +1,103 @@
+#首页卡片图表
+首页新增卡片:
+  method: POST
+  route: /apis/crm-web/statistics/component/saveOrUpdate
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+首页查看卡片:
+  method: POST
+  route: /apis/crm-web/statistics/component/exeStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "测试卡片"
+      componentType: 1
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName: "人员"
+      pageResult:
+      relatedDataModuleCode: ""
+      relatedDataModuleId:
+      relatedDataModuleName:
+      statisticsData:
+      - value: 13
+      statisticsFields:
+      - moduleFieldCode: ""
+        moduleCode: sysUser
+        moduleFieldName: 人员
+        aggregator: count
+      statisticsLevelSort: 0
+      statisticsMeasure: []
+
+首页删除卡片:
+  method: DELETE
+  route: /apis/crm-web/panel/component/delete?
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+首页新增图表:
+  method: POST
+  route: /apis/crm-web/statistics/component/saveOrUpdate
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+首页查看图表:
+  method: GET
+  route: /apis/crm-web/statistics/component/query/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "人员"
+      componentType: 2
+      conditionType: 0
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName: "人员"
+      from:
+      panelId:
+      panelLocation:
+      relatedDataModuleCode: ""
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField: ""
+      statisticsFields: []
+      statisticsLevelSort: 0
+      statisticsMeasure: []
+      statisticsMenuId:
+
+首页删除图表:
+  method: DELETE
+  route: /apis/crm-web/panel/component/delete?
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
