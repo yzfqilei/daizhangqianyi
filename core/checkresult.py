@@ -34,12 +34,12 @@ def check_datas(r, case_info, listname=None):
         if isinstance(rjson['data'], list):
             for listdata in rjson['data']:
                 for ss in listname:
-                    pytest.assume(str(case_info_data[ss]) == str(listdata[ss])),"%s值比对失败" % ss
+                    pytest.assume(str(case_info_data[ss]) == str(listdata[ss]))
                     logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(listdata[ss]))
         else:
             for ss in listname:
-                pytest.assume(str(case_info_data[ss]) == str(rjson['data'][ss])),"%s值比对失败" % ss
+                pytest.assume(str(case_info_data[ss]) == str(rjson['data'][ss]))
                 logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(rjson['data'][ss]))
     else:
-        pytest.assume(str(case_info_data) == str(rjson['data'])),"data值比对失败"
+        pytest.assume(str(case_info_data) == str(rjson['data']))
 

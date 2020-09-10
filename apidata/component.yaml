@@ -31,7 +31,7 @@
       relatedDataModuleId:
       relatedDataModuleName:
       statisticsData:
-      - value: 13
+      - value: 3
       statisticsFields:
       - moduleFieldCode: ""
         moduleCode: sysUser
