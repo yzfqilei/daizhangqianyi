@@ -14,8 +14,9 @@ from common import get_root_url
 
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
+rooturl = get_root_url.get_root_urls()
 result = result_base.ResultBase()
-rooturl = get_root_url
+
 
 
 @pytest.mark.usefixtures('is_login')

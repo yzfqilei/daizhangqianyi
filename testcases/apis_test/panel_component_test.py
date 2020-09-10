@@ -16,21 +16,11 @@ from common import get_root_url
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
 result = result_base.ResultBase()
-rooturl = get_root_url
+rooturl = get_root_url.get_root_urls()
 
 
-@pytest.mark.usefixtures('is_login')
 @allure.feature("首页面板及图表测试用例")
 class TestPanel(object):
-    @pytest.fixture(scope='module', autouse=True)
-    def setup_and_teardown(self, is_login):
-        # 查询人员模块id
-        csurl = '/apis/crm-web/module/find/module'
-        a = RestClient(rooturl)
-        head = {'access-token': is_login[0], 'refresh-token': is_login[1]}
-        r = a.request(csurl, 'POST', headers=head)
-        setattr(result, 'dataModuleId', json.loads(r.text)['data'][0]['id'])
-
     @pytest.mark.aaa
     @allure.story("首页新增面板")
     def test01(self):
@@ -59,14 +49,14 @@ class TestPanel(object):
 
     @pytest.mark.aaa
     @allure.story("首页新增卡片")
-    def test03(self):
+    def test03(self,renyuan_moduleid):
         """首页新增卡片"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("component.yaml", "首页新增卡片")
         a = RestClient(rooturl)
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 0,
                 "componentType": 1,
                 "componentName": "测试卡片", "conditionType": 1, "dataModuleName": "人员", "dataModuleCode": "sysUser",
-                "dataModuleId": "%s" % getattr(result, 'dataModuleId'), "conditions": [],
+                "dataModuleId": "%s" % renyuan_moduleid, "conditions": [],
                 "statisticsFields": [{"aggregator": "count", "moduleFieldCode": ""}]}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue)
@@ -103,14 +93,14 @@ class TestPanel(object):
         check_codes_msg(r, yamlvalue)
 
     @allure.story("首页新增图表")
-    def test07(self):
+    def test07(self,renyuan_moduleid):
         """首页新增图表"""
         csurl, method, head, yamlvalue, yaml_path, check_keys = get_common_params("component.yaml", "首页新增图表")
         a = RestClient(rooturl)
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 8,
                 "componentType": 2,
                 "dataModuleCode": "sysUser", "componentName": "人员",
-                "dataModuleId": "%s" % getattr(result, 'dataModuleId')}
+                "dataModuleId": "%s" % renyuan_moduleid}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue)
         setattr(result, 'component_id_tb', json.loads(r.text)['data'])
