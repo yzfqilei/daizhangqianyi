@@ -30,28 +30,30 @@ def check_codes_msg(r: Response, case_info):
 def check_datas(r, case_info, listname=None):
     case_info_data = case_info['expectresult']['data']
     rjson = json.loads(r.text)
-    with allure.step("检验响应单个msg"):
-        if listname:
-            if isinstance(rjson['data'], list):
-                for listdata in rjson['data']:
-                    for ss in listname:
-                        try:
-                            pytest.assume(str(case_info_data[ss]) == str(listdata[ss]))
-                            logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(listdata[ss]))
-                        except:
-                            allure.attach(name="'%s'字段预期值" % ss, body=str(case_info_data[ss]))
-                            allure.attach(name="'%s'字段实际值" % ss, body=str(listdata[ss]))
-            else:
+    if listname:
+        if isinstance(rjson['data'], list):
+            for listdata in rjson['data']:
                 for ss in listname:
                     try:
-                        pytest.assume(str(case_info_data[ss]) == str(rjson['data'][ss]))
-                        logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(rjson['data'][ss]))
+                        pytest.assume(str(case_info_data[ss]) == str(listdata[ss]))
+                        logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(listdata[ss]))
                     except:
+                        with allure.step("检验响应单个msg"):
+                            allure.attach(name="'%s'字段预期值" % ss, body=str(case_info_data[ss]))
+                            allure.attach(name="'%s'字段实际值" % ss, body=str(listdata[ss]))
+        else:
+            for ss in listname:
+                try:
+                    pytest.assume(str(case_info_data[ss]) == str(rjson['data'][ss]))
+                    logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(rjson['data'][ss]))
+                except:
+                    with allure.step("检验响应单个msg"):
                         allure.attach(name="'%s'字段预期值" % ss, body=str(case_info_data[ss]))
                         allure.attach(name="'%s'字段实际值" % ss, body=str(rjson['data'][ss]))
-        else:
-            try:
-                pytest.assume(str(case_info_data) == str(rjson['data']))
-            except:
+    else:
+        try:
+            pytest.assume(str(case_info_data) == str(rjson['data']))
+        except:
+            with allure.step("检验响应单个msg"):
                 allure.attach(name="data字段预期值", body=str(case_info_data))
                 allure.attach(name="data字段实际值", body=str(rjson['data']))
