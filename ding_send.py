@@ -32,7 +32,9 @@ def DingTalkSend():
     # 获取项目绝对路径
     path = os.path.abspath(os.path.dirname((__file__)))
     # 打开prometheusData 获取需要发送的信息
-    f = open(path + r'\allure-report\export\prometheusData.txt', 'r')
+    linuxpath = path + '/allure-report/export/prometheusData.txt'
+    windowspath = path + r'\allure-report\export\prometheusData.txt'
+    f = open(linuxpath, 'r')
     for lines in f:
         for c in lines:
             launch_name = lines.strip('\n').split(' ')[0]
