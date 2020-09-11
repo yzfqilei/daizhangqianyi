@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # coding:utf-8
-from core.checkresult import check_datas,check_codes_msg
+
+from core.checkresult import check_codes_msg,check_datas
 from core.rest_client import RestClient
 from common.read_data import ReadFileData
 from common import path_conf
@@ -18,6 +19,7 @@ reportpath = path_conf.REPORT_PATH
 
 @allure.feature("登陆测试用例")
 class TestLogin(object):
+    @allure.story("登陆测试case")
     @pytest.mark.parametrize("case", yaml_data.values(), ids=yaml_data.keys())
     def testlogin(self, case):
         """
@@ -31,6 +33,8 @@ class TestLogin(object):
         a = RestClient(rooturl)
         r = a.request(loginurl, method, json=data, headers=hd)
         check_codes_msg(r, case)
+
+
 
 if __name__ == '__main__':
     pytest.main(["login_test.py", "--html=" + reportpath + "report.html", "--self-contained-html"])

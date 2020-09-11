@@ -19,7 +19,7 @@ def check_codes_msg(r: Response, case_info):
     logger.info("expect:" + str(case_info['expectcode']) + "," + "actual:" + str(r.status_code))
     rjson = json.loads(r.text)
     if case_info['expectresult']:
-        with allure.step("校验响应预期值"):
+        with allure.step("校验响应code和全量msg"):
             allure.attach(name='预期值', body=str(case_info['expectresult']))
             allure.attach(name='实际值', body=r.text)
         pytest.assume(str(case_info['expectresult']['code']) == str(rjson['code']))
@@ -42,3 +42,4 @@ def check_datas(r, case_info, listname=None):
                 logger.info("expectdata:" + str(case_info_data[ss]) + "," + "actualdata:" + str(rjson['data'][ss]))
     else:
         pytest.assume(str(case_info_data) == str(rjson['data']))
+

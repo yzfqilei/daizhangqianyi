@@ -6,7 +6,8 @@ import os
 from common.read_data import ReadFileData
 import requests
 from common.write_data import WriteFileData
-import logger
+from common.get_root_url import get_root_urls
+from core.rest_client import RestClient
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
@@ -36,20 +37,26 @@ def is_login():
     hd = {"Content-Type": "application/json"}
     r = requests.post(login_url, json=login_data, headers=hd)
     result = json.loads(r.text)
-    # 获取token，写入setting.pip
+    # 获取token，写入setting.ini
     r_dir_data = result['data']
     access_token = r_dir_data['access_token']
     refresh_token = r_dir_data['refresh_token']
     data_file_path = os.path.join(BASE_PATH, "config", 'setting.ini')
     wd.write_ini(data_file_path, 'logininfo', 'access_token', access_token)
     wd.write_ini(data_file_path, 'logininfo', 'refresh_token', refresh_token)
-    print('-------测试用户：yzf1008  登录成功！-------')
-    logger.info('-------测试用户：yzf1008  登录成功！-------')
-    yield
-    print('-------token已清除，测试用户yzf1008 已登出！-------')
-    wd.write_ini(data_file_path, 'logininfo', 'access_token', '')
-    wd.write_ini(data_file_path, 'logininfo', 'refresh_token', '')
-    logger.info('-------token已清除，测试用户yzf1008 已登出！-------')
+    yield access_token, refresh_token  # 返回token
+
+
+@pytest.fixture(scope='session')
+def renyuan_moduleid(is_login):
+    """人员模块id查询"""
+    rooturl = get_root_urls()
+    csurl = '/apis/crm-web/module/find/module'
+    a = RestClient(rooturl)
+    head = {'access-token': is_login[0], 'refresh-token': is_login[1]}
+    r = a.request(csurl, 'POST', headers=head)
+    return json.loads(r.text)['data'][0]['id']
+
 
 if __name__ == '__main__':
     is_login()

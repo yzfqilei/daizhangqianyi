@@ -20,13 +20,13 @@ class MyConfigParser(ConfigParser):
 
 
 class WriteFileData:
-    def write_yaml(self, file_path, key_testcase, key, value):
+    def write_yaml(self, file_path, key_testcase, key1, value):
         with open(file_path, encoding="utf-8") as f:
             content = yaml.load(f, Loader=yaml.RoundTripLoader)
             # 修改yml文件中的参数
-            content[key_testcase][key] = value
+            content[key_testcase][key1] = value
         with open(file_path, 'w', encoding="utf-8") as nf:
-            yaml.dump(content, nf, Dumper=yaml.RoundTripDumper,allow_unicode=True,width=1000)
+            yaml.dump(content, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True, width=1000)
 
     def write_ini(self, file_path, section, option, value):
         logger.info(f'加载 {file_path}文件......')
@@ -40,4 +40,5 @@ class WriteFileData:
 
 if __name__ == '__main__':
     data = WriteFileData()
-    data.write_yaml('D:\\apistest_crm\\apidata\\123.yaml', '删除导航菜单(关联模块，范围全部)', 'data', 222)
+    data11 = 1123
+    data.write_yaml('D:\\apistest_crm\\apidata\\123.yaml', '删除导航菜单(关联模块，范围全部)',  'data', {'menuid':444})

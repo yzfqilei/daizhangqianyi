@@ -4,4 +4,4 @@
 import pytest
 
 if __name__ == '__main__':
-    pytest.main()
+    pytest.main(['-s','-q','testcases','--alluredir=./allure-results','--clean-alluredir','--html=./report/report.html','--self-contained-html'])

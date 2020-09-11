@@ -27,7 +27,7 @@ def get_common_params(filename, mainkey):
     head['access_token'] = access_token
     head['refresh_token'] = refresh_token
 
-    return rooturl, csurl, method, head, yamlvalue, yaml_path, checkkeys
+    return csurl, method, head, yamlvalue, yaml_path, checkkeys
 
 
 if __name__ == '__main__':
