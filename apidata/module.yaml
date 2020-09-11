@@ -1,0 +1,27 @@
+test_creat_module001:
+  data:
+    code: ''
+    flowType: 1
+    id: 0
+    mainFieldId: 0
+    name: module923
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      tenantId: '10447'
+      name: module923
+  headers:
+    Content-Type: application/json
+  method: POST
+  route: /apis/crm-web/module/insert
+
+test_delete_module002:
+  data:
+  expectcode: 200
+  expectresult: {code: 0, msg: !!null '', data: true}
+  headers:
+    Content-Type: application/json
+  method: DELETE
+  route: /apis/crm-web/module/
