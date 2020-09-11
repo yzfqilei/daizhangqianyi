@@ -1,8 +1,9 @@
 import pymysql
 import os
-from common.read_data import data
+from common.read_data import ReadFileData
 from common.logger import logger
 
+data = ReadFileData()
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
 data = data.load_ini(data_file_path)["mysql"]
