@@ -9,11 +9,11 @@ data_file_path = os.path.join(BASE_PATH, "config", "setting.ini")
 data = data.load_ini(data_file_path)["mysql"]
 
 DB_CONF = {
-    "host": data["MYSQL_HOST"],
-    "port": int(data["MYSQL_PORT"]),
-    "user": data["MYSQL_USER"],
-    "password": data["MYSQL_PASSWD"],
-    "db": data["MYSQL_DB"]
+    "host": data["mysql_host"],
+    "port": int(data["mysql_port"]),
+    "user": data["mysql_user"],
+    "password": data["mysql_passwd"],
+    "db": data["mysql_db"]
 }
 
 
@@ -57,3 +57,6 @@ class MysqlDb():
 
 
 db = MysqlDb(DB_CONF)
+
+if __name__ == '__main__':
+    print(db.select_db("select *from crm_company"))
