@@ -32,10 +32,11 @@ def generate_case(feature, yaml_name):
         yaml_title = k
         method = v['method']
         yaml_expect = v['expectresult']['data']
-        commoncase = ct.case_templates_common(yaml_title, method, yaml_expect, n)
+        num = str(n).zfill(2)
+        commoncase = ct.case_templates_common(yaml_title, method, yaml_expect, num)
         write_file(test_path, commoncase)
     print('文件生成完毕')
 
 
 if __name__ == '__main__':
-    generate_case('统计模块测试', 'statistics.yaml')
+    generate_case('sd', 'stadfdfdf.yaml')
