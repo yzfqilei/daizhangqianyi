@@ -6,14 +6,14 @@ from py._xmlgen import html
 import pytest
 
 
-@pytest.mark.optionalhook
-def pytest_html_results_table_header(cells):
-    cells.insert(1, html.th('Description'))
-
-
-@pytest.mark.optionalhook
-def pytest_html_results_table_row(report, cells):
-    cells.insert(1, html.td(report.description))
+# @pytest.mark.optionalhook
+# def pytest_html_results_table_header(cells):
+#     cells.insert(1, html.th('Description'))
+#
+#
+# @pytest.mark.optionalhook
+# def pytest_html_results_table_row(report, cells):
+#     cells.insert(1, html.td(report.description))
 
 
 @pytest.mark.hookwrapper
