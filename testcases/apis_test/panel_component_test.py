@@ -16,6 +16,7 @@ reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
 result = result_base.ResultBase()
 rooturl = get_root_url.get_root_urls()
+a = RestClient(rooturl)
 
 
 @allure.feature("首页面板及图表测试用例")
@@ -25,7 +26,6 @@ class TestPanel(object):
     def test01(self):
         """首页新增面板"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("panel.yaml", "首页新增面板")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -35,7 +35,6 @@ class TestPanel(object):
     def test02(self):
         """首页查看面板"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("panel.yaml", "首页查看面板")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         rjson = json.loads(r.text)
         panelid = rjson['data'][0]['id']
@@ -51,7 +50,6 @@ class TestPanel(object):
     def test03(self, renyuan_moduleid):
         """首页新增卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页新增卡片")
-        a = RestClient(rooturl)
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 0,
                 "componentType": 1,
                 "componentName": "测试卡片", "conditionType": 1, "dataModuleName": "人员", "dataModuleCode": "sysUser",
@@ -65,7 +63,6 @@ class TestPanel(object):
     def test04(self):
         """首页查看卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页查看卡片")
-        a = RestClient(rooturl)
         data = {"componentId": "%s" % getattr(result, 'component_id_kp'), "from": 1,
                 "panelId": "%s" % getattr(result, 'panelid')}
         r = a.request(csurl, method, json=data, headers=head)
@@ -76,7 +73,6 @@ class TestPanel(object):
     def test05(self):
         """首页修改面板"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("panel.yaml", "首页修改面板")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -85,7 +81,6 @@ class TestPanel(object):
     def test06(self):
         """首页删除卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页删除卡片")
-        a = RestClient(rooturl)
         param = {"componentId": getattr(result, 'component_id_kp'), "location": 0, "panelId": getattr(result,
                                                                                                       'panelid')}
         r = a.request(csurl, method, params=param, headers=head)
@@ -95,7 +90,6 @@ class TestPanel(object):
     def test07(self, renyuan_moduleid):
         """首页新增图表"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页新增图表")
-        a = RestClient(rooturl)
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 8,
                 "componentType": 2,
                 "dataModuleCode": "sysUser", "componentName": "人员",
@@ -108,7 +102,6 @@ class TestPanel(object):
     def test08(self):
         """首页查看图表"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页查看图表")
-        a = RestClient(rooturl)
         r = a.request(csurl + '%s' % getattr(result, 'component_id_tb'), method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -117,7 +110,6 @@ class TestPanel(object):
     def test09(self):
         """首页删除图表"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页删除图表")
-        a = RestClient(rooturl)
         param = {"componentId": getattr(result, 'component_id_kp'), "location": 8, "panelId": getattr(result,
                                                                                                       'panelid')}
         r = a.request(csurl, method, params=param, headers=head)
@@ -127,7 +119,6 @@ class TestPanel(object):
     def test10(self):
         """首页删除面板"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("panel.yaml", "首页删除面板")
-        a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
 

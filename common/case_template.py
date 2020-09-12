@@ -30,6 +30,7 @@ reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
 result = result_base.ResultBase()
 rooturl = get_root_url
+a = RestClient(rooturl)
 
 
 @pytest.mark.usefixtures('is_login')
@@ -45,7 +46,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -56,7 +56,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -67,7 +66,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -78,7 +76,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
             """
@@ -88,7 +85,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
             """
@@ -98,7 +94,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
     def test{n}(self):
         \"""{yaml_title}\"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        a = RestClient(rooturl)
         r = a.request(csurl + yamlvalue['data'], method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         """

@@ -16,34 +16,32 @@ reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
 result = result_base.ResultBase()
 rooturl = get_root_url.get_root_urls()
+a = RestClient(rooturl)
 
 
 @allure.feature("统计模块测试")
 class TestStatistics(object):
     @allure.story("新增统计目录")
-    def test1(self):
+    def test01(self):
         """新增统计目录"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增统计目录")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("查看统计目录")
-    def test2(self):
+    def test02(self):
         """查看统计目录"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "查看统计目录")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         setattr(result, 'menuid', json.loads(r.text)['data'][0]['id'])
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("新增环形图")
-    def test3(self, renyuan_moduleid):
+    def test03(self, renyuan_moduleid):
         """新增环形图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增环形图")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "环形图",
                 "dataModuleCode": "sysUser",
                 "componentType": 3, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
@@ -59,10 +57,9 @@ class TestStatistics(object):
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("环形图预览")
-    def test4(self, renyuan_moduleid):
+    def test04(self, renyuan_moduleid):
         """环形图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "环形图预览")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "环形图",
                 "dataModuleCode": "sysUser",
                 "componentType": 3, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
@@ -78,38 +75,34 @@ class TestStatistics(object):
         check_datas(r, yamlvalue)
 
     @allure.story("查看环形图")
-    def test5(self):
+    def test05(self):
         """查看环形图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "查看环形图")
-        a = RestClient(rooturl)
         data = {"componentId": "%s" % getattr(result, 'huanxingid')}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("图形列表")
-    def test6(self):
+    def test06(self):
         """图形列表"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "图形列表")
-        a = RestClient(rooturl)
         r = a.request(csurl, method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("删除环形图")
-    def test7(self):
+    def test07(self):
         """删除环形图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "删除环形图")
-        a = RestClient(rooturl)
         r = a.request(csurl + getattr(result, 'menuid') + '/' + getattr(result, 'huanxingid') + '/false', method,
                       headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("新增柱状图")
-    def test8(self, renyuan_moduleid):
+    def test08(self, renyuan_moduleid):
         """新增柱状图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增柱状图")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "柱状图",
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
@@ -126,10 +119,9 @@ class TestStatistics(object):
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("柱状图预览")
-    def test9(self, renyuan_moduleid):
+    def test09(self, renyuan_moduleid):
         """柱状图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "柱状图预览")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "柱状图",
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
@@ -149,7 +141,6 @@ class TestStatistics(object):
     def test10(self):
         """查看柱状图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "查看柱状图")
-        a = RestClient(rooturl)
         data = {"componentId": "%s" % getattr(result, 'zhuzhuangid')}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -159,7 +150,6 @@ class TestStatistics(object):
     def test11(self):
         """删除柱状图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "删除柱状图")
-        a = RestClient(rooturl)
         r = a.request(csurl + getattr(result, 'menuid') + '/' + getattr(result, 'zhuzhuangid') + '/false', method,
                       headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -168,7 +158,6 @@ class TestStatistics(object):
     def test12(self, renyuan_moduleid):
         """新增线性图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增线性图")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
                 "dataModuleCode": "sysUser",
                 "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
@@ -187,7 +176,6 @@ class TestStatistics(object):
     def test13(self, renyuan_moduleid):
         """线性图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "线性图预览")
-        a = RestClient(rooturl)
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
                 "dataModuleCode": "sysUser",
                 "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
@@ -206,7 +194,6 @@ class TestStatistics(object):
     def test14(self):
         """查看线性图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "查看线性图")
-        a = RestClient(rooturl)
         data = {"componentId": "%s" % getattr(result, 'xianxingid')}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -216,7 +203,6 @@ class TestStatistics(object):
     def test15(self):
         """删除线性图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "删除线性图")
-        a = RestClient(rooturl)
         r = a.request(csurl + getattr(result, 'menuid') + '/' + getattr(result, 'xianxingid') + '/false', method,
                       headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -225,6 +211,5 @@ class TestStatistics(object):
     def test16(self):
         """删除目统计目录"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "删除统计目录")
-        a = RestClient(rooturl)
         r = a.request(csurl + getattr(result, 'menuid'), method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)

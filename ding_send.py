@@ -6,19 +6,23 @@ import os
 import jenkins
 import json
 import urllib3
+from common.read_data import ReadFileData
+from common.path_conf import INI_PATH
 
+data = ReadFileData()
+jk_ini = data.load_ini(INI_PATH + 'setting.ini')['jenkins']
 # jenkins登录地址
-jenkins_url = "http://10.82.1.43:8989/"
+jenkins_url = jk_ini['jenkins_url']
 # 获取jenkins对象
-server = jenkins.Jenkins(jenkins_url, username='admin', password='admin')
+server = jenkins.Jenkins(jenkins_url, username=jk_ini['username'], password=jk_ini['password'])
 # job名称
-job_name = "job/apistest/"
+job_name = jk_ini['job_name']
 # job的url地址
 job_url = jenkins_url + job_name
 # 获取最后一次构建
 job_last_build_url = server.get_info(job_name)['lastBuild']['url']
 # 报告地址
-report_url = job_url + 'allure'
+report_url = jk_ini['report_url']
 
 '''
 钉钉推送方法：
@@ -50,8 +54,8 @@ def DingTalkSend():
     print('通过数量：{}'.format(status_failed))
 
     # 钉钉推送
-
-    url = 'https://oapi.dingtalk.com/robot/send?access_token=ef337ada48250f93a229496f97aa3296021a40d623a5326413aafa542d401527'  # webhook
+    webhook = data.load_ini(INI_PATH + 'setting.ini')['dingding']['webhook']
+    url = webhook  # webhook
     con = {"msgtype": "text",
            "text": {
                "content": "CRM接口自动化脚本执行完成。"
