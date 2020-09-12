@@ -42,7 +42,7 @@
   route: /apis/crm-web/panel/addOrEdit
   data:
     crmPanelAddOrEditDtoList:
-    - id: '753282840728350720'
+    - id: '754388261262241792'
       panelName: 测试面板
       sequence: 0
   headers: {Content-Type: application/json}
@@ -61,7 +61,7 @@
 首页删除面板:
   method: DELETE
   route: /apis/crm-web/panel/
-  data: '753282840728350720'
+  data: '754388261262241792'
   headers: {}
   expectcode: 200
   expectresult:

@@ -15,19 +15,19 @@ def get_common_params(filename, mainkey):
     ini_data = datass.load_ini(ini_path)
     access_token = ini_data['logininfo']['access_token']
     refresh_token = ini_data['logininfo']['refresh_token']
-    rooturl = ini_data['host']['api_root_url']
+    # rooturl = ini_data['host']['api_root_url']
     yamlvalue = yaml_data[mainkey]
-    if isinstance(yamlvalue['expectresult']['data'], dict):
-        checkkeys = yamlvalue['expectresult']['data'].keys()
-    else:
-        checkkeys = None
+    # if isinstance(yamlvalue['expectresult']['data'], dict):
+    #     checkkeys = yamlvalue['expectresult']['data'].keys()
+    # else:
+    #     checkkeys = None
     csurl = yamlvalue['route']
     method = yamlvalue['method']
     head = yamlvalue['headers']
     head['access_token'] = access_token
     head['refresh_token'] = refresh_token
 
-    return csurl, method, head, yamlvalue, yaml_path, checkkeys
+    return csurl, method, head, yamlvalue, yaml_path, mainkey
 
 
 if __name__ == '__main__':

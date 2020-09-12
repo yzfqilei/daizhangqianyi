@@ -1,0 +1,393 @@
+#统计目录
+新增统计目录:
+  method: POST
+  route: /apis/crm-web/menu/add
+  data:
+    menuName: "测试目录"
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentIds:
+      menuCode: "csml"
+      menuName: "测试目录"
+      panelCompoentVos: []
+      sequenceCode:
+      sequenceMsg:
+
+查看统计目录:
+  method: GET
+  route: /apis/crm-web/menu/list
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentIds:
+      menuCode: "csml"
+      menuName: "测试目录"
+      panelCompoentVos: []
+      sequenceCode:
+      sequenceMsg:
+
+#环形图
+新增环形图:
+  method: POST
+  route: /apis/crm-web/statistics/component/saveOrUpdate
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+环形图预览:
+  method: POST
+  route: /apis/crm-web/statistics/component/previewStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "环形图"
+      componentType: 3
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName:
+      id:
+      pageResult:
+      relatedDataModuleCode:
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField:
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: ""
+      statisticsMeasure:
+        - areaLevel:
+          descending:
+          fieldType: 1
+          groupDatesBy:
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+
+
+查看环形图:
+  method: POST
+  route: /apis/crm-web/statistics/component/exeStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "环形图"
+      componentType: 3
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName: "人员"
+      pageResult:
+      relatedDataModuleCode: ''
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField: ''
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: "人员"
+      statisticsMeasure:
+        - areaLevel:
+          descending: ''
+          fieldType: 1
+          groupDatesBy: ''
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+图形列表:
+  method: GET
+  route: /apis/crm-web/menu/list
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      menuCode: "csml"
+      menuName: "测试目录"
+      sequenceCode:
+      sequenceMsg:
+
+
+删除环形图:
+  method: DELETE
+  route: /apis/crm-web/statistics/component/delStatisticsComponent/
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: true
+
+#柱状图
+新增柱状图:
+  method: POST
+  route: /apis/crm-web/statistics/component/saveOrUpdate
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+柱状图预览:
+  method: POST
+  route: /apis/crm-web/statistics/component/previewStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "柱状图"
+      componentType: 4
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName:
+      id:
+      pageResult:
+      relatedDataModuleCode: ""
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField:
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: ""
+      statisticsMeasure:
+        - areaLevel:
+          descending:
+          fieldType: 1
+          groupDatesBy:
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+
+
+查看柱状图:
+  method: POST
+  route: /apis/crm-web/statistics/component/exeStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "柱状图"
+      componentType: 4
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName: '人员'
+      pageResult:
+      relatedDataModuleCode: ""
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField: ""
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: "人员"
+      statisticsMeasure:
+        - areaLevel:
+          descending: ""
+          fieldType: 1
+          groupDatesBy: ""
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+删除柱状图:
+  method: DELETE
+  route: /apis/crm-web/statistics/component/delStatisticsComponent/
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: true
+
+#线形图
+新增线性图:
+  method: POST
+  route: /apis/crm-web/statistics/component/saveOrUpdate
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+线性图预览:
+  method: POST
+  route: /apis/crm-web/statistics/component/previewStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "线性图"
+      componentType: 5
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName:
+      id:
+      pageResult:
+      relatedDataModuleCode:
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField:
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: ""
+      statisticsMeasure:
+        - areaLevel:
+          descending:
+          fieldType: 1
+          groupDatesBy:
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+
+
+查看线性图:
+  method: POST
+  route: /apis/crm-web/statistics/component/exeStatistics
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      componentName: "线性图"
+      componentType: 5
+      conditionType: 1
+      conditions: []
+      dataModuleCode: "sysUser"
+      dataModuleName: "人员"
+      pageResult:
+      relatedDataModuleCode: ""
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedForeignField: ""
+      statisticsData:
+        - name: "bosscs01"
+          value: 1
+        - name: "ceshibu01"
+          value: 1
+        - name: "yzf1008"
+          value: 1
+      statisticsFields:
+        - aggregator: "count"
+          moduleCode: "sysUser"
+          moduleFieldCode: ""
+          moduleFieldName: "人员"
+      statisticsMeasure:
+        - areaLevel:
+          descending: ""
+          fieldType: 1
+          groupDatesBy: ""
+          moduleCode: "sysUser"
+          moduleFieldCode: "username"
+          moduleFieldName: "用户名"
+
+删除线性图:
+  method: DELETE
+  route: /apis/crm-web/statistics/component/delStatisticsComponent/
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: true
+
+
+删除统计目录:
+  method: DELETE
+  route: /apis/crm-web/menu/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:

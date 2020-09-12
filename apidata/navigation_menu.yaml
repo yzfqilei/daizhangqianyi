@@ -70,7 +70,7 @@
       menuType: 0
       moduleCode: order
       menuUrl:
-      parentId: 0
+      parentId: '0'
       scopeType: 0
 
 
@@ -88,7 +88,7 @@
       menuType: 0
       moduleCode: order
       menuUrl:
-      parentId: 0
+      parentId: '0'
       scopeType: 0
 
 
@@ -96,7 +96,7 @@
   method: GET
   route: /apis/crm-web/nav/info
   data:
-    menuId: '751474137368801280'
+    menuId: '754388218346123264'
   headers: {}
   expectcode: 200
   expectresult:
@@ -107,7 +107,7 @@
       menuType: 0
       moduleCode: order
       menuUrl:
-      parentId: 0
+      parentId: '0'
       scopeType: 0
       scopeIds: []
 
@@ -115,7 +115,7 @@
 删除导航菜单(关联模块，范围全部):
   method: DELETE
   route: /apis/crm-web/nav/delete/
-  data: '751474137368801280'
+  data: '754388218346123264'
   headers: {}
   expectcode: 200
   expectresult:
