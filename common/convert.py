@@ -6,6 +6,23 @@
 """
 import json
 from urllib.parse import unquote
+import yaml
+from common.write_data import WriteFileData
+from common.logger import logger
+
+
+def convert_json_to_yaml(origin_json, yaml_path, mainkey):
+    """
+    json返回值写入yaml文件expectresult下
+    :param mainkey:
+    :param origin_json:
+    :param yaml_path:
+    :return:
+    """
+    wd = WriteFileData()
+    dyaml = yaml.load(origin_json)  # 将字符转yaml
+    wd.write_yaml(yaml_path, mainkey, 'expectresult', dyaml)
+    logger.info(">>> json转换yaml完成 ")
 
 
 def convert_list_to_dict(origin_list):
@@ -186,7 +203,7 @@ if __name__ == '__main__':
     result = {
         "item": 2,
         "test": "oo",
-        "dict1":[
+        "dict1": [
             {
                 "key1": "value0",
                 "key2": "value2",
@@ -197,7 +214,7 @@ if __name__ == '__main__':
                     {'actual': '', 'compare': 'equal', 'expect': 1},
                 'test':
                     {'actual': '', 'compare': 'equal', 'expect': 'ok'},
-                'dict1':[
+                'dict1': [
                     {'key1':
                          {'actual': '', 'compare': 'equal', 'expect': 'value1'},
                      'key2': {'actual': '', 'compare': 'equal', 'expect': 'value2'},

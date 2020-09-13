@@ -95,14 +95,14 @@ def insert_content_into_keyword_next_line(file_path, insert_content, keyword="")
 
 
 def create_file(file_path, content):
-    """ 当文件存在时，则不再创建和覆盖
+    """ 当文件存在时，则删除后重新写入
     """
-    if not os.path.exists(file_path):
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(content)
-    else:
-        logger.info("{} is exists!".format(file_path))
-        # print("{} is exists!".format(file_path))
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        logger.info("{} is exists，remove and create!".format(file_path))
+        print("{} is exists，remove and create!".format(file_path))
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(content)
 
 
 def write_file(file_path, content):
