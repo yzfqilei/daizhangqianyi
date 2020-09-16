@@ -20,7 +20,7 @@ def convert_json_to_yaml(origin_json, yaml_path, mainkey):
     :return:
     """
     wd = WriteFileData()
-    dyaml = yaml.load(origin_json)  # 将字符转yaml
+    dyaml = yaml.load(origin_json, Loader=yaml.FullLoader)  # 将字符转yaml
     wd.write_yaml(yaml_path, mainkey, 'expectresult', dyaml)
     logger.info(">>> json转换yaml完成 ")
 

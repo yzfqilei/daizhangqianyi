@@ -38,9 +38,9 @@ a = RestClient(rooturl)
 class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
         return main_case
 
-    def case_templates_common(self, yaml_title, method, yaml_expect, n):
+    def case_templates_common(self, yaml_title, method, yaml_data, n):
         global common_case
-        if method == 'POST' and yaml_expect is not None:
+        if method == 'POST':
             common_case = f"""
     @allure.story("{yaml_title}")
     def test{n}(self):
@@ -51,7 +51,18 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
         # check_codes_msg(r, yamlvalue, mainkey)
         # check_datas(r, yamlvalue)
 """
-        elif method == 'GET' and yaml_expect is not None:
+        elif method == 'GET' and yaml_data is not None:
+            common_case = f"""
+    @allure.story("{yaml_title}")
+    def test{n}(self):
+        \"""{yaml_title}\"""
+        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
+        r = a.request(csurl, method, params=yamlvalue['data'], headers=head)
+        convert_json_to_yaml(r.text, yaml_path, mainkey)
+        # check_codes_msg(r, yamlvalue, mainkey)
+        # check_datas(r, yamlvalue)
+"""
+        elif method == 'GET' and yaml_data is None:
             common_case = f"""
     @allure.story("{yaml_title}")
     def test{n}(self):
@@ -62,7 +73,7 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
         # check_codes_msg(r, yamlvalue, mainkey)
         # check_datas(r, yamlvalue)
 """
-        elif method == 'DELETE' and yaml_expect is not None:
+        elif method == 'DELETE':
             common_case = f"""
     @allure.story("{yaml_title}")
     def test{n}(self):
@@ -72,36 +83,6 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
         convert_json_to_yaml(r.text, yaml_path, mainkey)
         # check_codes_msg(r, yamlvalue, mainkey)
         # check_datas(r, yamlvalue)
-"""
-        elif method == 'POST' and yaml_expect is None:
-            common_case = f"""
-    @allure.story("{yaml_title}")
-    def test{n}(self):
-        \"""{yaml_title}\"""
-        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
-        convert_json_to_yaml(r.text, yaml_path, mainkey)
-        # check_codes_msg(r, yamlvalue, mainkey)
-"""
-        elif method == 'GET' and yaml_expect is None:
-            common_case = f"""
-    @allure.story("{yaml_title}")
-    def test{n}(self):
-        \"""{yaml_title}\"""
-        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        r = a.request(csurl, method, headers=head)
-        convert_json_to_yaml(r.text, yaml_path, mainkey)
-        # check_codes_msg(r, yamlvalue, mainkey)
-"""
-        elif method == 'DELETE' and yaml_expect is None:
-            common_case = f"""
-    @allure.story("{yaml_title}")
-    def test{n}(self):
-        \"""{yaml_title}\"""
-        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
-        r = a.request(csurl + yamlvalue['data'], method, headers=head)
-        convert_json_to_yaml(r.text, yaml_path, mainkey)
-        # check_codes_msg(r, yamlvalue, mainkey)
 """
         else:
             print("没有匹配到请求方法或模板！")
