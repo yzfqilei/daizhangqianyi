@@ -21,7 +21,6 @@ a = RestClient(rooturl)
 
 @allure.feature("首页面板及图表测试用例")
 class TestPanel(object):
-    @pytest.mark.aaa
     @allure.story("首页新增面板")
     def test01(self):
         """首页新增面板"""
@@ -30,7 +29,6 @@ class TestPanel(object):
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
-    @pytest.mark.aaa
     @allure.story("首页查看面板")
     def test02(self):
         """首页查看面板"""
@@ -45,7 +43,6 @@ class TestPanel(object):
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
-    @pytest.mark.aaa
     @allure.story("首页新增卡片")
     def test03(self, renyuan_moduleid):
         """首页新增卡片"""
