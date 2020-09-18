@@ -56,7 +56,7 @@ def check_datas(r, case_info):
 def _check_dict(dt, de):
     if dt and not de:
         raise AssertionError('>>> Data matching failed')
-    if not de or isinstance(de, int) or isinstance(de, str):
+    if not de or not isinstance(de, dict):
         try:
             assert de == dt
         except:

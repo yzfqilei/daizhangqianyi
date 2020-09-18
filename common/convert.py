@@ -22,7 +22,7 @@ def convert_json_to_yaml(origin_json, yaml_path, mainkey):
     wd = WriteFileData()
     dyaml = yaml.load(origin_json, Loader=yaml.FullLoader)  # 将字符转yaml
     wd.write_yaml(yaml_path, mainkey, 'expectresult', dyaml)
-    logger.info(">>> json转换yaml完成 ")
+    logger.info(">>> json转换yaml完成，转换数据：%s" % origin_json)
 
 
 def convert_list_to_dict(origin_list):
