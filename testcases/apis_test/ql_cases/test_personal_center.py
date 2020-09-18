@@ -89,6 +89,7 @@ class Testpersonal_center():
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
 
-    # def test_lookfor_notice007(self):
+    def test_lookfor_notice007(self):
+        #数据库插入消息
 
 
