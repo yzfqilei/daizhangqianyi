@@ -2,13 +2,15 @@ test_company_infor001:
   method: GET
   route: /apis/crm-web/company/info
   data:
-  headers: {"Content-Type": "application/json"}
+  headers: {}
   expectcode: 200
   expectresult:
     code: 0
     msg: null
     data:
       companyName: "测试代账公司"
+      contacts: '系统管理员'
+      companyId: '10447'
 
 test_user_infor002:
   method: GET
@@ -33,4 +35,44 @@ test_modify_password003:
   expectresult:
     code: 0
     msg: null
+    data: null
+
+test_modify_user_info004:
+  method: PUT
+  route: /apis/crm-web/user/current/user
+  data1:
+    {"username":"yzf1008","phone":"13121111221","email":null,"truename":"系统管理员1","sex":"男","deptIds":"750307176735780864","roleIds":["750307176735780865"],"identity":"主管","status":"正常","_id":"631126109332017152"}
+  data2:
+    {"username":"yzf1008","phone":"13121111221","email":null,"truename":"系统管理员","sex":"女","deptIds":"750307176735780864","roleIds":["750307176735780865"],"identity":"主管","status":"正常","_id":"631126109332017152"}
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: {"username":"yzf1008","truename":"系统管理员1","sex":"男"}
+  expectresult_renew:
+    code: 0
+    msg: null
+    data: {"username":"yzf1008","truename":"系统管理员","sex":"女"}
+
+test_modify_conpany_info005:
+  method: POST
+  route: /apis/crm-web/company/saveOrUpdate
+  data:
+    {"companyId":"10447","companyName":"测试代账公司1","simpleName":"代账公司","dzCompanyId":"631125285013688320","area":"江苏省/南京市/雨花台区","contacts":"系统管理员","contactsPhone":"15815815888","remark":"云账房网络科技有限公司","status":0,"companyType":0,"deleted":0,"creator":null}
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: '10447'
+
+test_change_phone_number006:
+  method: PUT
+  route: /apis/crm-web/user/phone?authCode=123456&phone=13698546854
+  headers: {"Content-Type": "application/json"}
+  expectcode: 200
+  expectresult:
+    code: 10005
+    msg: 验证码错误，请重新输入
     data: null

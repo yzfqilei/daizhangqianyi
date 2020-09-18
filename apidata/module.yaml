@@ -4,14 +4,14 @@ test_creat_module001:
     flowType: 1
     id: 0
     mainFieldId: 0
-    name: module923
+    name: module748
   expectcode: 200
   expectresult:
     code: 0
     msg:
     data:
       tenantId: '10447'
-      name: module923
+      name: module748
   headers:
     Content-Type: application/json
   method: POST
@@ -20,7 +20,10 @@ test_creat_module001:
 test_delete_module002:
   data:
   expectcode: 200
-  expectresult: {code: 0, msg: !!null '', data: true}
+  expectresult:
+    code: 0
+    msg:
+    data: true
   headers:
     Content-Type: application/json
   method: DELETE
