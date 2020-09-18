@@ -11,6 +11,8 @@ import pytest
 from common import path_conf
 from core import result_base
 from common import get_root_url
+from common.convert import convert_json_to_yaml
+
 
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
@@ -22,78 +24,67 @@ a = RestClient(rooturl)
 @pytest.mark.usefixtures('is_login')
 @allure.feature("导航菜单测试用例")
 class TestNavigation(object):
-    @allure.story("导航菜单内-自定义菜单为空")
-    def test01(self, is_login):
-        """导航菜单内-自定义菜单为空"""
-        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
-                                                                               "导航菜单内-自定义菜单为空")
-        r = a.request(csurl, method, headers=head)
-        token = is_login[0]
-        token1 = is_login[1]  # token获取
-        check_codes_msg(r, yamlvalue, mainkey)
-        check_datas(r, yamlvalue)
-
-    @allure.story("导航菜单外-自定义菜单为空")
-    def test02(self):
-        """导航菜单外-自定义菜单为空"""
-        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
-                                                                               "导航菜单外-自定义菜单为空")
-        r = a.request(csurl, method, headers=head)
-        check_codes_msg(r, yamlvalue, mainkey)
-        check_datas(r, yamlvalue)
-
     @allure.story("新增导航菜单(关联模块，范围全部)")
-    def test03(self):
+    def test01(self, customer_moduleid):
         """新增导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "新增导航菜单(关联模块，范围全部)")
-        r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
-        dataid = json.loads(r.text)['data']
+        data = {"parentId": "0", "scopeType": 0, "menuName": "测试", "menuType": 0, "moduleId": "%s" % customer_moduleid,
+                "moduleCode": "customer"}
+        r = a.request(csurl, method, json=data, headers=head)
+        setattr(result, 'menuid', json.loads(r.text)['data'])
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
-        wd.write_yaml(yaml_path, "删除导航菜单(关联模块，范围全部)", "data", dataid)  # 新增模块id写入删除用例参数中
-        wd.write_yaml(yaml_path, "导航菜单详情查看(关联模块，范围全部)", "data", {"menuId": '%s' % dataid})  # 新增模块id写入导航详情参数中
 
     @allure.story("新增重复的导航菜单(关联模块，范围全部)")
-    def test04(self):
+    def test02(self, customer_moduleid):
         """新增重复的导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "新增重复的导航菜单(关联模块，范围全部)")
-        r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
+        data = {"parentId": "0", "scopeType": 0, "menuName": "测试", "menuType": 0, "moduleId": "%s" % customer_moduleid,
+                "moduleCode": "customer"}
+        r = a.request(csurl, method, json=data, headers=head)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("导航菜单内-自定义菜单展示(关联模块，范围全部)")
-    def test05(self):
+    def test03(self):
         """导航菜单内-自定义菜单展示(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "导航菜单内-自定义菜单展示(关联模块，范围全部)")
         r = a.request(csurl, method, headers=head)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("导航菜单外-自定义菜单展示(关联模块，范围全部)")
-    def test06(self):
+    def test04(self):
         """导航菜单外-自定义菜单展示(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "导航菜单外-自定义菜单展示(关联模块，范围全部)")
         r = a.request(csurl, method, headers=head)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("导航菜单详情查看(关联模块，范围全部)")
-    def test07(self):
+    def test05(self):
         """导航菜单详情查看(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "导航菜单详情查看(关联模块，范围全部)")
-        r = a.request(csurl, method, params=yamlvalue['data'], headers=head)
+        data = {'menuId': getattr(result, 'menuid')}
+        r = a.request(csurl, method, params=data, headers=head)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("删除导航菜单(关联模块，范围全部)")
-    def test08(self):
+    def test06(self):
         """删除导航菜单(关联模块，范围全部)"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("navigation_menu.yaml",
                                                                                "删除导航菜单(关联模块，范围全部)")
-        r = a.request(csurl + yamlvalue['data'], method, headers=head)
+        r = a.request(csurl + getattr(result, 'menuid'), method, headers=head)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
 
 

@@ -26,6 +26,7 @@ class TestStatistics(object):
         """新增统计目录"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增统计目录")
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
+        setattr(result, 'menuid', json.loads(r.text)['data']['id'])
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
@@ -34,41 +35,40 @@ class TestStatistics(object):
         """查看统计目录"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "查看统计目录")
         r = a.request(csurl, method, headers=head)
-        setattr(result, 'menuid', json.loads(r.text)['data'][0]['id'])
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
     @allure.story("新增环形图")
-    def test03(self, renyuan_moduleid):
+    def test03(self, user_moduleid):
         """新增环形图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增环形图")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "环形图",
                 "dataModuleCode": "sysUser",
-                "componentType": 3, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "componentType": 3, "statisticsMeasure0": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'huanxingid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("环形图预览")
-    def test04(self, renyuan_moduleid):
+    def test04(self, user_moduleid):
         """环形图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "环形图预览")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "环形图",
                 "dataModuleCode": "sysUser",
-                "componentType": 3, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "componentType": 3, "statisticsMeasure0": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -100,38 +100,38 @@ class TestStatistics(object):
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("新增柱状图")
-    def test08(self, renyuan_moduleid):
+    def test08(self, user_moduleid):
         """新增柱状图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增柱状图")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "柱状图",
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
-                "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "statisticsMeasure1": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": 0}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'zhuzhuangid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("柱状图预览")
-    def test09(self, renyuan_moduleid):
+    def test09(self, user_moduleid):
         """柱状图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "柱状图预览")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "柱状图",
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
-                "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "statisticsMeasure1": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": 0}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -155,36 +155,36 @@ class TestStatistics(object):
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("新增线性图")
-    def test12(self, renyuan_moduleid):
+    def test12(self, user_moduleid):
         """新增线性图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增线性图")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
                 "dataModuleCode": "sysUser",
-                "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "componentType": 5, "statisticsMeasure0": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'xianxingid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("线性图预览")
-    def test13(self, renyuan_moduleid):
+    def test13(self, user_moduleid):
         """线性图预览"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "线性图预览")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
                 "dataModuleCode": "sysUser",
-                "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "componentType": 5, "statisticsMeasure0": ["人员.姓名", "姓名", "truename", "sysUser", 1],
                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                    {"moduleCode": "sysUser", "moduleFieldName": "姓名", "moduleFieldCode": "truename", "fieldType": 1,
                      "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % renyuan_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
                 "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)

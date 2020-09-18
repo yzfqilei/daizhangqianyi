@@ -24,18 +24,18 @@
       componentType: 1
       conditionType: 1
       conditions: []
-      dataModuleCode: "sysUser"
-      dataModuleName: "人员"
+      dataModuleCode: "customer"
+      dataModuleName: "客户"
       pageResult:
       relatedDataModuleCode: ""
       relatedDataModuleId:
       relatedDataModuleName:
       statisticsData:
-      - value: 3
+      - value: 1
       statisticsFields:
       - moduleFieldCode: ""
-        moduleCode: sysUser
-        moduleFieldName: 人员
+        moduleCode: customer
+        moduleFieldName: 客户
         aggregator: count
       statisticsLevelSort: 0
       statisticsMeasure: []
@@ -72,12 +72,12 @@
     code: 0
     msg:
     data:
-      componentName: "人员"
+      componentName: "客户"
       componentType: 2
       conditionType: 0
       conditions: []
-      dataModuleCode: "sysUser"
-      dataModuleName: "人员"
+      dataModuleCode: "customer"
+      dataModuleName: "客户"
       from:
       panelId:
       panelLocation:

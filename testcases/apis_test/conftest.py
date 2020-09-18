@@ -48,7 +48,18 @@ def is_login():
 
 
 @pytest.fixture(scope='session')
-def renyuan_moduleid(is_login):
+def customer_moduleid(is_login):
+    """客户模块id查询"""
+    rooturl = get_root_urls()
+    csurl = '/apis/crm-web/module/find/module'
+    a = RestClient(rooturl)
+    head = {'access-token': is_login[0], 'refresh-token': is_login[1]}
+    r = a.request(csurl, 'POST', headers=head)
+    return json.loads(r.text)['data'][-1]['id']
+
+
+@pytest.fixture(scope='session')
+def user_moduleid(is_login):
     """人员模块id查询"""
     rooturl = get_root_urls()
     csurl = '/apis/crm-web/module/find/module'

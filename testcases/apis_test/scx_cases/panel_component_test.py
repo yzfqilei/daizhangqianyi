@@ -44,13 +44,13 @@ class TestPanel(object):
         check_datas(r, yamlvalue)
 
     @allure.story("首页新增卡片")
-    def test03(self, renyuan_moduleid):
+    def test03(self, customer_moduleid):
         """首页新增卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页新增卡片")
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 0,
                 "componentType": 1,
-                "componentName": "测试卡片", "conditionType": 1, "dataModuleName": "人员", "dataModuleCode": "sysUser",
-                "dataModuleId": "%s" % renyuan_moduleid, "conditions": [],
+                "componentName": "测试卡片", "conditionType": 1, "dataModuleName": "客户", "dataModuleCode": "customer",
+                "dataModuleId": "%s" % customer_moduleid, "conditions": [],
                 "statisticsFields": [{"aggregator": "count", "moduleFieldCode": ""}]}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -84,13 +84,13 @@ class TestPanel(object):
         check_codes_msg(r, yamlvalue, mainkey)
 
     @allure.story("首页新增图表")
-    def test07(self, renyuan_moduleid):
+    def test07(self, customer_moduleid):
         """首页新增图表"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页新增图表")
         data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 8,
                 "componentType": 2,
-                "dataModuleCode": "sysUser", "componentName": "人员",
-                "dataModuleId": "%s" % renyuan_moduleid}
+                "dataModuleCode": "customer", "componentName": "客户",
+                "dataModuleId": "%s" % customer_moduleid}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         setattr(result, 'component_id_tb', json.loads(r.text)['data'])
