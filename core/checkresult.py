@@ -46,6 +46,8 @@ def check_datas(r, case_info):
         logger.info('>>> expect_data:{}'.format(expect_data))
         if isinstance(actual_data, list) and actual_data:
             actual_data = actual_data[0]
+        if isinstance(expect_data, list) and expect_data:
+            expect_data = expect_data[0]
         _check_dict(actual_data, expect_data)
     except Exception as e1:
         print(traceback.format_exc())

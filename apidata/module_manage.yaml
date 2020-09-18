@@ -1,0 +1,1457 @@
+添加模块:
+  method: POST
+  route: /apis/crm-web/module/insert
+  data:
+    code: ''
+    flowType: 0
+    id: 0
+    mainFieldId: 0
+    name: 测试模块
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      name: 测试模块
+      code: ceshimokuai
+      description:
+      icon:
+      type:
+      parentModuleId: '0'
+      detailModuleId:
+      mainFieldId: '0'
+      deleted:
+      moduleType:
+      enabled:
+      flowType: 0
+      functions:
+      - id:
+        name: 查看测试模块
+        code: view
+        description:
+        type: 0
+        layout:
+        sequence: 1
+        deleted:
+        method:
+        url:
+      - id:
+        name: 新增测试模块
+        code: new
+        description:
+        type: 0
+        layout:
+        sequence: 2
+        deleted:
+        method:
+        url:
+      - id:
+        name: 修改测试模块
+        code: edit
+        description:
+        type: 0
+        layout:
+        sequence: 3
+        deleted:
+        method:
+        url:
+      - id:
+        name: 删除测试模块
+        code: delete
+        description:
+        type: 0
+        layout:
+        sequence: 4
+        deleted:
+        method:
+        url:
+      - id:
+        name: 导入测试模块
+        code: import
+        description:
+        type: 0
+        layout:
+        sequence: 5
+        deleted:
+        method:
+        url:
+      - id:
+        name: 导出测试模块
+        code: export
+        description:
+        type: 0
+        layout:
+        sequence: 6
+        deleted:
+        method:
+        url:
+      fields:
+      - name: ID
+        code: _id
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 1
+        extendJson: {}
+        deleted: false
+      - name: 创建时间
+        code: _createTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 2
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted: false
+      - name: 创建人
+        code: _createUser
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 3
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+      - name: 创建人部门
+        code: _createDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 4
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted: false
+      - name: 最近分配时间
+        code: _distributeTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 5
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted: false
+      - name: 最近分配人员
+        code: _distributor
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 6
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+      - name: 修改时间
+        code: _modifyTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 7
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted: false
+      - name: 修改人
+        code: _modifyUser
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 8
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+      - name: 修改人部门
+        code: _modifyDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 9
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted: false
+      - name: 负责人
+        code: _principal
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 10
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+      - name: 申请人
+        code: _applicant
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 11
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+      - name: 审批意见
+        code: _approval
+        type: 1
+        componentId: 6
+        placeholder:
+        description:
+        layout: 0
+        required: true
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 12
+        extendJson:
+          items:
+          - sequence: 1
+            label: 同意
+            value: ''
+            selected:
+          - sequence: 2
+            label: 驳回
+            value: ''
+            selected:
+        deleted: false
+      - name: 审批说明
+        code: _approvalComment
+        type: 1
+        componentId: 2
+        placeholder:
+        description:
+        layout: 1
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 13
+        extendJson:
+          default: ''
+          length: 50
+          lines: 0
+        deleted: false
+      - name: 处理状态
+        code: _dealStatus
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 14
+        extendJson: {}
+        deleted: false
+
+修改模块名称（测试模块1）:
+  method: POST
+  route: /apis/crm-web/module/update
+  data:
+    code: ''
+    flowType: 0
+    id: 0
+    mainFieldId: 0
+    name: 测试模块
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+查看模块列表:
+  method: GET
+  route: /apis/crm-web/module/listAll
+  data:
+    type:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - name: 人员
+      code: sysUser
+      description:
+      icon:
+      type: 0
+      parentModuleId: '0'
+      sequence: 2
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 部门
+      code: dept
+      description:
+      icon:
+      type: 0
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 3
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 角色
+      code: role
+      description:
+      icon:
+      type: 0
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 4
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 订单
+      code: order
+      description:
+      icon:
+      type: 6
+      parentModuleId: '0'
+      sequence: 5
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 客户
+      code: customer
+      description:
+      icon:
+      type: 6
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 6
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 测试模块1
+      code: ceshimokuai
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      mainFieldId: '0'
+      sequence: 9
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 0
+查看模块详情:
+  method: GET
+  route: /apis/crm-web/module/findById
+  data:
+    id: 755867186647703552
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      name: 测试模块1
+      code: ceshimokuai
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      mainFieldId: '0'
+      deleted: false
+      moduleType:
+      enabled:
+      flowType: 0
+      functions:
+      - tenantId:
+        name: 查看测试模块1
+        code: view
+        description:
+        type: 0
+        layout:
+        sequence: 1
+        deleted: false
+        method:
+        url:
+      - tenantId:
+        name: 新增测试模块1
+        code: new
+        description:
+        type: 0
+        layout:
+        sequence: 2
+        deleted: false
+        method:
+        url:
+      - tenantId:
+        name: 修改测试模块1
+        code: edit
+        description:
+        type: 0
+        layout:
+        sequence: 3
+        deleted: false
+        method:
+        url:
+      fields:
+      - tenantId:
+        name: ID
+        code: _id
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 1
+        extendJson: {}
+        deleted:
+      - tenantId:
+        name: 创建时间
+        code: _createTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 2
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted:
+      - tenantId:
+        name: 创建人
+        code: _createUser
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 3
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+      - tenantId:
+        name: 创建人部门
+        code: _createDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 4
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted:
+      - tenantId:
+        name: 最近分配时间
+        code: _distributeTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 5
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted:
+      - tenantId:
+        name: 最近分配人员
+        code: _distributor
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 6
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+      - tenantId:
+        name: 修改时间
+        code: _modifyTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 7
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted:
+      - tenantId:
+        name: 修改人
+        code: _modifyUser
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 8
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+      - tenantId:
+        name: 修改人部门
+        code: _modifyDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 9
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted:
+      - tenantId:
+        name: 负责人
+        code: _principal
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 10
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+      - tenantId:
+        name: 申请人
+        code: _applicant
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 11
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+      - tenantId:
+        name: 审批意见
+        code: _approval
+        type: 1
+        componentId: 6
+        placeholder:
+        description:
+        layout: 0
+        required: true
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 12
+        extendJson:
+          items:
+          - sequence: 1
+            label: 同意
+            value: ''
+            selected:
+          - sequence: 2
+            label: 驳回
+            value: ''
+            selected:
+        deleted:
+      - tenantId:
+        name: 审批说明
+        code: _approvalComment
+        type: 1
+        componentId: 2
+        placeholder:
+        description:
+        layout: 1
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 13
+        extendJson:
+          default: ''
+          length: 50
+          lines: 0
+        deleted:
+      - tenantId:
+        name: 处理状态
+        code: _dealStatus
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 14
+        extendJson: {}
+        deleted:
+添加功能:
+  method: POST
+  route: /apis/crm-web/module/func/save
+  data:
+    id:
+    moduleId:
+    name: 测试功能
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      name: 测试功能
+      code: ceshigongneng
+      description:
+      type: 1
+      layout:
+      sequence: 7
+      deleted:
+      method:
+      url:
+
+查看功能列表:
+  method: GET
+  route: /apis/crm-web/module/field/list
+  data:
+    moduleId:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - name: ID
+      code: _id
+      type: 1
+      componentId: 1
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 1
+      extendJson: {}
+      deleted: false
+    - name: 创建时间
+      code: _createTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 2
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 创建人
+      code: _createUser
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 3
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 创建人部门
+      code: _createDept
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 4
+      extendJson:
+        reference: dept
+        fields:
+        - code: deptName
+          name: 部门名称
+      deleted: false
+    - name: 最近分配时间
+      code: _distributeTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 5
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 最近分配人员
+      code: _distributor
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 6
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 修改时间
+      code: _modifyTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 7
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 修改人
+      code: _modifyUser
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 8
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 修改人部门
+      code: _modifyDept
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 9
+      extendJson:
+        reference: dept
+        fields:
+        - code: deptName
+          name: 部门名称
+      deleted: false
+    - name: 负责人
+      code: _principal
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 10
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 申请人
+      code: _applicant
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 11
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 审批意见
+      code: _approval
+      type: 1
+      componentId: 6
+      placeholder:
+      description:
+      layout: 0
+      required: true
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 12
+      extendJson:
+        items:
+        - sequence: 1
+          label: 同意
+          value: ''
+          selected:
+        - sequence: 2
+          label: 驳回
+          value: ''
+          selected:
+      deleted: false
+    - name: 审批说明
+      code: _approvalComment
+      type: 1
+      componentId: 2
+      placeholder:
+      description:
+      layout: 1
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 13
+      extendJson:
+        default: ''
+        length: 50
+        lines: 0
+      deleted: false
+    - name: 处理状态
+      code: _dealStatus
+      type: 1
+      componentId: 1
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 14
+      extendJson: {}
+      deleted: false
+修改功能名称:
+  method: POST
+  route: /apis/crm-web/module/func/save
+  data:
+    id:
+    moduleId:
+    name: 测试功能1
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      name: 测试功能1
+      code:
+      description:
+      type: 1
+      layout:
+      sequence:
+      deleted:
+      method:
+      url:
+
+
+添加字段（单行文本）:
+  method: POST
+  route: /apis/crm-web/module/field/save
+  data:
+    code: ''
+    componentId: 1
+    description: ''
+    extendJson:
+      default: ''
+      length: 18
+    layout: 0
+    moduleId:
+    name: 单行文本
+    onlyRead: 0
+    placeholder: ''
+    repeated: false
+    required: false
+    sequence: 104
+    type: 0
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      name: 单行文本
+      code: danxingwenben
+      type: 0
+      componentId: 1
+      placeholder: ''
+      description: ''
+      layout: 0
+      required: false
+      repeated: false
+      master:
+      codeSequenceId:
+      extendJson:
+        default: ''
+        length: 18
+      deleted:
+
+查看字段列表:
+  method: GET
+  route: /apis/crm-web/module/field/list
+  data:
+    moduleId:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - name: ID
+      code: _id
+      type: 1
+      componentId: 1
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 1
+      extendJson: {}
+      deleted: false
+    - name: 创建时间
+      code: _createTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 2
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 创建人
+      code: _createUser
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 3
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 创建人部门
+      code: _createDept
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 4
+      extendJson:
+        reference: dept
+        fields:
+        - code: deptName
+          name: 部门名称
+      deleted: false
+    - name: 最近分配时间
+      code: _distributeTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 5
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 最近分配人员
+      code: _distributor
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 6
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 修改时间
+      code: _modifyTime
+      type: 1
+      componentId: 8
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 7
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm:ss
+      deleted: false
+    - name: 修改人
+      code: _modifyUser
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 8
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 修改人部门
+      code: _modifyDept
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 9
+      extendJson:
+        reference: dept
+        fields:
+        - code: deptName
+          name: 部门名称
+      deleted: false
+    - name: 负责人
+      code: _principal
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 10
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 申请人
+      code: _applicant
+      type: 1
+      componentId: 9
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 11
+      extendJson:
+        reference: sysUser
+        fields:
+        - code: truename
+          name: 姓名
+      deleted: false
+    - name: 审批意见
+      code: _approval
+      type: 1
+      componentId: 6
+      placeholder:
+      description:
+      layout: 0
+      required: true
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 12
+      extendJson:
+        items:
+        - sequence: 1
+          label: 同意
+          value: ''
+          selected:
+        - sequence: 2
+          label: 驳回
+          value: ''
+          selected:
+      deleted: false
+    - name: 审批说明
+      code: _approvalComment
+      type: 1
+      componentId: 2
+      placeholder:
+      description:
+      layout: 1
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 13
+      extendJson:
+        default: ''
+        length: 50
+        lines: 0
+      deleted: false
+    - name: 处理状态
+      code: _dealStatus
+      type: 1
+      componentId: 1
+      placeholder:
+      description:
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 14
+      extendJson: {}
+      deleted: false
+    - name: 单行文本
+      code: danxingwenben
+      type: 0
+      componentId: 1
+      placeholder: ''
+      description: ''
+      layout: 0
+      required: false
+      repeated: false
+      master: 0
+      codeSequenceId:
+      sequence: 15
+      extendJson:
+        default: ''
+        length: 18
+      deleted: false
+保存字段布局:
+  method: POST
+  route: /apis/crm-web/module/func/layout
+  data:
+    funcId:
+    pageLayout:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+删除字段布局:
+  method: POST
+  route: /apis/crm-web/module/func/layout
+  data:
+    funcId:
+    pageLayout:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+删除新增字段（单行文本）:
+  method: DELETE
+  route: /apis/crm-web/module/field/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: true
+删除新增功能（测试功能）:
+  method: POST
+  route: /apis/crm-web/module/func/delete
+  data:
+    id: '755868489037815808'
+    moduleId: '755867186647703552'
+    name: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+删除新增模块（测试模块1）:
+  method: DELETE
+  route: /apis/crm-web/module/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: true
+查看模块列表（tree）:
+  method: GET
+  route: /apis/crm-web/module/tree
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - parentId: '0'
+      name: 人员
+      type: 0
+      children: []
+    - parentId: '0'
+      name: 订单
+      type: 6
+      children: []
+    - parentId: '0'
+      name: 客户
+      type: 6
+      children: []
