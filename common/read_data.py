@@ -28,14 +28,14 @@ class ReadFileData:
         logger.info("加载 {} 文件......".format(file_path))
         with open(file_path, encoding='utf-8') as f:
             data = yaml.safe_load(f)
-        logger.info("读到数据 ==>>  {} ".format(data))
+        logger.info("读取文件数据成功！")
         return data
 
     def load_json(self, file_path):
         logger.info("加载 {} 文件......".format(file_path))
         with open(file_path, encoding='utf-8') as f:
             data = json.load(f)
-        logger.info("读到数据 ==>>  {} ".format(data))
+        logger.info("读取文件数据成功！")
         return data
 
     def load_ini(self, file_path):
@@ -43,7 +43,6 @@ class ReadFileData:
         config = MyConfigParser()
         config.read(file_path, encoding='utf-8')
         data = config.as_dict()
-        # print("读到数据 ==>>  {} ".format(data))
         return data
 
 

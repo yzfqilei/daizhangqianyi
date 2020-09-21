@@ -13,7 +13,6 @@ DB_CONF = {
     "port": int(data["mysql_port"]),
     "user": data["mysql_user"],
     "password": data["mysql_passwd"],
-    "db": data["mysql_db"]
 }
 
 
