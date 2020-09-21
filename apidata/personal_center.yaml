@@ -8,9 +8,9 @@ test_company_infor001:
     code: 0
     msg:
     data:
-      companyName: 测试代账公司
+      companyName: api测试
       contacts: 系统管理员
-      companyId: '10447'
+      companyId: '10235'
 
 test_user_infor002:
   method: GET
@@ -22,8 +22,8 @@ test_user_infor002:
     code: 0
     msg:
     data:
-      _id: '631126109332017152'
-      _createDept: 测试代账公司
+      _id: '756574317326995456'
+      _createDept: api测试
 
 test_modify_password003:
   method: POST
@@ -40,29 +40,30 @@ test_modify_password003:
 test_modify_user_info004:
   method: PUT
   route: /apis/crm-web/user/current/user
-  data1: {username: yzf1008, phone: '13121111221', email: !!null '', truename: 系统管理员1, sex: 男, deptIds: '750307176735780864', roleIds: ['750307176735780865'], identity: 主管, status: 正常, _id: '631126109332017152'}
-  data2: {username: yzf1008, phone: '13121111221', email: !!null '', truename: 系统管理员, sex: 女, deptIds: '750307176735780864', roleIds: ['750307176735780865'], identity: 主管, status: 正常, _id: '631126109332017152'}
+  data1: {username: henacs3m, status: 正常, truename: 系统管理员_m, sex: 男, phone: '13025414026', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
+  data2: {username: henacs3, status: 正常, truename: 系统管理员, sex: 女, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
+
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {username: yzf1008, truename: 系统管理员1, sex: 男}
+    data: {username: henacs3m, truename: 系统管理员_m, sex: 男}
   expectresult_renew:
     code: 0
     msg:
-    data: {username: yzf1008, truename: 系统管理员, sex: 女}
+    data: {username: henacs3, truename: 系统管理员, sex: 女}
 
 test_modify_conpany_info005:
   method: POST
   route: /apis/crm-web/company/saveOrUpdate
-  data: {companyId: '10447', companyName: 测试代账公司1, simpleName: 代账公司, dzCompanyId: '631125285013688320', area: 江苏省/南京市/雨花台区, contacts: 系统管理员, contactsPhone: '15815815888', remark: 云账房网络科技有限公司, status: 0, companyType: 0, deleted: 0, creator: !!null ''}
+  data: {companyId: '10235', companyName: api测试, simpleName: !!null '', dzCompanyId: '631125285013688320', area: !!null '', contacts: 系统管理员, contactsPhone: '13025414025', remark: !!null '', status: 0, companyType: 0, deleted: 0, creator: null ''}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: '10447'
+    data: '10235'
 
 test_change_phone_number006:
   method: PUT
@@ -83,10 +84,30 @@ test_read_notice007:
     code: 0
     msg:
     data:
-      id: 5436095418
-      type: '1'
+      id: '2225788390'
+      type: 1
       msg: a_test_message
-      data: ailmbjf
+      data: cimlbda
       receiver:
       readFlag: true
-      creator: '631126109332017152'
+      creator: '756574317326995456'
+
+test_set_notice_read008:
+  method: PATCH
+  route: /apis/crm-notice/notices/read-flag
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: null
+
+test_clean_all_notice009:
+  method: DELETE
+  route: /apis/crm-notice/notices/read
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: null
