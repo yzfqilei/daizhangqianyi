@@ -2,9 +2,9 @@
   method: POST
   route: /apis/login
   data:
-    account: yzf10081
+    account: henacs31
     grant_type: password
-    password: 111111
+    password: a111111
     type: account
   headers: {"Content-Type": "application/json"}
   expectcode: 200
@@ -21,7 +21,7 @@
   data:
     account: henacs3
     grant_type: password
-    password: a111111
+    password: a1111112
     type: account
   headers: {"Content-Type": "application/json"}
   expectcode: 200
@@ -34,7 +34,7 @@
   method: POST
   route: /apis/login
   data:
-    account: yzf1008
+    account: henacs3
     grant_type: password
     password: a111111
     type: account
@@ -49,10 +49,10 @@
   method: POST
   route: /apis/login
   data:
-    account: "yzkh5261"
-    grant_type: "password"
-    password: "a111111"
-    type: "account"
+    account: yzkh5261
+    grant_type: password
+    password: a111111
+    type: account
   headers: {"Content-Type": "application/json"}
   expectcode: 500
   expectresult:

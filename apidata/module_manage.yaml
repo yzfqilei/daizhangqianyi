@@ -21,7 +21,6 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
-      sequence: 15
       deleted:
       moduleType:
       enabled:
@@ -473,7 +472,6 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
-      sequence: 15
       deleted: false
       moduleType: 1
       enabled: 0
@@ -497,7 +495,6 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
-      sequence: 15
       deleted: false
       moduleType:
       enabled:
