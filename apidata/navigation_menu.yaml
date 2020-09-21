@@ -1,53 +1,17 @@
-导航菜单内-自定义菜单为空:
-  method: GET
-  route: /apis/crm-web/nav/allList
-  data:
-  headers: {Content-Type: application/json}
-  expectcode: 200
-  expectresult:
-    code: 0
-    msg:
-    data: []
-
-导航菜单外-自定义菜单为空:
-  method: GET
-  route: /apis/crm-web/nav/userMenuList
-  data:
-  headers: {Content-Type: application/json}
-  expectcode: 200
-  expectresult:
-    code: 0
-    msg:
-    data: []
-
-
 新增导航菜单(关联模块，范围全部):
   method: POST
   route: /apis/crm-web/nav/saveOrUpdate
   data:
-    menuName: 测试菜单
-    menuType: 0
-    moduleCode: order
-    moduleId: '750307180682620928'
-    scopeIds: []
-    scopeType: 0
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
     data:
-
 新增重复的导航菜单(关联模块，范围全部):
   method: POST
   route: /apis/crm-web/nav/saveOrUpdate
   data:
-    menuName: 测试菜单
-    menuType: 0
-    moduleCode: order
-    moduleId: '750307180682620928'
-    scopeIds: []
-    scopeType: 0
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
@@ -66,14 +30,117 @@
     code: 0
     msg:
     data:
-      menuName: 测试菜单
+    - menuName: 客户
       menuType: 0
-      moduleCode: order
+      moduleCode: customer
       menuUrl:
       parentId: '0'
       scopeType: 0
-
-
+      orderNum: 1
+      deleted: 0
+      children: []
+    - menuName: 营销管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 2
+      deleted: 0
+      children:
+      - menuName: 线索
+        menuType: 0
+        moduleCode: xiansuo
+        menuUrl:
+        scopeType: 0
+        orderNum: 3
+        deleted: 0
+        children: []
+      - menuName: 联系人
+        menuType: 0
+        moduleCode: lianxiren
+        menuUrl:
+        scopeType: 0
+        orderNum: 4
+        deleted: 0
+        children: []
+      - menuName: 跟进记录
+        menuType: 0
+        menuUrl:
+        scopeType: 0
+        orderNum: 5
+        deleted: 0
+        children: []
+      - menuName: 订单
+        menuType: 0
+        moduleCode: order
+        menuUrl:
+        scopeType: 0
+        orderNum: 6
+        deleted: 0
+        children: []
+    - menuName: 任务管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 7
+      deleted: 0
+      children:
+      - menuName: 工商注册
+        menuType: 0
+        moduleCode: gongshangzhuce
+        menuUrl:
+        scopeType: 0
+        orderNum: 8
+        deleted: 0
+        children: []
+      - menuName: 代理记账
+        menuType: 0
+        moduleCode: dailijizhang
+        menuUrl:
+        scopeType: 0
+        orderNum: 9
+        deleted: 0
+        children: []
+    - menuName: 财务管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 10
+      deleted: 0
+      children:
+      - menuName: 回款记录
+        menuType: 0
+        moduleCode: huikuanjilu
+        menuUrl:
+        scopeType: 0
+        orderNum: 11
+        deleted: 0
+        children: []
+      - menuName: 开票申请
+        menuType: 0
+        moduleCode: kaipiaoshenqing
+        menuUrl:
+        scopeType: 0
+        orderNum: 12
+        deleted: 0
+        children: []
+    - menuName: 测试
+      menuType: 0
+      moduleCode: customer
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 22
+      deleted: 0
+      children: []
 导航菜单外-自定义菜单展示(关联模块，范围全部):
   method: GET
   route: /apis/crm-web/nav/userMenuList
@@ -84,42 +151,146 @@
     code: 0
     msg:
     data:
-      menuName: 测试菜单
+    - menuName: 客户
       menuType: 0
-      moduleCode: order
+      moduleCode: customer
       menuUrl:
       parentId: '0'
       scopeType: 0
-
-
+      orderNum: 1
+      deleted: 0
+      children: []
+    - menuName: 营销管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 2
+      deleted: 0
+      children:
+      - menuName: 线索
+        menuType: 0
+        moduleCode: xiansuo
+        menuUrl:
+        scopeType: 0
+        orderNum: 3
+        deleted: 0
+        children: []
+      - menuName: 联系人
+        menuType: 0
+        moduleCode: lianxiren
+        menuUrl:
+        scopeType: 0
+        orderNum: 4
+        deleted: 0
+        children: []
+      - menuName: 跟进记录
+        menuType: 0
+        moduleCode: genjinjilu
+        menuUrl:
+        scopeType: 0
+        orderNum: 5
+        deleted: 0
+        children: []
+      - menuName: 订单
+        menuType: 0
+        moduleCode: order
+        menuUrl:
+        scopeType: 0
+        orderNum: 6
+        deleted: 0
+        children: []
+    - menuName: 任务管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 7
+      deleted: 0
+      children:
+      - menuName: 工商注册
+        menuType: 0
+        moduleCode: gongshangzhuce
+        menuUrl:
+        scopeType: 0
+        orderNum: 8
+        deleted: 0
+        children: []
+      - menuName: 代理记账
+        menuType: 0
+        moduleCode: dailijizhang
+        menuUrl:
+        scopeType: 0
+        orderNum: 9
+        deleted: 0
+        children: []
+    - menuName: 财务管理
+      menuType: 2
+      moduleId:
+      moduleCode:
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 10
+      deleted: 0
+      children:
+      - menuName: 回款记录
+        menuType: 0
+        moduleCode: huikuanjilu
+        menuUrl:
+        scopeType: 0
+        orderNum: 11
+        deleted: 0
+        children: []
+      - menuName: 开票申请
+        menuType: 0
+        moduleCode: kaipiaoshenqing
+        menuUrl:
+        scopeType: 0
+        orderNum: 12
+        deleted: 0
+        children: []
+    - menuName: 测试
+      menuType: 0
+      moduleCode: customer
+      menuUrl:
+      parentId: '0'
+      scopeType: 0
+      orderNum: 22
+      deleted: 0
+      children: []
 导航菜单详情查看(关联模块，范围全部):
   method: GET
   route: /apis/crm-web/nav/info
   data:
-    menuId: '754388218346123264'
   headers: {}
   expectcode: 200
   expectresult:
     code: 0
     msg:
     data:
-      menuName: 测试菜单
+      menuName: 测试
       menuType: 0
-      moduleCode: order
+      moduleCode: customer
       menuUrl:
       parentId: '0'
       scopeType: 0
       scopeIds: []
+      leafNode: 1
 
 
 删除导航菜单(关联模块，范围全部):
   method: DELETE
   route: /apis/crm-web/nav/delete/
-  data: '754388218346123264'
+  data: '756595428362948608'
   headers: {}
   expectcode: 200
   expectresult:
     code: 0
-    data:
     msg:
+    data:
 

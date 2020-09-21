@@ -7,10 +7,12 @@ import jenkins
 import json
 import urllib3
 from common.read_data import ReadFileData
-from common.path_conf import INI_PATH
+from common.path_conf import BASE_DIR
 
 data = ReadFileData()
-jk_ini = data.load_ini(INI_PATH + 'setting.ini')['jenkins']
+ini_pt = os.path.join(BASE_DIR, 'config/')  # linux目录
+# win_ini_pt = os.path.join(BASE_DIR, 'config\\')  # windows目录
+jk_ini = data.load_ini(ini_pt + 'setting.ini')['jenkins']
 # jenkins登录地址
 jenkins_url = jk_ini['jenkins_url']
 # 获取jenkins对象
@@ -34,7 +36,7 @@ report_url = jk_ini['report_url']
 def DingTalkSend():
     d = {}
     # 获取项目绝对路径
-    path = os.path.abspath(os.path.dirname((__file__)))
+    path = os.path.abspath(os.path.dirname(__file__))
     # 打开prometheusData 获取需要发送的信息
     linuxpath = path + '/allure-report/export/prometheusData.txt'
     windowspath = path + r'\allure-report\export\prometheusData.txt'
@@ -54,7 +56,7 @@ def DingTalkSend():
     print('通过数量：{}'.format(status_failed))
 
     # 钉钉推送
-    webhook = data.load_ini(INI_PATH + 'setting.ini')['dingding']['webhook']
+    webhook = data.load_ini(ini_pt + 'setting.ini')['dingding']['webhook']
     url = webhook  # webhook
     con = {"msgtype": "text",
            "text": {

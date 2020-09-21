@@ -19,9 +19,9 @@
   method: POST
   route: /apis/login
   data:
-    account: yzf1008
+    account: henacs3
     grant_type: password
-    password: 1111112
+    password: a111111
     type: account
   headers: {"Content-Type": "application/json"}
   expectcode: 200

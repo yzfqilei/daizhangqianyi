@@ -29,7 +29,8 @@ def check_codes_msg(r: Response, case_info, mainkey=None):
             allure.attach(name='实际值msg', body=str(rjson['msg']))
         pytest.assume(str(case_info['expectresult']['code']) == str(rjson['code']))
         pytest.assume(str(case_info['expectresult']['msg']) == str(rjson['msg']))
-        logger.info(">>> expect_code:" + str(case_info['expectresult']['code']) + "," + "actual_code:" + str(rjson['code']))
+        logger.info(
+            ">>> expect_code:" + str(case_info['expectresult']['code']) + "," + "actual_code:" + str(rjson['code']))
         logger.info(">>> expect_msg:" + str(case_info['expectresult']['msg']) + "," + "actual_msg:" + str(rjson['msg']))
 
 
@@ -52,7 +53,7 @@ def check_datas(r, case_info):
     except Exception as e1:
         print(traceback.format_exc())
         logger.info(traceback.format_exc())
-        raise e1
+        raise e1  # 增加raise e1是为了assert失败仍能继续执行下面的用例
 
 
 def _check_dict(dt, de):

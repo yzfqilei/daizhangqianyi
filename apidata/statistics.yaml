@@ -69,11 +69,9 @@
       relatedDataModuleName:
       relatedForeignField:
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -86,8 +84,8 @@
           fieldType: 1
           groupDatesBy:
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 
 
@@ -113,11 +111,9 @@
       relatedDataModuleName:
       relatedForeignField: ''
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -130,8 +126,8 @@
           fieldType: 1
           groupDatesBy: ''
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 图形列表:
   method: GET
@@ -195,11 +191,9 @@
       relatedDataModuleName:
       relatedForeignField:
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -212,8 +206,8 @@
           fieldType: 1
           groupDatesBy:
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 
 
@@ -239,11 +233,9 @@
       relatedDataModuleName:
       relatedForeignField: ""
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -256,8 +248,8 @@
           fieldType: 1
           groupDatesBy: ""
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 删除柱状图:
   method: DELETE
@@ -305,11 +297,9 @@
       relatedDataModuleName:
       relatedForeignField:
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -322,8 +312,8 @@
           fieldType: 1
           groupDatesBy:
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 
 
@@ -349,11 +339,9 @@
       relatedDataModuleName:
       relatedForeignField: ""
       statisticsData:
-        - name: "bosscs01"
+        - name: "测试人员"
           value: 1
-        - name: "ceshibu01"
-          value: 1
-        - name: "yzf1008"
+        - name: "系统管理员"
           value: 1
       statisticsFields:
         - aggregator: "count"
@@ -366,8 +354,8 @@
           fieldType: 1
           groupDatesBy: ""
           moduleCode: "sysUser"
-          moduleFieldCode: "username"
-          moduleFieldName: "用户名"
+          moduleFieldCode: "truename"
+          moduleFieldName: "姓名"
 
 删除线性图:
   method: DELETE

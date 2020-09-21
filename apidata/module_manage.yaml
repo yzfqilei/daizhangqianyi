@@ -21,6 +21,7 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
+      sequence: 15
       deleted:
       moduleType:
       enabled:
@@ -91,13 +92,10 @@
         code: _id
         type: 1
         componentId: 1
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 1
         extendJson: {}
         deleted: false
@@ -105,13 +103,10 @@
         code: _createTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 2
         extendJson:
           default:
@@ -123,13 +118,10 @@
         code: _createUser
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 3
         extendJson:
           reference: sysUser
@@ -141,13 +133,10 @@
         code: _createDept
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 4
         extendJson:
           reference: dept
@@ -159,13 +148,10 @@
         code: _distributeTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 5
         extendJson:
           default:
@@ -177,13 +163,10 @@
         code: _distributor
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 6
         extendJson:
           reference: sysUser
@@ -195,13 +178,10 @@
         code: _modifyTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 7
         extendJson:
           default:
@@ -213,13 +193,10 @@
         code: _modifyUser
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 8
         extendJson:
           reference: sysUser
@@ -231,13 +208,10 @@
         code: _modifyDept
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 9
         extendJson:
           reference: dept
@@ -249,13 +223,10 @@
         code: _principal
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 10
         extendJson:
           reference: sysUser
@@ -267,13 +238,10 @@
         code: _applicant
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 11
         extendJson:
           reference: sysUser
@@ -285,13 +253,10 @@
         code: _approval
         type: 1
         componentId: 6
-        placeholder:
         description:
         layout: 0
         required: true
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 12
         extendJson:
           items:
@@ -308,13 +273,10 @@
         code: _approvalComment
         type: 1
         componentId: 2
-        placeholder:
         description:
         layout: 1
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 13
         extendJson:
           default: ''
@@ -325,17 +287,13 @@
         code: _dealStatus
         type: 1
         componentId: 1
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 14
         extendJson: {}
         deleted: false
-
 修改模块名称（测试模块1）:
   method: POST
   route: /apis/crm-web/module/update
@@ -363,12 +321,13 @@
     code: 0
     msg:
     data:
-    - name: 人员
-      code: sysUser
+    - name: 线索
+      code: xiansuo
       description:
       icon:
-      type: 0
+      type: 1
       parentModuleId: '0'
+      detailModuleId:
       sequence: 2
       deleted: false
       moduleType: 1
@@ -398,13 +357,98 @@
       moduleType: 1
       enabled: 0
       flowType: 1
+    - name: 跟进记录
+      code: genjinjilu
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 6
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 回款记录
+      code: huikuanjilu
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 7
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 开票申请
+      code: kaipiaoshenqing
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 8
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 0
+    - name: 工商注册
+      code: gongshangzhuce
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 9
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 代理记账
+      code: dailijizhang
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 10
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 人员
+      code: sysUser
+      description:
+      icon:
+      type: 0
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 11
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
     - name: 订单
       code: order
       description:
       icon:
       type: 6
       parentModuleId: '0'
-      sequence: 5
+      detailModuleId:
+      sequence: 12
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+    - name: 联系人
+      code: lianxiren
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      sequence: 13
       deleted: false
       moduleType: 1
       enabled: 0
@@ -416,7 +460,7 @@
       type: 6
       parentModuleId: '0'
       detailModuleId:
-      sequence: 6
+      sequence: 14
       deleted: false
       moduleType: 1
       enabled: 0
@@ -429,7 +473,7 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
-      sequence: 9
+      sequence: 15
       deleted: false
       moduleType: 1
       enabled: 0
@@ -453,13 +497,13 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
+      sequence: 15
       deleted: false
       moduleType:
       enabled:
       flowType: 0
       functions:
-      - tenantId:
-        name: 查看测试模块1
+      - name: 查看测试模块1
         code: view
         description:
         type: 0
@@ -468,8 +512,7 @@
         deleted: false
         method:
         url:
-      - tenantId:
-        name: 新增测试模块1
+      - name: 新增测试模块1
         code: new
         description:
         type: 0
@@ -478,8 +521,7 @@
         deleted: false
         method:
         url:
-      - tenantId:
-        name: 修改测试模块1
+      - name: 修改测试模块1
         code: edit
         description:
         type: 0
@@ -489,33 +531,25 @@
         method:
         url:
       fields:
-      - tenantId:
-        name: ID
+      - name: ID
         code: _id
         type: 1
         componentId: 1
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 1
         extendJson: {}
         deleted:
-      - tenantId:
-        name: 创建时间
+      - name: 创建时间
         code: _createTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 2
         extendJson:
           default:
@@ -523,18 +557,14 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - tenantId:
-        name: 创建人
+      - name: 创建人
         code: _createUser
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 3
         extendJson:
           reference: sysUser
@@ -542,18 +572,14 @@
           - code: truename
             name: 姓名
         deleted:
-      - tenantId:
-        name: 创建人部门
+      - name: 创建人部门
         code: _createDept
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 4
         extendJson:
           reference: dept
@@ -561,18 +587,14 @@
           - code: deptName
             name: 部门名称
         deleted:
-      - tenantId:
-        name: 最近分配时间
+      - name: 最近分配时间
         code: _distributeTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 5
         extendJson:
           default:
@@ -580,18 +602,14 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - tenantId:
-        name: 最近分配人员
+      - name: 最近分配人员
         code: _distributor
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 6
         extendJson:
           reference: sysUser
@@ -599,18 +617,14 @@
           - code: truename
             name: 姓名
         deleted:
-      - tenantId:
-        name: 修改时间
+      - name: 修改时间
         code: _modifyTime
         type: 1
         componentId: 8
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 7
         extendJson:
           default:
@@ -618,18 +632,14 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - tenantId:
-        name: 修改人
+      - name: 修改人
         code: _modifyUser
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 8
         extendJson:
           reference: sysUser
@@ -637,18 +647,14 @@
           - code: truename
             name: 姓名
         deleted:
-      - tenantId:
-        name: 修改人部门
+      - name: 修改人部门
         code: _modifyDept
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 9
         extendJson:
           reference: dept
@@ -656,18 +662,14 @@
           - code: deptName
             name: 部门名称
         deleted:
-      - tenantId:
-        name: 负责人
+      - name: 负责人
         code: _principal
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 10
         extendJson:
           reference: sysUser
@@ -675,18 +677,14 @@
           - code: truename
             name: 姓名
         deleted:
-      - tenantId:
-        name: 申请人
+      - name: 申请人
         code: _applicant
         type: 1
         componentId: 9
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 11
         extendJson:
           reference: sysUser
@@ -694,18 +692,14 @@
           - code: truename
             name: 姓名
         deleted:
-      - tenantId:
-        name: 审批意见
+      - name: 审批意见
         code: _approval
         type: 1
         componentId: 6
-        placeholder:
         description:
         layout: 0
         required: true
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 12
         extendJson:
           items:
@@ -718,36 +712,28 @@
             value: ''
             selected:
         deleted:
-      - tenantId:
-        name: 审批说明
+      - name: 审批说明
         code: _approvalComment
         type: 1
         componentId: 2
-        placeholder:
         description:
         layout: 1
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 13
         extendJson:
           default: ''
           length: 50
           lines: 0
         deleted:
-      - tenantId:
-        name: 处理状态
+      - name: 处理状态
         code: _dealStatus
         type: 1
         componentId: 1
-        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        master:
-        codeSequenceId:
         sequence: 14
         extendJson: {}
         deleted:
@@ -789,13 +775,10 @@
       code: _id
       type: 1
       componentId: 1
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 1
       extendJson: {}
       deleted: false
@@ -803,13 +786,10 @@
       code: _createTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 2
       extendJson:
         default:
@@ -821,13 +801,10 @@
       code: _createUser
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 3
       extendJson:
         reference: sysUser
@@ -839,13 +816,10 @@
       code: _createDept
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 4
       extendJson:
         reference: dept
@@ -857,13 +831,10 @@
       code: _distributeTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 5
       extendJson:
         default:
@@ -875,13 +846,10 @@
       code: _distributor
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 6
       extendJson:
         reference: sysUser
@@ -893,13 +861,10 @@
       code: _modifyTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 7
       extendJson:
         default:
@@ -911,13 +876,10 @@
       code: _modifyUser
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 8
       extendJson:
         reference: sysUser
@@ -929,13 +891,10 @@
       code: _modifyDept
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 9
       extendJson:
         reference: dept
@@ -947,13 +906,10 @@
       code: _principal
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 10
       extendJson:
         reference: sysUser
@@ -965,13 +921,10 @@
       code: _applicant
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 11
       extendJson:
         reference: sysUser
@@ -983,13 +936,10 @@
       code: _approval
       type: 1
       componentId: 6
-      placeholder:
       description:
       layout: 0
       required: true
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 12
       extendJson:
         items:
@@ -1006,13 +956,10 @@
       code: _approvalComment
       type: 1
       componentId: 2
-      placeholder:
       description:
       layout: 1
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 13
       extendJson:
         default: ''
@@ -1023,13 +970,10 @@
       code: _dealStatus
       type: 1
       componentId: 1
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 14
       extendJson: {}
       deleted: false
@@ -1071,7 +1015,6 @@
     moduleId:
     name: 单行文本
     onlyRead: 0
-    placeholder: ''
     repeated: false
     required: false
     sequence: 104
@@ -1086,13 +1029,11 @@
       code: danxingwenben
       type: 0
       componentId: 1
-      placeholder: ''
       description: ''
       layout: 0
       required: false
       repeated: false
-      master:
-      codeSequenceId:
+      sequence: 15
       extendJson:
         default: ''
         length: 18
@@ -1113,13 +1054,10 @@
       code: _id
       type: 1
       componentId: 1
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 1
       extendJson: {}
       deleted: false
@@ -1127,13 +1065,10 @@
       code: _createTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 2
       extendJson:
         default:
@@ -1145,13 +1080,10 @@
       code: _createUser
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 3
       extendJson:
         reference: sysUser
@@ -1163,13 +1095,10 @@
       code: _createDept
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 4
       extendJson:
         reference: dept
@@ -1181,13 +1110,10 @@
       code: _distributeTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 5
       extendJson:
         default:
@@ -1199,13 +1125,10 @@
       code: _distributor
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 6
       extendJson:
         reference: sysUser
@@ -1217,13 +1140,10 @@
       code: _modifyTime
       type: 1
       componentId: 8
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 7
       extendJson:
         default:
@@ -1235,13 +1155,10 @@
       code: _modifyUser
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 8
       extendJson:
         reference: sysUser
@@ -1253,13 +1170,10 @@
       code: _modifyDept
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 9
       extendJson:
         reference: dept
@@ -1271,13 +1185,10 @@
       code: _principal
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 10
       extendJson:
         reference: sysUser
@@ -1289,13 +1200,10 @@
       code: _applicant
       type: 1
       componentId: 9
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 11
       extendJson:
         reference: sysUser
@@ -1307,13 +1215,10 @@
       code: _approval
       type: 1
       componentId: 6
-      placeholder:
       description:
       layout: 0
       required: true
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 12
       extendJson:
         items:
@@ -1330,13 +1235,10 @@
       code: _approvalComment
       type: 1
       componentId: 2
-      placeholder:
       description:
       layout: 1
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 13
       extendJson:
         default: ''
@@ -1347,13 +1249,10 @@
       code: _dealStatus
       type: 1
       componentId: 1
-      placeholder:
       description:
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 14
       extendJson: {}
       deleted: false
@@ -1361,13 +1260,10 @@
       code: danxingwenben
       type: 0
       componentId: 1
-      placeholder: ''
       description: ''
       layout: 0
       required: false
       repeated: false
-      master: 0
-      codeSequenceId:
       sequence: 15
       extendJson:
         default: ''
@@ -1444,12 +1340,40 @@
     msg:
     data:
     - parentId: '0'
+      name: 线索
+      type: 1
+      children: []
+    - parentId: '0'
+      name: 跟进记录
+      type: 1
+      children: []
+    - parentId: '0'
+      name: 回款记录
+      type: 1
+      children: []
+    - parentId: '0'
+      name: 开票申请
+      type: 1
+      children: []
+    - parentId: '0'
+      name: 工商注册
+      type: 1
+      children: []
+    - parentId: '0'
+      name: 代理记账
+      type: 1
+      children: []
+    - parentId: '0'
       name: 人员
       type: 0
       children: []
     - parentId: '0'
       name: 订单
       type: 6
+      children: []
+    - parentId: '0'
+      name: 联系人
+      type: 1
       children: []
     - parentId: '0'
       name: 客户
