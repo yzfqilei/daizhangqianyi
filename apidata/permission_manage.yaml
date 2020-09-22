@@ -1,0 +1,2248 @@
+部门列表搜索:
+  method: POST
+  route: /apis/crm-web/module/dept/list
+  data:
+    conditions: {}
+    field: ''
+    keywords: a
+    order: ''
+    pageIndex: 1
+    pageSize: 9999
+    sort:
+      _createTime: ASC
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 9999
+      totalPage: 1
+      currPage: 1
+      list:
+      - _id: '756585370497454080'
+        _createDept: '756585380370845696'
+        _createUser: 系统管理员
+        _modifyUser: 系统管理员
+        _principal: 系统管理员
+        _tenantId: '10235'
+        deptName: api测试
+        parentId: '0'
+        _modifyDept: api测试
+        _modifyUserReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+        _principalReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+        _modifyDeptReference:
+          _id: '756585370497454080'
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _modifyUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+部门列表新增下级:
+  method: POST
+  route: /apis/crm-web/module/dept/insert
+  data:
+    deptName: 测试部门
+    parentId: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      deptName: 测试部门
+      parentId: '756585370497454080'
+      _createUser: '756574317326995456'
+      _tenantId: '10235'
+      _createDept: '756585370497454080'
+      _modifyUser:
+      _modifyTime:
+      _modifyDept:
+      _principal: '756574317326995456'
+部门编辑下级:
+  method: POST
+  route: /apis/crm-web/module/dept/save
+  data:
+    deptName: 测试部门1
+    _id: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      deptName: 测试部门1
+      _modifyUser: '756574317326995456'
+      _modifyDept: '756585370497454080'
+新增人员表单查询:
+  method: GET
+  route: /apis/crm-web/module/func/sysUser/new
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - children:
+      - code: username
+        componentId: 1
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 14
+        deleted: false
+        tenantId: '10235'
+        name: 用户名
+      - code: password
+        componentId: 13
+        extendJson:
+          length: '40'
+          default: ''
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 16
+        deleted: false
+        tenantId: '10235'
+        name: 登录密码
+      - code: status
+        componentId: 6
+        extendJson:
+          items:
+          - label: 正常
+            selected: true
+          - label: 离职
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 22
+        deleted: false
+        tenantId: '10235'
+        name: 状态
+      expend: true
+      title: 登录信息
+    - children:
+      - code: truename
+        componentId: 1
+        extendJson:
+          length: '50'
+          default: ''
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 17
+        deleted: false
+        tenantId: '10235'
+        name: 姓名
+      - code: sex
+        componentId: 6
+        extendJson:
+          items:
+          - label: 男
+            selected: false
+          - label: 女
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 18
+        deleted: false
+        tenantId: '10235'
+        name: 性别
+      - code: phone
+        componentId: 16
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 15
+        deleted: false
+        tenantId: '10235'
+        name: 手机号
+      - code: youxiang
+        componentId: 1
+        extendJson:
+          length: 50
+          default: ''
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        layout: 0
+        sequence: 26
+        deleted: false
+        tenantId: '10235'
+        name: 邮箱
+      - code: deptIds
+        componentId: 9
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 19
+        deleted: false
+        tenantId: '10235'
+        name: 部门
+      - code: identity
+        componentId: 6
+        extendJson:
+          items:
+          - label: 主管
+            selected: false
+          - label: 普通员工
+            selected: true
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 21
+        deleted: false
+        tenantId: '10235'
+        name: 身份
+      - code: roleIds
+        componentId: 10
+        extendJson:
+          reference: role
+          fields:
+          - code: roleName
+            name: 角色名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 20
+        deleted: false
+        tenantId: '10235'
+        name: 角色
+      expend: true
+      title: 基本信息
+人员字段重复性检查:
+  method: GET
+  route: /apis/crm-web/module/sysUser/validate
+  data:
+  - fieldId: '756585730700087309'
+    value: cs02
+  - fieldId: '756585730700087309'
+    value: '18005162224'
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+
+新增人员:
+  method: POST
+  route: /apis/crm-web/module/sysUser/insert
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      status: 正常
+      truename: 测试cs
+      sex: 男
+      phone: '18005162887'
+      youxiang: ''
+      identity: 普通员工
+      _createUser: '756574317326995456'
+      _tenantId: '10235'
+      _createDept: '756585370497454080'
+      _modifyUser:
+      _modifyTime:
+      _modifyDept:
+      _principal: '756574317326995456'
+人员列表展示:
+  method: POST
+  route: /apis/crm-web/module/sysUser/list
+  data:
+    conditions:
+      deptIds: '757543364034957312'
+    pageIndex: 1
+    pageSize: 10
+    total: 2
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyTime:
+        _modifyUser:
+        _principal: 系统管理员
+        deptIds: 测试部门1
+        identity: 普通员工
+        phone: '18005162887'
+        roleIds:
+        - 超级管理员
+        sex: 男
+        status: 正常
+        truename: 测试cs
+        youxiang: ''
+        deptIdsReference:
+          deptName: 测试部门1
+          SHOW_INFO: 测试部门1
+        _principalReference:
+          _modifyDept:
+          _modifyUser:
+          _tenantId: '10235'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+        roleIdsReference:
+        - roleCode: ADMIN
+          roleName: 超级管理员
+          SHOW_INFO: 超级管理员
+        _createDeptReference:
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+查看人员表单查询:
+  method: GET
+  route: /apis/crm-web/module/func/sysUser/view
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - children:
+      - code: username
+        componentId: 1
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        onlyRead: 1
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 14
+        deleted: false
+        tenantId: '10235'
+        name: 用户名
+      - code: password
+        componentId: 13
+        extendJson:
+          length: '40'
+          default: ''
+        description:
+        onlyRead: 1
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 16
+        deleted: false
+        tenantId: '10235'
+        name: 登录密码
+      - code: status
+        componentId: 6
+        extendJson:
+          items:
+          - label: 正常
+            selected: true
+          - label: 离职
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 22
+        deleted: false
+        tenantId: '10235'
+        name: 状态
+      expend: true
+      title: 登录信息
+    - children:
+      - code: truename
+        componentId: 1
+        extendJson:
+          length: '50'
+          default: ''
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 17
+        deleted: false
+        tenantId: '10235'
+        name: 姓名
+      - code: sex
+        componentId: 6
+        extendJson:
+          items:
+          - label: 男
+            selected: false
+          - label: 女
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 18
+        deleted: false
+        tenantId: '10235'
+        name: 性别
+      - code: phone
+        componentId: 16
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        onlyRead: 1
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 15
+        deleted: false
+        tenantId: '10235'
+        name: 手机号
+      - code: youxiang
+        componentId: 1
+        extendJson:
+          length: 50
+          default: ''
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        layout: 0
+        sequence: 26
+        deleted: false
+        tenantId: '10235'
+        name: 邮箱
+      - code: deptIds
+        componentId: 9
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 19
+        deleted: false
+        tenantId: '10235'
+        name: 部门
+      - code: identity
+        componentId: 6
+        extendJson:
+          items:
+          - label: 主管
+            selected: false
+          - label: 普通员工
+            selected: true
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 21
+        deleted: false
+        tenantId: '10235'
+        name: 身份
+      - code: roleIds
+        componentId: 10
+        extendJson:
+          reference: role
+          fields:
+          - code: roleName
+            name: 角色名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 20
+        deleted: false
+        tenantId: '10235'
+        name: 角色
+      expend: true
+      title: 基本信息
+修改人员表单查询:
+  method: GET
+  route: /apis/crm-web/module/func/sysUser/edit
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - children:
+      - code: username
+        componentId: 1
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        onlyRead: 1
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 14
+        deleted: false
+        tenantId: '10235'
+        name: 用户名
+      - code: status
+        componentId: 6
+        extendJson:
+          items:
+          - label: 正常
+            selected: true
+          - label: 离职
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 22
+        deleted: false
+        tenantId: '10235'
+        name: 状态
+      expend: true
+      title: 登录信息
+    - children:
+      - code: truename
+        componentId: 1
+        extendJson:
+          length: '50'
+          default: ''
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 17
+        deleted: false
+        tenantId: '10235'
+        name: 姓名
+      - code: sex
+        componentId: 6
+        extendJson:
+          items:
+          - label: 男
+            selected: false
+          - label: 女
+            selected: false
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 18
+        deleted: false
+        tenantId: '10235'
+        name: 性别
+      - code: phone
+        componentId: 16
+        extendJson:
+          length: '150'
+          default: ''
+        description:
+        onlyRead: 1
+        type: 1
+        repeated: true
+        required: true
+        layout: 0
+        sequence: 15
+        deleted: false
+        tenantId: '10235'
+        name: 手机号
+      - code: youxiang
+        componentId: 1
+        extendJson:
+          length: 50
+          default: ''
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        layout: 0
+        sequence: 26
+        deleted: false
+        tenantId: '10235'
+        name: 邮箱
+      - code: deptIds
+        componentId: 9
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 19
+        deleted: false
+        tenantId: '10235'
+        name: 部门
+      - code: identity
+        componentId: 6
+        extendJson:
+          items:
+          - label: 主管
+            selected: false
+          - label: 普通员工
+            selected: true
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 21
+        deleted: false
+        tenantId: '10235'
+        name: 身份
+      - code: roleIds
+        componentId: 10
+        extendJson:
+          reference: role
+          fields:
+          - code: roleName
+            name: 角色名称
+        description:
+        type: 1
+        repeated: false
+        required: true
+        layout: 0
+        sequence: 20
+        deleted: false
+        tenantId: '10235'
+        name: 角色
+      expend: true
+      title: 基本信息
+人员列表展示字段:
+  method: GET
+  route: /apis/crm-web/module/sysUser/grid
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - name: 用户名
+      code: username
+      sequence: 14
+      checked: false
+      componentId: 1
+      extendJson:
+        default: ''
+        length: '150'
+    - name: 手机号
+      code: phone
+      sequence: 15
+      checked: false
+      componentId: 16
+      extendJson:
+        default: ''
+        length: '150'
+    - name: 登录密码
+      code: password
+      sequence: 16
+      checked: false
+      componentId: 13
+      extendJson:
+        default: ''
+        length: '40'
+    - name: 姓名
+      code: truename
+      sequence: 17
+      checked: true
+      componentId: 1
+      extendJson:
+        default: ''
+        length: '50'
+    - name: 性别
+      code: sex
+      sequence: 18
+      checked: true
+      componentId: 6
+      extendJson:
+        items:
+        - label: 男
+          selected: false
+        - label: 女
+          selected: false
+    - name: 部门
+      code: deptIds
+      sequence: 19
+      checked: true
+      componentId: 9
+      extendJson:
+        reference: dept
+        fields:
+        - code: deptName
+          name: 部门名称
+    - name: 角色
+      code: roleIds
+      sequence: 20
+      checked: true
+      componentId: 10
+      extendJson:
+        reference: role
+        fields:
+        - code: roleName
+          name: 角色名称
+    - name: 身份
+      code: identity
+      sequence: 21
+      checked: true
+      componentId: 6
+      extendJson:
+        items:
+        - label: 主管
+          selected: false
+        - label: 普通员工
+          selected: true
+    - name: 状态
+      code: status
+      sequence: 22
+      checked: true
+      componentId: 6
+      extendJson:
+        items:
+        - label: 正常
+          selected: true
+        - label: 离职
+          selected: false
+    - name: 邮箱
+      code: youxiang
+      sequence: 26
+      checked: false
+      componentId: 1
+      extendJson:
+        default: ''
+        length: 50
+人员列表搜索展示:
+  method: POST
+  route: /apis/crm-web/module/sysUser/list
+  data:
+    conditions:
+    - field: truename
+      operator: IN
+      value: 测试
+    - field: deptIds
+      operator: '='
+      value: '756585370497454080'
+    pageIndex: 1
+    pageSize: 10
+    total: 2
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyTime:
+        _modifyUser:
+        _principal: 系统管理员
+        deptIds: 测试部门1
+        identity: 普通员工
+        phone: '18005162887'
+        roleIds:
+        - 超级管理员
+        sex: 男
+        status: 正常
+        truename: 测试cs
+        youxiang: ''
+        deptIdsReference:
+          _tenantId: '10235'
+          deptName: 测试部门1
+          SHOW_INFO: 测试部门1
+        _principalReference:
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+        roleIdsReference:
+        - roleCode: ADMIN
+          roleName: 超级管理员
+          SHOW_INFO: 超级管理员
+        _createDeptReference:
+          deptName: api测试
+          parentId: '0'
+          SHOW_INFO: api测试
+        _createUserReference:
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+修改人员部门:
+  method: POST
+  route: /apis/crm-web/module/sysUser/batchsave
+  data:
+  - deptIds: ''
+    _id: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+修改人员状态:
+  method: POST
+  route: /apis/crm-web/module/sysUser/batchsave
+  data:
+  - status: 正常
+    _id: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - status: 正常
+导出系统管理员:
+  method: GET
+  route: /apis/crm-web/module/sysUser/export
+  data:
+    ids:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+角色校验:
+  method: POST
+  route: /apis/crm-web/module/role/validate
+  data:
+  - code: roleName
+    value: 测试角色
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: []
+
+添加角色:
+  method: POST
+  route: /apis/crm-web/module/role/insert
+  data:
+    roleName: 测试角色
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      roleName: 测试角色
+角色复制:
+  method: POST
+  route: /apis/crm-web/role/permission/copy/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+角色详细:
+  method: GET
+  route: /apis/crm-web/role/permission/queryRolePermission?roleId=757643670890614784
+  data:
+    roleId:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    msg: success
+    moduleFuncTree:
+    - idKey: '0'
+      parentId:
+      roleId:
+      moduleId:
+      moduleCode:
+      moduleFuncId:
+      moduleFuncCode:
+      name: 系统模块
+      type: 3
+      sequence: 0
+      children:
+      - moduleCode: dept
+        moduleFuncId:
+        moduleFuncCode:
+        name: 部门
+        type: 5
+        sequence: 3
+        children:
+        - moduleCode: dept
+          moduleFuncCode: view
+          name: 查看部门
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: dept
+          moduleFuncCode: new
+          name: 新增部门
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: dept
+          moduleFuncCode: edit
+          name: 修改部门
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: dept
+          moduleFuncCode: delete
+          name: 删除部门
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: dept
+          moduleFuncCode: import
+          name: 导入部门
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: dept
+          moduleFuncCode: export
+          name: 导出部门
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - moduleCode: role
+        moduleFuncId:
+        moduleFuncCode:
+        name: 角色
+        type: 5
+        sequence: 4
+        children:
+        - moduleCode: role
+          moduleFuncCode: view
+          name: 查看角色
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: role
+          moduleFuncCode: new
+          name: 新增角色
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: role
+          moduleFuncCode: edit
+          name: 修改角色
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: role
+          moduleFuncCode: delete
+          name: 删除角色
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: role
+          moduleFuncCode: import
+          name: 导入角色
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: role
+          moduleFuncCode: export
+          name: 导出角色
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - moduleCode: sysUser
+        moduleFuncId:
+        moduleFuncCode:
+        name: 人员
+        type: 5
+        sequence: 11
+        children:
+        - moduleCode: sysUser
+          moduleFuncCode: view
+          name: 查看人员
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: sysUser
+          moduleFuncCode: new
+          name: 新增人员
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: sysUser
+          moduleFuncCode: edit
+          name: 修改人员
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: sysUser
+          moduleFuncCode: delete
+          name: 删除人员
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: sysUser
+          moduleFuncCode: import
+          name: 导入人员
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: sysUser
+          moduleFuncCode: export
+          name: 导出人员
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - moduleCode: order
+        moduleFuncId:
+        moduleFuncCode:
+        name: 订单
+        type: 5
+        sequence: 12
+        children:
+        - moduleCode: order
+          moduleFuncCode: view
+          name: 查看订单
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: order
+          moduleFuncCode: new
+          name: 新增订单
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - imoduleCode: order
+          moduleFuncCode: edit
+          name: 修改订单
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: order
+          moduleFuncCode: delete
+          name: 删除订单
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: order
+          moduleFuncCode: import
+          name: 导入订单
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: order
+          moduleFuncCode: export
+          name: 导出订单
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - moduleCode: customer
+        moduleFuncId:
+        moduleFuncCode:
+        name: 客户
+        type: 5
+        sequence: 14
+        children:
+        - moduleCode: customer
+          moduleFuncCode: view
+          name: 查看客户
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: customer
+          moduleFuncCode: new
+          name: 新增客户
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: customer
+          moduleFuncCode: edit
+          name: 修改客户
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: customer
+          moduleFuncCode: import
+          name: 导入客户
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: customer
+          moduleFuncCode: export
+          name: 导出客户
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      isSetting: false
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '1'
+      parentId:
+      roleId:
+      moduleId:
+      moduleCode:
+      moduleFuncId:
+      moduleFuncCode:
+      name: 自定义模块
+      type: 4
+      sequence: 1
+      children:
+      - moduleCode: xiansuo
+        moduleFuncId:
+        moduleFuncCode:
+        name: 线索
+        type: 5
+        sequence: 2
+        children:
+        - moduleCode: xiansuo
+          moduleFuncCode: view
+          name: 查看线索
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: xiansuo
+          moduleFuncCode: new
+          name: 新增线索
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: xiansuo
+          moduleFuncCode: edit
+          name: 修改线索
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: xiansuo
+          moduleFuncCode: delete
+          name: 删除线索
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: xiansuo
+          moduleFuncCode: import
+          name: 导入线索
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: xiansuo
+          moduleFuncCode: export
+          name: 导出线索
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - parentId: '1'
+        roleId:
+        moduleCode: genjinjilu
+        moduleFuncId:
+        moduleFuncCode:
+        name: 跟进记录
+        type: 5
+        sequence: 6
+        children:
+        - moduleCode: genjinjilu
+          moduleFuncCode: view
+          name: 查看跟进记录
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: genjinjilu
+          moduleFuncCode: new
+          name: 新增跟进记录
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: genjinjilu
+          moduleFuncCode: edit
+          name: 修改跟进记录
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: genjinjilu
+          moduleFuncCode: delete
+          name: 删除跟进记录
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: genjinjilu
+          moduleFuncCode: import
+          name: 导入跟进记录
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: genjinjilu
+          moduleFuncCode: export
+          name: 导出跟进记录
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - parentId: '1'
+        roleId:
+        moduleCode: huikuanjilu
+        moduleFuncId:
+        moduleFuncCode:
+        name: 回款记录
+        type: 5
+        sequence: 7
+        children:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: view
+          name: 查看回款记录
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: new
+          name: 新增回款记录
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: edit
+          name: 修改回款记录
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: delete
+          name: 删除回款记录
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: import
+          name: 导入回款记录
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: export
+          name: 导出回款记录
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: huikuanjilu
+          moduleFuncCode: shenpibiaodan
+          name: 审批表单
+          type: 2
+          sequence: 7
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - parentId: '1'
+        roleId:
+        moduleCode: kaipiaoshenqing
+        moduleFuncId:
+        moduleFuncCode:
+        name: 开票申请
+        type: 5
+        sequence: 8
+        children:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: view
+          name: 查看开票申请
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: new
+          name: 新增开票申请
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: edit
+          name: 修改开票申请
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: delete
+          name: 删除开票申请
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: import
+          name: 导入开票申请
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: export
+          name: 导出开票申请
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: kaipiaoshenqing
+          moduleFuncCode: kaipiaoshenpi
+          name: 开票审批
+          type: 2
+          sequence: 7
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      - parentId: '1'
+        roleId:
+        moduleCode: gongshangzhuce
+        moduleFuncId:
+        moduleFuncCode:
+        name: 工商注册
+        type: 5
+        sequence: 9
+        children:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: view
+          name: 查看工商注册
+          type: 2
+          sequence: 1
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: new
+          name: 新增工商注册
+          type: 2
+          sequence: 2
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: edit
+          name: 修改工商注册
+          type: 2
+          sequence: 3
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: delete
+          name: 删除工商注册
+          type: 2
+          sequence: 4
+          children: []
+          isSetting: false
+          dataScopeFlag: true
+          fieldScopeFlag:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: import
+          name: 导入工商注册
+          type: 2
+          sequence: 5
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        - moduleCode: gongshangzhuce
+          moduleFuncCode: export
+          name: 导出工商注册
+          type: 2
+          sequence: 6
+          children: []
+          isSetting: true
+          dataScopeFlag:
+          fieldScopeFlag:
+        isSetting: false
+        dataScopeFlag: true
+        fieldScopeFlag: true
+      isSetting: false
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-1'
+      parentId:
+      roleId:
+      moduleId: '-1'
+      moduleCode: settings
+      moduleFuncId:
+      moduleFuncCode:
+      name: 系统设置
+      type: 1
+      sequence: 2
+      children:
+      - idKey: '-10001'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10001'
+        moduleFuncCode: /system/order
+        name: 流程管理
+        type: 2
+        sequence: 1
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10002'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10002'
+        moduleFuncCode: /system/permission
+        name: 权限管理
+        type: 2
+        sequence: 2
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10003'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10003'
+        moduleFuncCode: /system/module
+        name: 模块管理
+        type: 2
+        sequence: 3
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10014'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10014'
+        moduleFuncCode: /system/fieldCollect
+        name: 字段归集
+        type: 2
+        sequence: 4
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10015'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10015'
+        moduleFuncCode: /system/fieldMapping
+        name: 字段映射
+        type: 2
+        sequence: 5
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10016'
+        parentId: '-1'
+        roleId:
+        moduleId: '-1'
+        moduleCode: settings
+        moduleFuncId: '-10016'
+        moduleFuncCode: /system/assignFieldValue
+        name: 指定字段值
+        type: 2
+        sequence: 6
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-2'
+      parentId:
+      roleId:
+      moduleId: '-2'
+      moduleCode: other
+      moduleFuncId:
+      moduleFuncCode:
+      name: 其他
+      type: 1
+      sequence: 3
+      children:
+      - idKey: '-10005'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10005'
+        moduleFuncCode: /companyInfo
+        name: 企业信息
+        type: 2
+        sequence: 1
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10006'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10006'
+        moduleFuncCode: /setMenuNav
+        name: 导航菜单
+        type: 2
+        sequence: 2
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10004'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10004'
+        moduleFuncCode: columnview
+        name: 设置列表显示
+        type: 2
+        sequence: 3
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10007'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10007'
+        moduleFuncCode: /module/search-field
+        name: 设置搜索条件
+        type: 2
+        sequence: 4
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10008'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10008'
+        moduleFuncCode: /module/filter
+        name: 设置筛选条件
+        type: 2
+        sequence: 5
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10009'
+        parentId: '-2'
+        roleId:
+        moduleId: '-2'
+        moduleCode: other
+        moduleFuncId: '-10009'
+        moduleFuncCode: /module/association
+        name: 设置关联页签
+        type: 2
+        sequence: 6
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-3'
+      parentId:
+      roleId:
+      moduleId: '-3'
+      moduleCode: index
+      moduleFuncId:
+      moduleFuncCode:
+      name: 首页
+      type: 6
+      sequence: 4
+      children:
+      - idKey: '-10010'
+        parentId: '-3'
+        roleId:
+        moduleId: '-3'
+        moduleCode: index
+        moduleFuncId: '-10010'
+        moduleFuncCode: /index/panel/edit
+        name: 设置面板
+        type: 2
+        sequence: -1
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-4'
+      parentId:
+      roleId:
+      moduleId: '-4'
+      moduleCode: statistics
+      moduleFuncId:
+      moduleFuncCode:
+      name: 统计
+      type: 9
+      sequence: 5
+      children:
+      - idKey: '-10011'
+        parentId: '-4'
+        roleId:
+        moduleId: '-4'
+        moduleCode: statistics
+        moduleFuncId: '-10011'
+        moduleFuncCode: /statistics/new
+        name: 添加目录
+        type: 2
+        sequence: -3
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10012'
+        parentId: '-4'
+        roleId:
+        moduleId: '-4'
+        moduleCode: statistics
+        moduleFuncId: '-10012'
+        moduleFuncCode: /statistics/edit
+        name: 编辑目录
+        type: 2
+        sequence: -2
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      - idKey: '-10013'
+        parentId: '-4'
+        roleId:
+        moduleId: '-4'
+        moduleCode: statistics
+        moduleFuncId: '-10013'
+        moduleFuncCode: /statistics/delete
+        name: 删除目录
+        type: 2
+        sequence: -1
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-5'
+      parentId:
+      roleId:
+      moduleId: '-5'
+      moduleCode: approval
+      moduleFuncId:
+      moduleFuncCode:
+      name: 审批
+      type: 1
+      sequence: 6
+      children:
+      - idKey: '-10017'
+        parentId: '-5'
+        roleId:
+        moduleId: '-5'
+        moduleCode: approval
+        moduleFuncId: '-10017'
+        moduleFuncCode: /approval/listAll
+        name: 全部审批
+        type: 2
+        sequence: 1
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    - idKey: '-6'
+      parentId:
+      roleId:
+      moduleId: '-6'
+      moduleCode: task
+      moduleFuncId:
+      moduleFuncCode:
+      name: 任务
+      type: 1
+      sequence: 7
+      children:
+      - idKey: '-10018'
+        parentId: '-6'
+        roleId:
+        moduleId: '-6'
+        moduleCode: task
+        moduleFuncId: '-10018'
+        moduleFuncCode: /task/listAll
+        name: 全部任务
+        type: 2
+        sequence: 7
+        children: []
+        isSetting: true
+        dataScopeFlag: false
+        fieldScopeFlag: false
+      isSetting: true
+      dataScopeFlag: false
+      fieldScopeFlag: false
+    code: 0
+    data: []
+
+
+角色校验（重复）:
+  method: POST
+  route: /apis/crm-web/module/role/validate
+  data:
+  - code: roleName
+    value: 测试角色
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - id:
+      fieldId:
+      code: roleName
+      value: 测试角色
+搜索角色:
+  method: POST
+  route: /apis/crm-web/module/role/list
+  data:
+    keywords: 超级
+    pageIndex: 1
+    pageSize: 10000
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10000
+      totalPage: 1
+      currPage: 1
+      list:
+      - roleCode: ADMIN
+        roleName: 超级管理员
+        _principalReference:
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+        _createUserReference:
+          email:
+          identity: 主管
+          phone: '13025414025'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          SHOW_INFO: 系统管理员
+角色编辑重命名:
+  method: POST
+  route: /apis/crm-web/module/role/save
+  data:
+    roleName: 测试角色1
+    _id: ''
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      roleName: 测试角色1
+角色详情修改:
+  method: POST
+  route: /apis/crm-web/role/permission/saveOrUpdateRolePermission
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+角色添加人员:
+  method: POST
+  route: /apis/crm-web/user/role/pushUserRoles
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+角色修改人员:
+  method: POST
+  route: /apis/crm-web/module/sysUser/batchsave
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+角色移除人员:
+  method: DELETE
+  route: /apis/crm-web/user/role/deleteUserRoles
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: -1
+    msg: 系统异常
+    data:
+
+
+删除测试角色:
+  method: DELETE
+  route: /apis/crm-web/module/role/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+删除测试人员:
+  method: DELETE
+  route: /apis/crm-web/module/sysUser/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+
+删除测试部门:
+  method: DELETE
+  route: /apis/crm-web/module/dept/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
