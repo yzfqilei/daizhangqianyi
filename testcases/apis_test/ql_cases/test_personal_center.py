@@ -4,7 +4,7 @@ from core.checkresult import check_codes_msg, check_datas
 from core.rest_client import RestClient
 from common.write_data import WriteFileData
 from core.common_params import get_common_params
-import json, sys, time, random
+import json, sys, time, random, os
 import allure
 import pytest
 from common import path_conf
@@ -21,7 +21,7 @@ a = RestClient(rooturl)
 
 @pytest.mark.usefixtures("is_login")
 @allure.feature("个人中心测试用例")
-class Testpersonal_center():
+class Test_personal_center():
     def test_company_infor001(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
@@ -63,7 +63,7 @@ class Testpersonal_center():
         check_datas(res, yamlvalue)
         print('-------企业信息已修改成功-------')
         res = r.request(csurl, method, json=yamlvalue['data2'], headers=headers)
-        # check_codes_msg(res, yamlvalue,mainkey)
+        check_codes_msg(res, yamlvalue,mainkey)
         res_dir = json.loads(res.text)
         pytest.assume(res_dir['data']['username'], yamlvalue['expectresult_renew']['data']['username'])
         pytest.assume(res_dir['data']['truename'], yamlvalue['expectresult_renew']['data']['truename'])
@@ -88,24 +88,25 @@ class Testpersonal_center():
 
     def test_read_notice007(self):
         # 数据库插入消息
-        self.create_time = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-        self.data = ''.join(random.sample(['n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'], 7))
-        self.id = random.randint(100000000, 999999999)
-        self.notice_id = random.randint(1000000000, 9999999999)
+        create_time = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+        header_data = ''.join(random.sample(['n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'], 7))
+        id = random.randint(100000000, 999999999)
+        notice_id = random.randint(1000000000, 9999999999)
         db.execute_db(
-            f"INSERT INTO yzf_crm_notice.notice (id,type,msg,`data`,creator,create_time) VALUES ( '{self.notice_id}','1', 'a_test_message','{self.data}','756574317326995456','{self.create_time}');")
+            f"INSERT INTO yzf_crm_notice.notice (id,type,msg,`data`,creator,create_time) VALUES ( '{notice_id}','1', 'a_test_message','{header_data}','756574317326995456','{create_time}');")
         db.execute_db(
-            f"INSERT INTO yzf_crm_notice.user_notice (id,user_id,notice_id,read_flag,read_time,deleted) VALUES ( '{self.id}','756574317326995456','{self.notice_id}','0','{self.create_time}','0');")
+            f"INSERT INTO yzf_crm_notice.user_notice (id,user_id,notice_id,read_flag,read_time,deleted) VALUES ( '{id}','756574317326995456','{notice_id}','0','{create_time}','0');")
         # 将notice_id写入yaml的预期结果里
         func_name = sys._getframe().f_code.co_name
-        data = {'id': str(self.notice_id), 'type': 1, 'msg': 'a_test_message', 'data': self.data, 'receiver': None,
+        data = {'id': str(notice_id), 'type': 1, 'msg': 'a_test_message', 'data': header_data, 'receiver': None,
                 'readFlag': True, 'creator': '756574317326995456'}
         expectresult = {'code': 0, 'msg': None, 'data': data}
-        wd.write_yaml('..\\..\\..\\apidata\\personal_center.yaml', func_name, 'expectresult', expectresult)
+        yaml_path = os.path.join(path_conf.BASE_DIR, "apidata", 'personal_center.yaml')
+        wd.write_yaml(yaml_path, func_name, 'expectresult', expectresult)
 
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
-        csurl = csurl + str(self.notice_id) + '/read-flag'
+        csurl = csurl + str(notice_id) + '/read-flag'
         res = r.request(csurl, method, headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
