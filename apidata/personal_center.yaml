@@ -84,10 +84,10 @@ test_read_notice007:
     code: 0
     msg:
     data:
-      id: '8981222116'
+      id: '1350278352'
       type: 1
       msg: a_test_message
-      data: dgbhjnm
+      data: mbelagd
       receiver:
       readFlag: true
       creator: '756574317326995456'
