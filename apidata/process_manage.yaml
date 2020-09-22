@@ -46,3 +46,37 @@ test_screen_work_folw004:
     code: 0
     msg: null
     data: {"totalCount":1,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"id":"756586099794644992","procDefId":"flowable-1600425782870:1:ba5326ff-f99b-11ea-be7a-7020840caef4","name":"工商注册","type":1,"formId":"756585727382392837","formName":"工商注册","ruleType":null,"ruleCyclePeriod":null,"ruleCycleTime":null,"status":1,"pushFlag":0,"creator":"系统管理员","createTime":1600425478000,"modifier":null,"modifyTime":null,"bpmnXml":null,"tenantId":null}]}
+
+test_screen_status_deactive005:
+  method: GET
+  route: /apis/crm-workflow/workflow/procDefs?name=&type&status=0&formId&pageIndex=1&pageSize=10
+  data:
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: {"totalCount":0,"pageSize":10,"totalPage":0,"currPage":1,"list":[]}
+
+test_screen_status_active006:
+  method: GET
+  route: /apis/crm-workflow/workflow/procDefs?name=&type&status=1&formId&pageIndex=1&pageSize=10
+  data:
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: {"totalCount":2,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"id":"756586099794644992","procDefId":"flowable-1600425782870:1:ba5326ff-f99b-11ea-be7a-7020840caef4","name":"工商注册","type":1,"formId":"756585727382392837","formName":"工商注册","ruleType":null,"ruleCyclePeriod":null,"ruleCycleTime":null,"status":1,"pushFlag":0,"creator":"系统管理员","createTime":1600425478000,"modifier":null,"modifyTime":null,"bpmnXml":null,"tenantId":null},{"id":"756586102009237504","procDefId":"flowable-1600425783402:1:baa42d37-f99b-11ea-be7a-7020840caef4","name":"开票申请","type":0,"formId":"756585727382392840","formName":"开票申请","ruleType":null,"ruleCyclePeriod":null,"ruleCycleTime":null,"status":1,"pushFlag":0,"creator":"系统管理员","createTime":1600425478000,"modifier":null,"modifyTime":null,"bpmnXml":null,"tenantId":null}]}
+
+test_screen_status_all007:
+  method: GET
+  route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
+  data:
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg: null
+    data: {"totalCount":2,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"id":"756586099794644992","procDefId":"flowable-1600425782870:1:ba5326ff-f99b-11ea-be7a-7020840caef4","name":"工商注册","type":1,"formId":"756585727382392837","formName":"工商注册","ruleType":null,"ruleCyclePeriod":null,"ruleCycleTime":null,"status":1,"pushFlag":0,"creator":"系统管理员","createTime":1600425478000,"modifier":null,"modifyTime":null,"bpmnXml":null,"tenantId":null},{"id":"756586102009237504","procDefId":"flowable-1600425783402:1:baa42d37-f99b-11ea-be7a-7020840caef4","name":"开票申请","type":0,"formId":"756585727382392840","formName":"开票申请","ruleType":null,"ruleCyclePeriod":null,"ruleCycleTime":null,"status":1,"pushFlag":0,"creator":"系统管理员","createTime":1600425478000,"modifier":null,"modifyTime":null,"bpmnXml":null,"tenantId":null}]}
+

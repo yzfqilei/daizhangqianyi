@@ -53,3 +53,26 @@ class Test_process_manage():
         res = a.request(url=csurl, method=method, headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
+    def test_screen_status_deactive005(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    def test_screen_status_active006(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    def test_screen_status_all007(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
