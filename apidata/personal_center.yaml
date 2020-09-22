@@ -84,14 +84,13 @@ test_read_notice007:
     code: 0
     msg:
     data:
-      id: '2225788390'
+      id: '1350278352'
       type: 1
       msg: a_test_message
-      data: cimlbda
+      data: mbelagd
       receiver:
       readFlag: true
       creator: '756574317326995456'
-
 test_set_notice_read008:
   method: PATCH
   route: /apis/crm-notice/notices/read-flag
@@ -99,15 +98,15 @@ test_set_notice_read008:
   expectcode: 200
   expectresult:
     code: 0
-    msg: null
-    data: null
+    msg:
+    data:
 
 test_clean_all_notice009:
   method: DELETE
   route: /apis/crm-notice/notices/read
-  headers: { Content-Type: application/json }
+  headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
-    msg: null
-    data: null
+    msg:
+    data:
