@@ -42,7 +42,6 @@ test_modify_user_info004:
   route: /apis/crm-web/user/current/user
   data1: {username: henacs3m, status: 正常, truename: 系统管理员_m, sex: 男, phone: '13025414026', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
   data2: {username: henacs3, status: 正常, truename: 系统管理员, sex: 女, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
-
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:

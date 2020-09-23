@@ -66,9 +66,10 @@ class Test_personal_center():
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
         print('-------企业信息已修改成功-------')
-        res = r.request(csurl, method, json=yamlvalue['data2'], headers=headers)
-        check_codes_msg(res, yamlvalue,mainkey)
-        res_dir = json.loads(res.text)
+
+        response = r.request(csurl, method, json=yamlvalue['data2'], headers=headers)
+        check_codes_msg(response, yamlvalue, mainkey)
+        res_dir = json.loads(response.text)
         pytest.assume(res_dir['data']['username'], yamlvalue['expectresult_renew']['data']['username'])
         pytest.assume(res_dir['data']['truename'], yamlvalue['expectresult_renew']['data']['truename'])
         pytest.assume(res_dir['data']['sex'], yamlvalue['expectresult_renew']['data']['sex'])
