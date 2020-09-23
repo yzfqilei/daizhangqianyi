@@ -62,18 +62,10 @@ class Test_personal_center():
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
-        res = r.request(csurl, method, json=yamlvalue['data1'], headers=headers)
+        res = r.request(csurl, method, json=yamlvalue['data'], headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
-        print('-------企业信息已修改成功-------')
 
-        response = r.request(csurl, method, json=yamlvalue['data2'], headers=headers)
-        check_codes_msg(response, yamlvalue, mainkey)
-        res_dir = json.loads(response.text)
-        pytest.assume(res_dir['data']['username'], yamlvalue['expectresult_renew']['data']['username'])
-        pytest.assume(res_dir['data']['truename'], yamlvalue['expectresult_renew']['data']['truename'])
-        pytest.assume(res_dir['data']['sex'], yamlvalue['expectresult_renew']['data']['sex'])
-        print('-------企业信息修改已复原-------')
 
     @allure.story("修改企业信息")
     def test_modify_conpany_info005(self):
@@ -147,7 +139,12 @@ class Test_personal_center():
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
 
-
-
-
+    @allure.story("还原个人信息")
+    def test_recovery_user_info010(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
+        r = RestClient(rooturl)
+        res = r.request(csurl, method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
 
