@@ -28,6 +28,8 @@ def get_current_time(t=0):
         return curr_time.strftime('%Y%m%d-%H%M%S')  # 格式：2016-07-19-18-11-04
     elif t == 3:
         return curr_time.strftime('%Y-%m-%d')  # 格式：2016-07-19
+    elif t == 4:
+        return curr_time.strftime('%d%H%M%S')  # 格式：22173735
     else:
         print("[warning]: no format matches...pls check!")
 
@@ -117,4 +119,4 @@ def print_json(json_content):
 
 
 if __name__ == '__main__':
-    pass
+    print(get_current_time(4))
