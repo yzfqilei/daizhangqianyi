@@ -335,9 +335,6 @@
       list:
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _modifyTime:
-        _modifyUser:
         _principal: 系统管理员
         deptIds: 测试部门1
         identity: 普通员工
@@ -352,8 +349,6 @@
           deptName: 测试部门1
           SHOW_INFO: 测试部门1
         _principalReference:
-          _modifyDept:
-          _modifyUser:
           _tenantId: '10235'
           email:
           identity: 主管
