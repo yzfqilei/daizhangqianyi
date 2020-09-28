@@ -40,18 +40,13 @@ test_modify_password003:
 test_modify_user_info004:
   method: PUT
   route: /apis/crm-web/user/current/user
-  data1: {username: henacs3m, status: 正常, truename: 系统管理员_m, sex: 男, phone: '13025414026', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
-  data2: {username: henacs3, status: 正常, truename: 系统管理员, sex: 女, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
+  data: {username: henacs3, status: 正常, truename: 系统管理员_m, sex: 男, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {username: henacs3m, truename: 系统管理员_m, sex: 男}
-  expectresult_renew:
-    code: 0
-    msg:
-    data: {username: henacs3, truename: 系统管理员, sex: 女}
+    data: {username: henacs3, truename: 系统管理员_m, sex: 男}
 
 test_modify_conpany_info005:
   method: POST
@@ -109,3 +104,14 @@ test_clean_all_notice009:
     code: 0
     msg:
     data:
+
+test_recovery_user_info010:
+  method: PUT
+  route: /apis/crm-web/user/current/user
+  data: {username: henacs3, status: 正常, truename: 系统管理员, sex: 女, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {username: henacs3, truename: 系统管理员, sex: 女}
