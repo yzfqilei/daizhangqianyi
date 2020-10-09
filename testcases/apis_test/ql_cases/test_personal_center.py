@@ -59,13 +59,14 @@ class Test_personal_center():
 
     @allure.story("修改个人信息")
     def test004_modify_user_info(self):
+        time.sleep(1)
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
         res = r.request(csurl, method, json=yamlvalue['data'], headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
-        time.sleep(1)
+
 
     @allure.story("修改企业信息")
     def test005_modify_conpany_info(self):
