@@ -23,7 +23,7 @@ a = RestClient(rooturl)
 @allure.feature("个人中心测试用例")
 class Test_personal_center():
     @allure.story("查看企业信息")
-    def test_company_infor001(self):
+    def test001_company_infor(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         a = RestClient(rooturl)
@@ -33,7 +33,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("查看个人信息")
-    def test_user_infor002(self):
+    def test002_user_infor(self):
         # 传入用例名称获取yaml数据字典
         func_name = sys._getframe().f_code.co_name
         func_name = sys._getframe().f_code.co_name
@@ -45,7 +45,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("修改密码")
-    def test_modify_password003(self):
+    def test003_modify_password(self):
         # 传入用例名称获取yaml数据字典
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
@@ -58,17 +58,17 @@ class Test_personal_center():
         check_codes_msg(res, yamlvalue, mainkey)
 
     @allure.story("修改个人信息")
-    def test_modify_user_info004(self):
+    def test004_modify_user_info(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
         res = r.request(csurl, method, json=yamlvalue['data'], headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
-
+        time.sleep(1)
 
     @allure.story("修改企业信息")
-    def test_modify_conpany_info005(self):
+    def test005_modify_conpany_info(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
@@ -77,7 +77,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("修改手机号码")
-    def test_change_phone_number006(self):
+    def test006_change_phone_number(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
@@ -86,7 +86,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("查看消息")
-    def test_read_notice007(self):
+    def test007_read_notice(self):
         # 数据库插入消息
         create_time = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         header_data = ''.join(random.sample(['n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'], 7))
@@ -112,7 +112,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("设置所有消息为已读")
-    def test_set_notice_read008(self):
+    def test008_set_notice_read(self):
         # 数据库插入消息
         create_time = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         data = ''.join(random.sample(['n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'], 7))
@@ -130,7 +130,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("清除所有消息")
-    def test_clean_all_notice009(self):
+    def test009_clean_all_notice(self):
         #该用例依赖test_set_notice_read008产生的notice数据，不可单独运行调试；
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
@@ -140,7 +140,7 @@ class Test_personal_center():
         check_datas(res, yamlvalue)
 
     @allure.story("还原个人信息")
-    def test_recovery_user_info010(self):
+    def test010_recovery_user_info(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)

@@ -8,7 +8,7 @@ search_process:
     code: 0
     msg:
 
-test_create_approval_flow001:
+test001_create_approval_flow:
   method: POST
   route: /apis/crm-workflow/workflow/procDefWithNodes
   data:
@@ -19,7 +19,7 @@ test_create_approval_flow001:
     msg:
     data:
 
-test_create_work_flow002:
+test002_create_work_flow:
   method: POST
   route: /apis/crm-workflow/workflow/procDefWithNodes
   data:
@@ -30,7 +30,7 @@ test_create_work_flow002:
     msg:
     data:
 
-test_search_process003:
+test003_search_process:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=work_flow&type&status&formId&pageIndex=1&pageSize=10
   headers: {Content-Type: application/json}
@@ -43,9 +43,9 @@ test_search_process003:
       pageSize: 10
       currPage: 1
       list:
-      - id: '756586102441250871'
+      - id: '756586102441250874'
         name: work_flow
-test_screen_all004:
+test004_screen_all:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
   data:
@@ -56,7 +56,7 @@ test_screen_all004:
     msg:
     data: [work_flow, approval_flow]
 
-test_screen_approval_flow005:
+test005_screen_approval_flow:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type=0&status&formId&pageIndex=1&pageSize=10
   data:
@@ -67,7 +67,7 @@ test_screen_approval_flow005:
     msg:
     data: [approval_flow]
 
-test_screen_work_folw006:
+test006_screen_work_folw:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type=1&status&formId&pageIndex=1&pageSize=10
   data:
@@ -78,7 +78,7 @@ test_screen_work_folw006:
     msg:
     data: [work_flow]
 
-test_deactive_process007:
+test007_deactive_process:
   method: POST
   route: /apis/crm-workflow/workflow/procDef/
   data:
@@ -89,7 +89,7 @@ test_deactive_process007:
     msg:
     data:
 
-test_screen_status_deactive008:
+test008_screen_status_deactive:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status=0&formId&pageIndex=1&pageSize=10
   data:
@@ -100,7 +100,7 @@ test_screen_status_deactive008:
     msg:
     data: {totalCount: 2, pageSize: 10, totalPage: 1, currPage: 1}
 
-test_active_process009:
+test009_active_process:
   method: POST
   route: /apis/crm-workflow/workflow/procDef/
   data:
@@ -111,7 +111,7 @@ test_active_process009:
     msg:
     data:
 
-test_screen_status_active010:
+test010_screen_status_active:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status=1&formId&pageIndex=1&pageSize=10
   data:
@@ -124,7 +124,7 @@ test_screen_status_active010:
 
 
 
-test_screen_status_all011:
+test011_screen_status_all:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
   data:
@@ -137,7 +137,7 @@ test_screen_status_all011:
 
 
 
-test_delete_work_flow012:
+test012_delete_work_flow:
   method: DELETE
   route: /apis/crm-workflow/workflow/procDef/
   data:
@@ -148,7 +148,7 @@ test_delete_work_flow012:
     msg:
     data:
 
-test_delete_approval_flow013:
+test013_delete_approval_flow:
   method: DELETE
   route: /apis/crm-workflow/workflow/procDef/
   data:
