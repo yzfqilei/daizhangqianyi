@@ -84,6 +84,17 @@ class Test{convert_str_to_hump(self.yaml_name.split(".")[0])}(object):"""
         # check_codes_msg(r, yamlvalue, mainkey)
         # check_datas(r, yamlvalue)
 """
+        elif method == 'PUT':
+            common_case = f"""
+    @allure.story("{yaml_title}")
+    def test{n}(self):
+        \"""{yaml_title}\"""
+        csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("{self.yaml_name}", "{yaml_title}")
+        r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
+        convert_json_to_yaml(r.text, yaml_path, mainkey)
+        # check_codes_msg(r, yamlvalue, mainkey)
+        # check_datas(r, yamlvalue)
+"""
         else:
-            print("没有匹配到请求方法或模板！")
+            print("没有匹配到请求方法或模板，请确认后到生成模板里新增！")
         return common_case
