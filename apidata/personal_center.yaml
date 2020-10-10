@@ -1,4 +1,4 @@
-test_company_infor001:
+test001_company_infor:
   method: GET
   route: /apis/crm-web/company/info
   data:
@@ -12,7 +12,7 @@ test_company_infor001:
       contacts: 系统管理员
       companyId: '10235'
 
-test_user_infor002:
+test002_user_infor:
   method: GET
   route: /apis/crm-web/user/queryLoginUserInfo
   data:
@@ -25,7 +25,7 @@ test_user_infor002:
       _id: '756574317326995456'
       _createDept: api测试
 
-test_modify_password003:
+test003_modify_password:
   method: POST
   route: /apis/crm-web/user/account/password
   data1: {newPwd: a222222, originPwd: a111111}
@@ -37,7 +37,7 @@ test_modify_password003:
     msg:
     data:
 
-test_modify_user_info004:
+test004_modify_user_info:
   method: PUT
   route: /apis/crm-web/user/current/user
   data: {username: henacs3, status: 正常, truename: 系统管理员_m, sex: 男, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
@@ -48,7 +48,7 @@ test_modify_user_info004:
     msg:
     data: {username: henacs3, truename: 系统管理员_m, sex: 男}
 
-test_modify_conpany_info005:
+test005_modify_conpany_info:
   method: POST
   route: /apis/crm-web/company/saveOrUpdate
   data: {companyId: '10235', companyName: api测试, simpleName: !!null '', dzCompanyId: '631125285013688320', area: !!null '', contacts: 系统管理员, contactsPhone: '13025414025', remark: !!null '', status: 0, companyType: 0, deleted: 0, creator: null ''}
@@ -59,7 +59,7 @@ test_modify_conpany_info005:
     msg:
     data: '10235'
 
-test_change_phone_number006:
+test006_change_phone_number:
   method: PUT
   route: /apis/crm-web/user/phone?authCode=123456&phone=13698546854
   headers: {Content-Type: application/json}
@@ -69,7 +69,7 @@ test_change_phone_number006:
     msg: 验证码错误，请重新输入
     data:
 
-test_read_notice007:
+test007_read_notice:
   method: PATCH
   route: /apis/crm-notice/notice/
   headers: {Content-Type: application/json}
@@ -78,14 +78,14 @@ test_read_notice007:
     code: 0
     msg:
     data:
-      id: '1350278352'
+      id: '7486013228'
       type: 1
       msg: a_test_message
-      data: mbelagd
+      data: kgcjedi
       receiver:
       readFlag: true
       creator: '756574317326995456'
-test_set_notice_read008:
+test008_set_notice_read:
   method: PATCH
   route: /apis/crm-notice/notices/read-flag
   headers: {Content-Type: application/json}
@@ -95,7 +95,7 @@ test_set_notice_read008:
     msg:
     data:
 
-test_clean_all_notice009:
+test009_clean_all_notice:
   method: DELETE
   route: /apis/crm-notice/notices/read
   headers: {Content-Type: application/json}
@@ -105,7 +105,7 @@ test_clean_all_notice009:
     msg:
     data:
 
-test_recovery_user_info010:
+test010_recovery_user_info:
   method: PUT
   route: /apis/crm-web/user/current/user
   data: {username: henacs3, status: 正常, truename: 系统管理员, sex: 女, phone: '13025414025', youxiang: '', deptIds: '756585370497454080', identity: 主管, roleIds: ['756585370497454081'], _id: '756574317326995456'}
