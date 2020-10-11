@@ -45,7 +45,7 @@ class RestClient:
                 data = complexjson.dumps(json)
             return self.session.put(url, data, **kwargs)
         if method == "delete" or method == 'DELETE' or method == 'Delete':
-            return self.session.delete(url, **kwargs)
+            return requests.delete(url, data=data, json=json, **kwargs)
         if method == "patch" or method == 'PATCH' or method == 'Patch':
             if json:
                 data = complexjson.dumps(json)

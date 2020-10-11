@@ -1,0 +1,240 @@
+指定字段值新增（订单 -- 备注）:
+  method: POST
+  route: /apis/crm-web/assign-field-value
+  data:
+    assignType: 1
+    assignValue:
+      extendJson: []
+      finalValue: '33'
+    executeNow: 0
+    targetFieldId: '756585730700087452'
+    targetModuleId: '756585727382392835'
+    triggeringAction: 1,2
+    triggeringCondition:
+    - codeId: '756585730700087501'
+      compareFieldCode: '0000000'
+      compareType: 1
+      fieldType: 3
+      fieldValue: '12'
+      moduleCode: order
+      moduleFieldCode: dingdanjine
+      operator: '='
+    triggeringConditionType: 1
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      targetModuleId: '756585727382392835'
+      targetModuleName: 订单
+      targetFieldId: '756585730700087452'
+      targetFieldName: 备注
+      triggeringAction: 1,2
+      assignType: 1
+      assignValue:
+        finalValue: '33'
+        fieldCode: ''
+        fieldName:
+        expression: ''
+        extendJson: []
+      triggeringConditionType: 1
+      triggeringCondition:
+      - moduleFieldCode: dingdanjine
+        moduleCode: order
+        fieldType: 3
+        operator: '='
+        fieldValue: '12'
+        compareType: 1
+        compareFieldCode: '0000000'
+指定字段值目标模块查询:
+  method: GET
+  route: /apis/crm-web/assign-field-values/target-module
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - value: '756585727382392840'
+      description: 开票申请
+    - value: '756585727382392835'
+      description: 订单
+指定字段值数据分页查询:
+  method: GET
+  route: /apis/crm-web/assign-field-values
+  data:
+    pageIndex: 1
+    pageSize: 10
+    targetModuleId: 756585727382392840
+    targetFieldId:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - targetModuleId: '756585727382392840'
+        targetModuleName: 开票申请
+        targetFieldId: '756585730700087442'
+        targetFieldName: 开票金额
+        triggeringAction: 1,2
+        assignType: 1
+        assignValue:
+          finalValue: '12'
+          fieldCode: ''
+          fieldName:
+          expression: ''
+          extendJson: []
+        triggeringConditionType: 1
+        triggeringCondition:
+        - moduleFieldCode: kaipiaozhuangtai
+          moduleCode: kaipiaoshenqing
+          fieldType: 4
+          operator: '='
+          fieldValue: 已开票
+          compareType: 1
+          compareFieldCode: ''
+指定字段值目标模块查询（开票申请）:
+  method: GET
+  route: /apis/crm-web/assign-field-values/target-field
+  data:
+    moduleId: 756585727382392840
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - value: '756585730700087442'
+      description: 开票金额
+指定字段值目标模块字段查询（开票申请 -- 开票金额）:
+  method: GET
+  route: /apis/crm-web/assign-field-values
+  data:
+    pageIndex: 1
+    pageSize: 10
+    targetModuleId: 756585727382392840
+    targetFieldId: 756585730700087442
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - targetModuleId: '756585727382392840'
+        targetModuleName: 开票申请
+        targetFieldId: '756585730700087442'
+        targetFieldName: 开票金额
+        triggeringAction: 1,2
+        assignType: 1
+        assignValue:
+          finalValue: '12'
+          fieldCode: ''
+          fieldName:
+          expression: ''
+          extendJson: []
+        triggeringConditionType: 1
+        triggeringCondition:
+        - moduleFieldCode: kaipiaozhuangtai
+          moduleCode: kaipiaoshenqing
+          fieldType: 4
+          operator: '='
+          fieldValue: 已开票
+          compareType: 1
+          compareFieldCode: ''
+指定字段值目标模块详情（开票申请）:
+  method: GET
+  route: /apis/crm-web/assign-field-value/764491216233566208
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      id: '764491216233566208'
+      targetModuleId: '756585727382392840'
+      targetModuleName: 开票申请
+      targetFieldId: '756585730700087442'
+      targetFieldName: 开票金额
+      triggeringAction: 1,2
+      assignType: 1
+      assignValue:
+        finalValue: '12'
+        fieldCode: ''
+        fieldName:
+        expression: ''
+        extendJson: []
+      triggeringConditionType: 1
+      triggeringCondition:
+      - moduleFieldCode: kaipiaozhuangtai
+        moduleCode: kaipiaoshenqing
+        fieldType: 4
+        operator: '='
+        fieldValue: 已开票
+        compareType: 1
+        compareFieldCode: ''
+指定字段值目标模块删除（订单）:
+  method: DELETE
+  route: /apis/crm-web/assign-field-values
+  data:
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+指定字段值触发条件修改（开票申请）:
+  method: PUT
+  route: /apis/crm-web/assign-field-value/764491216233566208/triggering-condition
+  data:
+    triggeringCondition:
+    - compareFieldCode: ''
+      compareType: 1
+      fieldType: 4
+      fieldValue: 已开票
+      moduleCode: kaipiaoshenqing
+      moduleFieldCode: kaipiaozhuangtai
+      operator: '='
+    triggeringConditionType: 1
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      id: '764491216233566208'
+      targetModuleId: '756585727382392840'
+      targetModuleName: 开票申请
+      targetFieldId: '756585730700087442'
+      targetFieldName: 开票金额
+      triggeringAction: 1,2
+      assignType: 1
+      assignValue:
+        finalValue: '12'
+        fieldCode: ''
+        fieldName:
+        expression: ''
+        extendJson: []
+      triggeringConditionType: 1
+      triggeringCondition:
+      - moduleFieldCode: kaipiaozhuangtai
+        moduleCode: kaipiaoshenqing
+        fieldType: 4
+        operator: '='
+        fieldValue: 已开票
+        compareType: 1
+        compareFieldCode: ''
