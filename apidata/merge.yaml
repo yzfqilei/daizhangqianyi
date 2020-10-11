@@ -1,0 +1,29 @@
+test001_create_merge:
+  method: POST
+  route: /apis/crm-web/merge/config
+  data: {"sourceModuleId":"756585727382392835","targetModuleId":"756585727382392843","sourceFieldId":"756585730700087356","targetFieldId":"756585730700087560","referenceFieldId":"756585730700087433","mergeType":1,"targetFieldEditable":1,"executeNow":0,"id":"","mergeTriggerAdd":1,"mergeTriggerDelete":1,"mergeTriggerUpdate":1}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"tenantId":"10235","sourceModuleId":"756585727382392835","sourceModuleCode":"order","sourceFieldId":"756585730700087356","sourceFieldCode":"_principal","sourceConditions":[],"sourceConditionType":null,"targetModuleId":"756585727382392843","targetModuleCode":"customer","targetFieldId":"756585730700087560","targetFieldCode":"_applicant","targetConditions":[],"targetConditionType":null,"referenceFieldId":"756585730700087433","referenceFieldCode":"kehumingcheng","mergeType":1,"mergeTriggerAdd":1,"mergeTriggerUpdate":1,"mergeTriggerDelete":1,"targetFieldEditable":1,"deleted":null,"createUser":null,"createTime":null,"modifyUser":null,"modifyTime":null}
+
+test002_delete_merge:
+  method: DELETE
+  route: /apis/crm-web/merge/config/ids?ids=
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+test003_screen_merge:
+  method: GET
+  route: /apis/crm-web/merge/config/condition/source/field/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
