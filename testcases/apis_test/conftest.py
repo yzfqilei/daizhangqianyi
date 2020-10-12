@@ -8,6 +8,7 @@ import requests
 from common.write_data import WriteFileData
 from common.get_root_url import get_root_urls
 from core.rest_client import RestClient
+from core.get_module_datas import get_datas
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
@@ -67,6 +68,25 @@ def user_moduleid(is_login):
     head = {'access-token': is_login[0], 'refresh-token': is_login[1]}
     r = a.request(csurl, 'POST', headers=head)
     return json.loads(r.text)['data'][0]['id']
+
+
+@pytest.fixture(scope='session')
+def insert_module_data(is_login):
+    """批量插入跟进记录表单数据"""
+    module_datas = get_datas('module_datas.yaml')
+    rooturl = get_root_urls()
+    csurl = '/apis/crm-web/module/genjinjilu/insert'
+    a = RestClient(rooturl)
+    head = {'access-token': is_login[0], 'refresh-token': is_login[1], 'Content-Type': 'application/json;charset=UTF-8'}
+    dataid_list = []
+    for jdata in module_datas:
+        r_in = a.request(csurl, 'POST', json=jdata, headers=head)
+        dataid_list.append(json.loads(r_in.text)['data']['_id'])
+    yield dataid_list
+    # csurl_de = '/apis/crm-web/module/genjinjilu/'
+    # for de_id in dataid_list:
+    #     a.request(csurl_de + de_id, 'DELETE', headers=head)
+    # print('delete success')
 
 
 if __name__ == '__main__':

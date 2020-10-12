@@ -1,0 +1,47 @@
+#跟进模块数据源
+data:
+    - bianhao1: "10"
+      bianhao2: "5"
+      diqu:
+        - "110000"
+        - "110100"
+        - "110101"
+      fujian: []
+      genjinleixing: "现场拜访"
+      genjinshijiancong: "2020-10-12 11:21:11"
+      genjinshijianzhi: "2020-10-12 00:00"
+      genjinshuoming: "刚接触"
+      jiage: "1"
+      lianxiren: "张三"
+      shoujihao: "18005162880"
+      suoshukehu: "756597488315666432"
+    - bianhao1: "5"
+      bianhao2: "10"
+      diqu:
+        - "140000"
+        - "140400"
+        - "140404"
+      fujian: []
+      genjinleixing: "电话沟通"
+      genjinshijiancong: "2020-10-12 11:24:43"
+      genjinshijianzhi: "2021-11-01 00:00"
+      genjinshuoming: "谈话中"
+      jiage: "10"
+      lianxiren: "李四"
+      shoujihao: "18005162881"
+      suoshukehu: "756597488315666432"
+    - bianhao1: "5"
+      bianhao2: "5"
+      diqu:
+        - "140000"
+        - "140300"
+        - "140302"
+      fujian: []
+      genjinleixing: "其他"
+      genjinshijiancong: "2020-10-12 11:26:21"
+      genjinshijianzhi: "2020-10-12 00:00"
+      genjinshuoming: "谈话"
+      jiage: "100"
+      lianxiren: "张三"
+      shoujihao: "18005162881"
+      suoshukehu: "756597488315666432"
