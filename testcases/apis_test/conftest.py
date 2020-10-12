@@ -52,11 +52,11 @@ def is_login():
 def customer_moduleid(is_login):
     """客户模块id查询"""
     rooturl = get_root_urls()
-    csurl = '/apis/crm-web/module/find/module'
+    csurl = '/apis/crm-web/module/code/customer'
     a = RestClient(rooturl)
     head = {'access-token': is_login[0], 'refresh-token': is_login[1]}
-    r = a.request(csurl, 'POST', headers=head)
-    return json.loads(r.text)['data'][-1]['id']
+    r = a.request(csurl, 'GET', headers=head)
+    return json.loads(r.text)['data']['id']
 
 
 @pytest.fixture(scope='session')
