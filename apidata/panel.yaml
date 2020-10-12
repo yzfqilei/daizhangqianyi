@@ -1,3 +1,4 @@
+#首页图表
 首页新增面板:
   method: POST
   route: /apis/crm-web/panel/addOrEdit
