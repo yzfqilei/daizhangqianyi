@@ -21,6 +21,7 @@ rooturl = get_root_url.get_root_urls()
 a = RestClient(rooturl)
 
 
+
 @pytest.mark.usefixtures('is_login')
 @allure.feature("模块管理")
 class TestModuleManage(object):
@@ -179,3 +180,5 @@ class TestModuleManage(object):
         # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
+
+
