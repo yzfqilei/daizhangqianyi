@@ -4,6 +4,7 @@ from configparser import ConfigParser
 from common.logger import logger
 
 
+
 class MyConfigParser(ConfigParser):
     # 重写 configparser 中的 optionxform 函数，解决 .ini 文件中的 键option 自动转为小写的问题
     def __init__(self, defaults=None):
@@ -45,6 +46,13 @@ class ReadFileData:
         data = config.as_dict()
         return data
 
+    def load_yaml_value(self,file_path,module_name, key_name):
+        logger.info("加载 {} 文件......".format(file_path))
+        with open(file_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+            data = data[module_name][key_name]
+        logger.info("读取文件数据成功！")
+        return data
 
 if __name__ == '__main__':
     data = ReadFileData()

@@ -1,15 +1,69 @@
+#存储参数
+variable:
+  merge_id: '765516362700427264'
+
+#归集用例
 test001_create_merge:
   method: POST
   route: /apis/crm-web/merge/config
-  data: {"sourceModuleId":"756585727382392835","targetModuleId":"756585727382392843","sourceFieldId":"756585730700087356","targetFieldId":"756585730700087560","referenceFieldId":"756585730700087433","mergeType":1,"targetFieldEditable":1,"executeNow":0,"id":"","mergeTriggerAdd":1,"mergeTriggerDelete":1,"mergeTriggerUpdate":1}
+  data: {sourceModuleId: '756585727382392832', targetModuleId: '756585727382392833', sourceFieldId: '756585730700087298', targetFieldId: '756585730700087325', referenceFieldId: '756585730700087327', priority: 1, mergeType: 1, targetFieldEditable: 1, id: '', mergeTriggerAdd: 1, mergeTriggerUpdate: 1}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {"tenantId":"10235","sourceModuleId":"756585727382392835","sourceModuleCode":"order","sourceFieldId":"756585730700087356","sourceFieldCode":"_principal","sourceConditions":[],"sourceConditionType":null,"targetModuleId":"756585727382392843","targetModuleCode":"customer","targetFieldId":"756585730700087560","targetFieldCode":"_applicant","targetConditions":[],"targetConditionType":null,"referenceFieldId":"756585730700087433","referenceFieldCode":"kehumingcheng","mergeType":1,"mergeTriggerAdd":1,"mergeTriggerUpdate":1,"mergeTriggerDelete":1,"targetFieldEditable":1,"deleted":null,"createUser":null,"createTime":null,"modifyUser":null,"modifyTime":null}
+    data: {tenantId: '10235', sourceModuleId: '756585727382392832', sourceModuleCode: sysUser, sourceFieldId: '756585730700087298', sourceFieldCode: _createUser, sourceConditions: [], sourceConditionType: !!null '', targetModuleId: '756585727382392833', targetModuleCode: dept, targetFieldId: '756585730700087325', targetFieldCode: _modifyUser, targetConditions: [], targetConditionType: !!null '', referenceFieldId: '756585730700087327', referenceFieldCode: _principal, mergeType: 1, mergeTriggerAdd: 1, mergeTriggerUpdate: 1, mergeTriggerDelete: 0, targetFieldEditable: 1, deleted: !!null '', createUser: !!null '', createTime: !!null '', modifyUser: !!null '', modifyTime: !!null ''}
 
-test002_delete_merge:
+test002_source_screen_merge:
+  method: GET
+  route: /apis/crm-web/merge/config/condition/target/field/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+
+test003list_merge:
+  method: POST
+  route: /apis/crm-web/merge/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+
+test004_sourceField_screen_merge:
+  method: POST
+  route: /apis/crm-web/merge/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{mergeType: 1, mergeTypeName: 赋值, sourceModuleId: '756585727382392832', sourceModuleName: 人员, sourceFieldId: '756585730700087298', sourceFieldName: 创建人, targetModuleId: '756585727382392833', targetModuleName: 部门, targetFieldId: '756585730700087325', targetFieldName: 修改人, referenceFieldId: '756585730700087327', referenceFieldName: 负责人, sourceConditions: [], targetConditions: [], sourceConditionType: !!null '', targetConditionType: !!null '', mergeTriggerAdd: 1, mergeTriggerUpdate: 1, mergeTriggerDelete: 0, triggerName: '新建,更新', targetFieldEditable: 1}]}
+
+test005_target_screen_merge:
+  method: GET
+  route: /apis/crm-web/merge/config/condition/source/field/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: [{id: '756585730700087325', name: 修改人, code: _modifyUser, componentId: 9}]
+
+test006_targetField_screen_merge:
+  method: POST
+  route: /apis/crm-web/merge/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{mergeType: 1, mergeTypeName: 赋值, sourceModuleId: '756585727382392832', sourceModuleName: 人员, sourceFieldId: '756585730700087298', sourceFieldName: 创建人, targetModuleId: '756585727382392833', targetModuleName: 部门, targetFieldId: '756585730700087325', targetFieldName: 修改人, referenceFieldId: '756585730700087327', referenceFieldName: 负责人, sourceConditions: [], targetConditions: [], sourceConditionType: !!null '', targetConditionType: !!null '', mergeTriggerAdd: 1, mergeTriggerUpdate: 1, mergeTriggerDelete: 0, triggerName: '新建,更新', targetFieldEditable: 1}]}
+
+
+test007_delete_merge:
   method: DELETE
   route: /apis/crm-web/merge/config/ids?ids=
   headers: {Content-Type: application/json}
@@ -18,12 +72,3 @@ test002_delete_merge:
     code: 0
     msg:
     data:
-
-test003_screen_merge:
-  method: GET
-  route: /apis/crm-web/merge/config/condition/source/field/
-  headers: {Content-Type: application/json}
-  expectcode: 200
-  expectresult:
-    code: 0
-    msg:

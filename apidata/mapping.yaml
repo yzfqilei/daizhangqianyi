@@ -1,15 +1,69 @@
+#存储参数
+variable:
+  mapping_id: '765507379679858688'
+
+#映射用例
 test001_create_mapping:
   method: POST
   route: /apis/crm-web/mapping/config
-  data: {"sourceModuleId":"756585727382392832","targetModuleId":"756585727382392833","sourceFieldId":"756585730700087298","targetFieldId":"756585730700087325","referenceFieldId":"756585730700087327","priority":1,"mappingType":1,"targetFieldEditable":1,"id":"","mappingTriggerAdd":1,"mappingTriggerUpdate":1}
+  data: {sourceModuleId: '756585727382392832', targetModuleId: '756585727382392833', sourceFieldId: '756585730700087298', targetFieldId: '756585730700087325', referenceFieldId: '756585730700087327', priority: 1, mappingType: 1, targetFieldEditable: 1, id: '', mappingTriggerAdd: 1, mappingTriggerUpdate: 1}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {"tenantId":"10235","sourceModuleId":"756585727382392832","sourceFieldId":"756585730700087298","sourceModuleCode":"sysUser","sourceFieldCode":"_createUser","sourceConditions":[],"targetModuleId":"756585727382392833","targetFieldId":"756585730700087325","targetModuleCode":"dept","targetFieldCode":"_modifyUser","referenceFieldId":"756585730700087327","referenceFieldCode":"_principal","priority":1,"mappingType":1,"mappingValue":null,"mappingTriggerAdd":1,"mappingTriggerUpdate":1,"targetFieldEditable":1,"transferButton":0,"sourceConditionType":null,"deleted":null,"createTime":null,"createUser":null,"modifyUser":null,"modifyTime":null}
+    data: {tenantId: '10235', sourceModuleId: '756585727382392832', sourceFieldId: '756585730700087298', sourceModuleCode: sysUser, sourceFieldCode: _createUser, sourceConditions: [], targetModuleId: '756585727382392833', targetFieldId: '756585730700087325', targetModuleCode: dept, targetFieldCode: _modifyUser, referenceFieldId: '756585730700087327', referenceFieldCode: _principal, priority: 1, mappingType: 1, mappingValue: !!null '', mappingTriggerAdd: 1, mappingTriggerUpdate: 1, targetFieldEditable: 1, transferButton: 0, sourceConditionType: !!null '', deleted: !!null '', createTime: !!null '', createUser: !!null '', modifyUser: !!null '', modifyTime: !!null ''}
 
-test002_delete_mapping:
+test002_source_screen_mapping:
+  method: GET
+  route: /apis/crm-web/mapping/config/condition/target/field/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+
+test003list_mapping:
+  method: POST
+  route: /apis/crm-web/mapping/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+
+test004_sourceField_screen_mapping:
+  method: POST
+  route: /apis/crm-web/mapping/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{sourceModuleId: '756585727382392832', sourceModuleName: 人员, sourceFieldId: '756585730700087298', sourceFieldName: 创建人, targetModuleId: '756585727382392833', targetModuleName: 部门, targetFieldId: '756585730700087325', targetFieldName: 修改人, referenceFieldId: '756585730700087327', referenceFieldName: 负责人, sourceConditions: [], sourceConditionType: !!null '', targetConditionType: !!null '', mappingTriggerAdd: 1, mappingTriggerUpdate: 1, triggerName: '新建,更新', priority: 1, priorityName: 高, targetFieldEditable: 1, transferButton: 0, mappingType: 1, mappingValue: !!null ''}]}
+
+test005_target_screen_mapping:
+  method: GET
+  route: /apis/crm-web/merge/config/condition/source/field/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: [{id: '756585730700087325', name: 修改人, code: _modifyUser, componentId: 9}]
+
+test006_targetField_screen_mapping:
+  method: POST
+  route: /apis/crm-web/mapping/config/list
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{sourceModuleId: '756585727382392832', sourceModuleName: 人员, sourceFieldId: '756585730700087298', sourceFieldName: 创建人, targetModuleId: '756585727382392833', targetModuleName: 部门, targetFieldId: '756585730700087325', targetFieldName: 修改人, referenceFieldId: '756585730700087327', referenceFieldName: 负责人, sourceConditions: [], sourceConditionType: !!null '', targetConditionType: !!null '', mappingTriggerAdd: 1, mappingTriggerUpdate: 1, triggerName: '新建,更新', priority: 1, priorityName: 高, targetFieldEditable: 1, transferButton: 0, mappingType: 1, mappingValue: !!null ''}]}
+
+
+test007_delete_mapping:
   method: DELETE
   route: /apis/crm-web/mapping/config/ids?ids=
   headers: {Content-Type: application/json}
@@ -18,12 +72,3 @@ test002_delete_mapping:
     code: 0
     msg:
     data:
-
-test003_screen_mapping:
-  method: GET
-  route: /apis/crm-web/merge/config/condition/source/field/
-  headers: {Content-Type: application/json}
-  expectcode: 200
-  expectresult:
-    code: 0
-    msg:
