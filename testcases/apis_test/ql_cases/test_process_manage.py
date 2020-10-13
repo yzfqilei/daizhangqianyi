@@ -34,14 +34,15 @@ class Test_process_manage():
         list = data['list']
         id_dict = list[0]
         id = id_dict['id']
+        procDefId = id_dict['procDefId']
         print('----------查询成功！')
-        return id
+        return id, procDefId
 
     @allure.story("创建审批流")
     def test001_create_approval_flow(self):
         func_name = sys._getframe().f_code.co_name
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
-        data={"procDef":{"procDefId":None,"bpmnXml":"<definitions xmlns=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:flowable=\"http://flowable.org/bpmn\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:omgdc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:omgdi=\"http://www.omg.org/spec/DD/20100524/DI\" typeLanguage=\"http://www.w3.org/2001/XMLSchema\" expressionLanguage=\"http://www.w3.org/1999/XPath\" targetNamespace=\"http://www.flowable.org/processdef\"><process id=\"flowable-1601172946156\" name=\"approval_flow\" isExecutable=\"true\"><extensionElements/><startEvent id=\"node-start\" name=\"开始\" flowable:initiator=\"starter\"></startEvent><endEvent id=\"node-end\" name=\"结束\"></endEvent><userTask id=\"input-6e898487\" name=\"node\" flowable:formKey=\"\"><extensionElements></extensionElements></userTask><sequenceFlow id=\"line-84b60c88\" sourceRef=\"node-start\" targetRef=\"input-6e898487\"></sequenceFlow><sequenceFlow id=\"line-9d70bfb8\" sourceRef=\"input-6e898487\" targetRef=\"node-end\"></sequenceFlow></process><bpmndi:BPMNDiagram id=\"BPMNDiagram_flowable-1601172946156\"><bpmndi:BPMNPlane bpmnElement=\"flowable-1601172946156\" id=\"BPMNPlane_flowable-1601172946156\"><bpmndi:BPMNShape bpmnElement=\"input-6e898487\" id=\"BPMNShape_input-6e898487\"><omgdc:Bounds height=\"35\" width=\"60\" x=\"239.015625\" y=\"72\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement=\"node-start\" id=\"BPMNShape_node-start\"><omgdc:Bounds height=\"50\" width=\"50\" x=\"50\" y=\"50\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement=\"node-end\" id=\"BPMNShape_node-end\"><omgdc:Bounds height=\"50\" width=\"50\" x=\"650\" y=\"480\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNEdge bpmnElement=\"line-84b60c88\" id=\"BPMNEdge_line-84b60c88\"><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint></bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement=\"line-9d70bfb8\" id=\"BPMNEdge_line-9d70bfb8\"><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint></bpmndi:BPMNEdge></bpmndi:BPMNPlane></bpmndi:BPMNDiagram></definitions>","formId":"756585727382392840","name":"approval_flow","ruleCyclePeriod":"","ruleCycleTime":"undefined undefined  * * ?","ruleType":0,"status":0,"type":0,"pushFlag":0},"procNodes":[{"assignee":"","assigneeType":-1,"formId":"756585727382392840","name":"node","formLayoutCode":"","pushMsg":0,"taskDefKey":"input-6e898487","id":"","sequence":0}],"procMsg":{"assignee":"","assigneeType":0}}
+        data={"procDef":{"procDefId":None,"bpmnXml":"<definitions xmlns=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:flowable=\"http://flowable.org/bpmn\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:omgdc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:omgdi=\"http://www.omg.org/spec/DD/20100524/DI\" typeLanguage=\"http://www.w3.org/2001/XMLSchema\" expressionLanguage=\"http://www.w3.org/1999/XPath\" targetNamespace=\"http://www.flowable.org/processdef\"><process id=\"flowable-1602297919597\" name=\"approval_flow\" isExecutable=\"true\"><extensionElements/><startEvent id=\"node-start\" name=\"开始\" flowable:initiator=\"starter\"></startEvent><endEvent id=\"node-end\" name=\"结束\"></endEvent><userTask id=\"review-252a859f\" name=\"review\" flowable:formKey=\"\" flowable:candidateGroups=\"u_756574317326995456\"><extensionElements></extensionElements></userTask><userTask id=\"input-97814ba8\" name=\"node\" flowable:formKey=\"\"><extensionElements></extensionElements></userTask><sequenceFlow id=\"line-b0c73353\" sourceRef=\"node-start\" targetRef=\"input-97814ba8\"></sequenceFlow><sequenceFlow id=\"line-406f5e6d\" sourceRef=\"input-97814ba8\" targetRef=\"review-252a859f\"></sequenceFlow><sequenceFlow id=\"line-7a5fc671\" sourceRef=\"review-252a859f\" targetRef=\"node-end\"></sequenceFlow></process><bpmndi:BPMNDiagram id=\"BPMNDiagram_flowable-1602297919597\"><bpmndi:BPMNPlane bpmnElement=\"flowable-1602297919597\" id=\"BPMNPlane_flowable-1602297919597\"><bpmndi:BPMNShape bpmnElement=\"review-252a859f\" id=\"BPMNShape_review-252a859f\"><omgdc:Bounds height=\"40\" width=\"60\" x=\"385.015625\" y=\"116.5\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement=\"input-97814ba8\" id=\"BPMNShape_input-97814ba8\"><omgdc:Bounds height=\"35\" width=\"60\" x=\"225.515625\" y=\"95.5\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement=\"node-start\" id=\"BPMNShape_node-start\"><omgdc:Bounds height=\"50\" width=\"50\" x=\"50\" y=\"50\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNShape bpmnElement=\"node-end\" id=\"BPMNShape_node-end\"><omgdc:Bounds height=\"50\" width=\"50\" x=\"650\" y=\"480\"></omgdc:Bounds></bpmndi:BPMNShape><bpmndi:BPMNEdge bpmnElement=\"line-b0c73353\" id=\"BPMNEdge_line-b0c73353\"><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint></bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement=\"line-406f5e6d\" id=\"BPMNEdge_line-406f5e6d\"><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint></bpmndi:BPMNEdge><bpmndi:BPMNEdge bpmnElement=\"line-7a5fc671\" id=\"BPMNEdge_line-7a5fc671\"><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint><omgdi:waypoint x=\"0\" y=\"0\"></omgdi:waypoint></bpmndi:BPMNEdge></bpmndi:BPMNPlane></bpmndi:BPMNDiagram></definitions>","formId":"756585727382392840","name":"approval_flow","ruleCyclePeriod":"","ruleCycleTime":"undefined undefined  * * ?","ruleType":0,"status":0,"type":0,"pushFlag":0},"procNodes":[{"assignee":"756574317326995456","assigneeType":6,"formId":"756585727382392840","name":"review","formLayoutCode":"kaipiaoshenpi","pushMsg":0,"taskDefKey":"review-252a859f","id":"","sequence":1},{"assignee":"","assigneeType":-1,"formId":"756585727382392840","name":"node","formLayoutCode":"","pushMsg":0,"taskDefKey":"input-97814ba8","id":"","sequence":0}],"procMsg":{"assignee":"756585370497454081","assigneeType":5}}
         a = RestClient(rooturl)
         res = a.request(url=csurl, method=method, json=data, headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
@@ -63,7 +64,7 @@ class Test_process_manage():
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
 
         # 由于创建接口不返回流程id，因此此处需要将id返回写入yaml文档中
-        id = Test_process_manage.search_process(self, name='work_flow')
+        id, procDefId = Test_process_manage.search_process(self, name='work_flow')
         data = {'totalCount': 1, 'pageSize': 10, 'currPage': 1, 'list': [{'id': id, 'name': 'work_flow'}]}
         expectresult = {'code': 0, 'msg': None, 'data': data}
         wd.write_yaml(yaml_path, func_name, 'expectresult', expectresult)
@@ -110,8 +111,8 @@ class Test_process_manage():
     @allure.story("停用工作流和审批流")
     def test007_deactive_process(self):
         func_name = sys._getframe().f_code.co_name
-        approval_id=Test_process_manage.search_process(self,name='approval_flow')
-        work_id = Test_process_manage.search_process(self, name='work_flow')
+        approval_id, procDefId=Test_process_manage.search_process(self,name='approval_flow')
+        work_id, procDefId = Test_process_manage.search_process(self, name='work_flow')
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
         a = RestClient(rooturl)
         url=csurl+str(approval_id)+','+str(work_id)+'/disable'
@@ -133,8 +134,8 @@ class Test_process_manage():
     @allure.story("启用工作流和审批流")
     def test009_active_process(self):
         func_name = sys._getframe().f_code.co_name
-        approval_id=Test_process_manage.search_process(self,name='approval_flow')
-        work_id = Test_process_manage.search_process(self, name='work_flow')
+        approval_id, procDefId=Test_process_manage.search_process(self,name='approval_flow')
+        work_id, procDefId= Test_process_manage.search_process(self, name='work_flow')
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
         a = RestClient(rooturl)
         url=csurl+str(approval_id)+','+str(work_id)+'/enable'
@@ -164,10 +165,36 @@ class Test_process_manage():
         pytest.assume('跟进记录' in res.text)
         pytest.assume('开票申请' in res.text)
 
+# 审批菜单中的相关用例
+    # -------begin-------
+    @allure.story("开始审批")
+    def test012_start_approval(self):
+        func_name = sys._getframe().f_code.co_name
+        approval_id, procDefId = Test_process_manage.search_process(self, name='approval_flow')
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
+        a = RestClient(rooturl)
+        url = csurl+str(procDefId)+'/start'
+        res = a.request(url=url, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+    #审批工作流难点：无法获取任务id，因为任务ID是点击具体的流程后生成的
+    # @allure.story("审批同意")
+    #def test013_agree_approval(self):
+        # func_name = sys._getframe().f_code.co_name
+        # approval_id, procDefId = Test_process_manage.search_process(self, name='approval_flow')
+        # csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
+        # a = RestClient(rooturl)
+        # url = csurl+str(procDefId)+'/start'
+        # res = a.request(url=url, method=method, json=yamlvalue['data'], headers=headers)
+        # check_codes_msg(res, yamlvalue, mainkey)
+        # check_datas(res, yamlvalue)
+    # -------over-------
+
+
     @allure.story("删除工作流")
     def test012_delete_work_flow(self):
         func_name = sys._getframe().f_code.co_name
-        id = Test_process_manage.search_process(self, name='work_flow')
+        id, procDefId = Test_process_manage.search_process(self, name='work_flow')
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
         a = RestClient(rooturl)
         csurl=csurl+id
@@ -178,10 +205,11 @@ class Test_process_manage():
     @allure.story("删除审批流")
     def test013_delete_approval_flow(self):
         func_name = sys._getframe().f_code.co_name
-        id = Test_process_manage.search_process(self, name='approval_flow')
+        id, procDefId = Test_process_manage.search_process(self, name='approval_flow')
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('process_manage.yaml', func_name)
         a = RestClient(rooturl)
         csurl=csurl+id
         res = a.request(url=csurl, method=method, headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
+

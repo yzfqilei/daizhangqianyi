@@ -38,7 +38,7 @@ def is_login():
     hd = {"Content-Type": "application/json"}
     r = requests.post(login_url, json=login_data, headers=hd)
     result = json.loads(r.text)
-    # 获取token，写入setting.ini
+    # 获取token，写入setting.pip
     r_dir_data = result['data']
     access_token = r_dir_data['access_token']
     refresh_token = r_dir_data['refresh_token']
@@ -101,6 +101,24 @@ def query_sysuser(is_login):
     sysuser_list = json.loads(r_in.text)['data']
     return sysuser_list
 
+
+@pytest.fixture(scope='session')
+def preset_module_data(is_login):
+    """批量插入跟进记录表单数据"""
+    module_datas = get_datas('preset_data.yaml')
+    rooturl = get_root_urls()
+    csurl = '/apis/crm-web/module/genjinjilu/insert'
+    a = RestClient(rooturl)
+    head = {'access-token': is_login[0], 'refresh-token': is_login[1], 'Content-Type': 'application/json;charset=UTF-8'}
+    dataid_list = []
+    for jdata in module_datas:
+        r_in = a.request(csurl, 'POST', json=jdata, headers=head)
+        dataid_list.append(json.loads(r_in.text)['data']['_id'])
+    yield dataid_list
+    csurl_de = '/apis/crm-web/module/genjinjilu/'
+    for de_id in dataid_list:
+        a.request(csurl_de + de_id, 'DELETE', headers=head)
+    print('delete success')
 
 if __name__ == '__main__':
     is_login()

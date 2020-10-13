@@ -39,4 +39,4 @@ def generate_case(feature, yaml_name):
 
 
 if __name__ == '__main__':
-    generate_case('模块管理', 'module_manage.yaml')
+    generate_case('模块管理', 'personal_center.yaml')

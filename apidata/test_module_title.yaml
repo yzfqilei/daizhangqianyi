@@ -1,0 +1,99 @@
+#菜单表头测试用例
+test001_set_contact_search:
+  method: POST
+  route: /apis/crm-web/profile/module/756585727382392842/search-field
+  data: {"moduleFieldIds":["756585730700087534"]}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"id":"765212789559136256","tenantId":"10235","userId":"756574317326995456","moduleId":"756585727382392842","fields":[{"id":"756585730700087534","tenantId":"10235","moduleId":"756585727382392842","name":"联系人","code":"lianxiren","type":0,"componentId":1,"placeholder":"","description":null,"layout":0,"required":true,"repeated":false,"master":0,"codeSequenceId":null,"sequence":20,"extendJson":{"default":"","length":1000,"lines":5},"deleted":false,"checked":null}]}
+
+test002_search_contact_nonexist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","conditions":[],"logicOperator":"OR","keywords":"测试","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":0,"pageSize":10,"totalPage":0,"currPage":1,"list":[]}
+
+test003_search_contact_exist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","conditions":[],"logicOperator":"OR","keywords":"孙三","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":1,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"_createDept":"api测试","_createUser":"系统管理员","_modifyDept":null,"_principal":"系统管理员","bianhao1":"3","bianhao2":"1","diqu":["140000","140300","140302"],"fujian":[],"genjinleixing":"其他","genjinshijiancong":"2020-10-12 11:26","genjinshijianzhi":"2020-10-12 00:00","genjinshuoming":"谈话","jiage":"100","lianxiren":"孙三","shoujihao":"13833333333","suoshukehu":"测试用户","suoshukehuReference":{"_id":"756597488315666432","_createDept":"756585370497454080","_createUser":"756574317326995456","_details":[],"_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","adminDivision":["110000","110100","110101"],"customerName":"测试用户","status":"正式客户","syncToDz":"是","taxpayerCode":"151241245621235","taxpayerType":"增值税一般纳税人","_applicant":null,"SHOW_INFO":"测试用户"},"_principalReference":{"_id":"756574317326995456","_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"},"_createDeptReference":{"_id":"756585370497454080","_createDept":"756585380370845696","_createUser":"756574317326995456","_principal":"756574317326995456","_tenantId":"10235","deptName":"api测试","parentId":"0","_modifyDept":"756585370497454080","SHOW_INFO":"api测试"},"_createUserReference":{"_id":"756574317326995456","_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"}}]}
+
+test004_set_phone_search:
+  method: POST
+  route: /apis/crm-web/profile/module/756585727382392842/search-field
+  data: {"moduleFieldIds":["765171332185985024"]}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"id":"765212789559136256","tenantId":"10235","userId":"756574317326995456","moduleId":"756585727382392842","fields":[{"id":"765171332185985024","tenantId":"10235","moduleId":"756585727382392842","name":"手机号","code":"shoujihao","type":0,"componentId":16,"placeholder":"","description":"","layout":0,"required":false,"repeated":false,"master":0,"codeSequenceId":null,"sequence":22,"extendJson":{"default":{"type":0,"value":""}},"deleted":false,"checked":null}]}
+
+test005_search_phone_nonexist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","keywords":"13851731828","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":0,"pageSize":10,"totalPage":0,"currPage":1,"list":[]}
+
+test006_search_phone_exist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","keywords":"13811111111","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":1,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"_createDept":"api测试","_createUser":"系统管理员","_modifyDept":null,"_principal":"系统管理员","bianhao1":"1","bianhao2":"3","diqu":["110000","110100","110101"],"fujian":[],"genjinleixing":"现场拜访","genjinshijiancong":"2020-10-12 11:21","genjinshijianzhi":"2020-10-12 00:00","genjinshuoming":"刚接触","jiage":"1","lianxiren":"赵一","shoujihao":"13811111111","suoshukehu":"测试用户","suoshukehuReference":{"_id":"756597488315666432","_createDept":"756585370497454080","_createUser":"756574317326995456","_details":[],"_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","adminDivision":["110000","110100","110101"],"customerName":"测试用户","status":"正式客户","syncToDz":"是","taxpayerCode":"151241245621235","taxpayerType":"增值税一般纳税人","_applicant":null,"SHOW_INFO":"测试用户"},"_principalReference":{"_id":"756574317326995456","_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"},"_createDeptReference":{"_id":"756585370497454080","_createDept":"756585380370845696","_createUser":"756574317326995456","_principal":"756574317326995456","_tenantId":"10235","deptName":"api测试","parentId":"0","_modifyDept":"756585370497454080","SHOW_INFO":"api测试"},"_createUserReference":{"_id":"756574317326995456","_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"}}]}
+
+test007_set_number1_search:
+  method: POST
+  route: /apis/crm-web/profile/module/756585727382392842/search-field
+  data: {"moduleFieldIds":["765171381825572864"]}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"id":"765212789559136256","tenantId":"10235","userId":"756574317326995456","moduleId":"756585727382392842","fields":[{"id":"765171381825572864","tenantId":"10235","moduleId":"756585727382392842","name":"数量1","code":"bianhao1","type":0,"componentId":3,"placeholder":"","description":"","layout":0,"required":false,"repeated":false,"master":0,"codeSequenceId":null,"sequence":23,"extendJson":{"default":{"type":0,"value":null},"length":18,"type":0,"digit":0},"deleted":false,"checked":null}]}
+
+test008_search_number1_nonexist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","keywords":"777","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":0,"pageSize":10,"totalPage":0,"currPage":1,"list":[]}
+
+test009_search_number1_exist:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data: {"field":"","order":"","keywords":"1","pageSize":10,"pageIndex":1}
+  headers: { Content-Type: application/json }
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {"totalCount":1,"pageSize":10,"totalPage":1,"currPage":1,"list":[{"_createDept":"api测试","_createUser":"系统管理员","_modifyDept":null,"_principal":"系统管理员","bianhao1":"1","bianhao2":"3","diqu":["110000","110100","110101"],"fujian":[],"genjinleixing":"现场拜访","genjinshijiancong":"2020-10-12 11:21","genjinshijianzhi":"2020-10-12 00:00","genjinshuoming":"刚接触","jiage":"1","lianxiren":"赵一","shoujihao":"13811111111","suoshukehu":"测试用户","suoshukehuReference":{"_createDept":"756585370497454080","_createUser":"756574317326995456","_details":[],"_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","adminDivision":["110000","110100","110101"],"customerName":"测试用户","status":"正式客户","syncToDz":"是","taxpayerCode":"151241245621235","taxpayerType":"增值税一般纳税人","_applicant":null,"version":"765594432002199552","SHOW_INFO":"测试用户"},"_principalReference":{"_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"},"_createDeptReference":{"_createDept":"756585380370845696","_createUser":"756574317326995456","_principal":"756574317326995456","_tenantId":"10235","deptName":"api测试","parentId":"0","_modifyDept":"756585370497454080","SHOW_INFO":"api测试"},"_createUserReference":{"_createDept":"756585370497454080","_createUser":"756574317326995456","_modifyDept":null,"_principal":"756574317326995456","_tenantId":"10235","deptIds":"756585370497454080","email":null,"identity":"主管","phone":"13025414025","roleIds":["756585370497454081"],"sex":"女","status":"正常","truename":"系统管理员","username":"henacs3","version":"765557023192748032","lianxiren":"测试","youxiang":"","superAdmin":"1","SHOW_INFO":"系统管理员"}}]}

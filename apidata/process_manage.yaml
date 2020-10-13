@@ -1,3 +1,4 @@
+#流程管理
 search_process:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
@@ -43,8 +44,9 @@ test003_search_process:
       pageSize: 10
       currPage: 1
       list:
-      - id: '756586102441250874'
+      - id: '756586102441250878'
         name: work_flow
+
 test004_screen_all:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
@@ -122,8 +124,6 @@ test010_screen_status_active:
     msg:
     data:
 
-
-
 test011_screen_status_all:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
@@ -135,7 +135,27 @@ test011_screen_status_all:
     msg:
     data:
 
+test012_start_approval:
+  method: POST
+  route: /apis/crm-workflow/workflow/procDef/
+  data: {"document":{"dingdanmingcheng":null,"kehumingcheng":"756597488315666432","fuwuxiangmu":null,"kaipiaojine":"999","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","zhidingrenyuan1":null,"liuchengzhidingrenyuan":[]},"formId":"756585727382392840","variables":{"dingdanmingcheng":null,"kehumingcheng":"756597488315666432","fuwuxiangmu":null,"kaipiaojine":"999","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","zhidingrenyuan1":null}}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
 
+test013_agree_approval:
+  method: POST
+  route: /apis/crm-workflow/workflow/task/complete
+  data: {"variables":{"kehumingcheng":"756597488315666432","dingdanmingcheng":null,"fuwuxiangmu":null,"kaipiaojine":"999.00","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","_approval":"同意","zhidingrenyuan1":null},"document":{"kehumingcheng":"756597488315666432","dingdanmingcheng":null,"fuwuxiangmu":null,"kaipiaojine":"999.00","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","_approval":"同意","zhidingrenyuan1":null,"liuchengzhidingrenyuan":[]},"handler":"","taskIdList":["f4657043-0abc-11eb-be7a-7020840caef4"]}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
 
 test012_delete_work_flow:
   method: DELETE
