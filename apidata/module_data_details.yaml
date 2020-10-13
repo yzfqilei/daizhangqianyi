@@ -1,0 +1,1925 @@
+#模块数据详细
+字段排序查询:
+  method: GET
+  route: /apis/crm-web/module/genjinjilu/grid
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - id: '14007'
+      fieldId: '756585730700087499'
+      name: 所属客户
+      code: suoshukehu
+      sequence: 19
+      checked: true
+      componentId: 9
+      extendJson:
+        reference: customer
+        fields:
+        - code: customerName
+          name: 客户名称
+    - id: '14034'
+      fieldId: '756585730700087534'
+      name: 联系人
+      code: lianxiren
+      sequence: 20
+      checked: true
+      componentId: 1
+      extendJson:
+        default: ''
+        length: 1000
+        lines: 5
+    - id: '14071'
+      fieldId: '765171332185985024'
+      name: 手机号
+      code: shoujihao
+      sequence: 22
+      checked: true
+      componentId: 16
+      extendJson:
+        default:
+          type: 0
+          value: ''
+    - id: '14004'
+      fieldId: '756585730700087495'
+      name: 跟进类型
+      code: genjinleixing
+      sequence: 16
+      checked: true
+      componentId: 4
+      extendJson:
+        items:
+        - id: 1
+          label: 现场拜访
+          selected: false
+        - id: 2
+          label: 电话沟通
+          selected: false
+        - id: 3
+          label: 微信联系
+          selected: false
+        - id: 4
+          label: 其他
+          selected: false
+    - id: '14005'
+      fieldId: '756585730700087496'
+      name: 跟进说明
+      code: genjinshuoming
+      sequence: 17
+      checked: true
+      componentId: 2
+      extendJson:
+        default: ''
+        length: 1000
+        lines: 5
+    - id: '14002'
+      fieldId: '756585730700087493'
+      name: 跟进时间从
+      code: genjinshijiancong
+      sequence: 14
+      checked: true
+      componentId: 8
+      extendJson:
+        default:
+          type: 1
+          value: 2020-07-22 10:42
+        dateFormat: YYYY-MM-DD HH:mm
+    - id: '14003'
+      fieldId: '756585730700087494'
+      name: 跟进时间至
+      code: genjinshijianzhi
+      sequence: 15
+      checked: true
+      componentId: 8
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        dateFormat: YYYY-MM-DD HH:mm
+    - id: '14006'
+      fieldId: '756585730700087497'
+      name: 附件
+      code: fujian
+      sequence: 18
+      checked: true
+      componentId: 12
+      extendJson:
+        maxSize: 5
+    - id: '14072'
+      fieldId: '765171381825572864'
+      name: 数量1
+      code: bianhao1
+      sequence: 23
+      checked: true
+      componentId: 3
+      extendJson:
+        default:
+          type: 0
+          value:
+        length: 18
+        type: 0
+        digit: 0
+    - id: '14073'
+      fieldId: '765171410980179968'
+      name: 数量2
+      code: bianhao2
+      sequence: 24
+      checked: true
+      componentId: 3
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        length: 18
+        type: 0
+        digit: 0
+    - id: '14074'
+      fieldId: '765171443070799872'
+      name: 地区
+      code: diqu
+      sequence: 25
+      checked: true
+      componentId: 14
+      extendJson: {}
+    - id: '14075'
+      fieldId: '765171485114503168'
+      name: 价格
+      code: jiage
+      sequence: 26
+      checked: false
+      componentId: 17
+      extendJson:
+        default:
+          type: 0
+          value: ''
+        length: 18
+        digit: 2
+字段排序修改保存:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/saveGrid
+  data:
+  - checked: true
+    fieldId: '756585730700087499'
+    id: '14007'
+    moduleId: '756585727382392842'
+    sequence: 0
+  - checked: true
+    fieldId: '756585730700087534'
+    id: '14034'
+    moduleId: '756585727382392842'
+    sequence: 1
+  - checked: true
+    fieldId: '765171332185985024'
+    id: '14071'
+    moduleId: '756585727382392842'
+    sequence: 2
+  - checked: true
+    fieldId: '756585730700087495'
+    id: '14004'
+    moduleId: '756585727382392842'
+    sequence: 3
+  - checked: true
+    fieldId: '756585730700087496'
+    id: '14005'
+    moduleId: '756585727382392842'
+    sequence: 4
+  - checked: true
+    fieldId: '756585730700087493'
+    id: '14002'
+    moduleId: '756585727382392842'
+    sequence: 5
+  - checked: true
+    fieldId: '756585730700087494'
+    id: '14003'
+    moduleId: '756585727382392842'
+    sequence: 6
+  - checked: true
+    fieldId: '756585730700087497'
+    id: '14006'
+    moduleId: '756585727382392842'
+    sequence: 7
+  - checked: true
+    fieldId: '765171381825572864'
+    id: '14072'
+    moduleId: '756585727382392842'
+    sequence: 8
+  - checked: true
+    fieldId: '765171410980179968'
+    id: '14073'
+    moduleId: '756585727382392842'
+    sequence: 9
+  - checked: true
+    fieldId: '765171443070799872'
+    id: '14074'
+    moduleId: '756585727382392842'
+    sequence: 10
+  - checked: false
+    fieldId: '765171485114503168'
+    id: '14075'
+    moduleId: '756585727382392842'
+    sequence: 11
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+数据列表分页查询（100页）:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data:
+    field: ''
+    order: ''
+    pageIndex: 1
+    pageSize: 100
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 3
+      pageSize: 100
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyUser:
+        _principal: 系统管理员
+        bianhao1: '5'
+        bianhao2: '5'
+        diqu:
+        - '140000'
+        - '140300'
+        - '140302'
+        fujian: []
+        genjinleixing: 其他
+        genjinshijiancong: 2020-10-12 11:26
+        genjinshijianzhi: 2020-10-12 00:00
+        genjinshuoming: 谈话
+        jiage: '100'
+        lianxiren: 王五
+        shoujihao: '18005162881'
+        suoshukehu: 测试用户
+        suoshukehuReference:
+          _id: '756597488315666432'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _details: []
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          adminDivision:
+          - '110000'
+          - '110100'
+          - '110101'
+          customerName: 测试用户
+          status: 正式客户
+          syncToDz: 是
+          taxpayerCode: '151241245621235'
+          taxpayerType: 增值税一般纳税人
+          _applicant:
+          SHOW_INFO: 测试用户
+        _principalReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _createDeptReference:
+          _id: '756585370497454080'
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _modifyUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyUser:
+        _principal: 系统管理员
+        bianhao1: '5'
+        bianhao2: '10'
+        diqu:
+        - '140000'
+        - '140400'
+        - '140404'
+        fujian: []
+        genjinleixing: 电话沟通
+        genjinshijiancong: 2020-10-12 11:24
+        genjinshijianzhi: 2021-11-01 00:00
+        genjinshuoming: 谈话中
+        jiage: '10'
+        lianxiren: 李四
+        shoujihao: '18005162881'
+        suoshukehu: 测试用户
+        suoshukehuReference:
+          _id: '756597488315666432'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _details: []
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          adminDivision:
+          - '110000'
+          - '110100'
+          - '110101'
+          customerName: 测试用户
+          status: 正式客户
+          syncToDz: 是
+          taxpayerCode: '151241245621235'
+          taxpayerType: 增值税一般纳税人
+          _applicant:
+          SHOW_INFO: 测试用户
+        _principalReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _createDeptReference:
+          _id: '756585370497454080'
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _modifyUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyUser:
+        _principal: 系统管理员
+        bianhao1: '10'
+        bianhao2: '5'
+        diqu:
+        - '110000'
+        - '110100'
+        - '110101'
+        fujian: []
+        genjinleixing: 现场拜访
+        genjinshijiancong: 2020-10-12 11:21
+        genjinshijianzhi: 2020-10-12 00:00
+        genjinshuoming: 刚接触
+        jiage: '1'
+        lianxiren: 张三
+        shoujihao: '18005162880'
+        suoshukehu: 测试用户
+        suoshukehuReference:
+          _id: '756597488315666432'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _details: []
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          adminDivision:
+          - '110000'
+          - '110100'
+          - '110101'
+          customerName: 测试用户
+          status: 正式客户
+          syncToDz: 是
+          taxpayerCode: '151241245621235'
+          taxpayerType: 增值税一般纳税人
+          _applicant:
+          SHOW_INFO: 测试用户
+        _principalReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _createDeptReference:
+          _id: '756585370497454080'
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _modifyUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _id: '756574317326995456'
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+模块id查询（跟进记录）:
+  method: GET
+  route: /apis/crm-web/module/code/genjinjilu
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      id: '756585727382392842'
+      tenantId: '10235'
+      name: 跟进记录
+      code: genjinjilu
+      description:
+      icon:
+      type: 1
+      parentModuleId: '0'
+      detailModuleId:
+      mainFieldId: '756585730700087480'
+      sequence: 6
+      createUser: '735094484798410752'
+      deleted: false
+      moduleType: 1
+      enabled: 0
+      flowType: 1
+      mainShowField:
+        id: '756585730700087480'
+        tenantId: '10235'
+        moduleId: '756585727382392842'
+        name: ID
+        code: _id
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 1
+        extendJson: {}
+        deleted: false
+模块数据权限查询（新增、查看）:
+  method: GET
+  route: /apis/crm-web/module/756585727382392842/associations
+  data: permissions=view,new
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: []
+第一条数据流程id查询:
+  method: GET
+  route: /apis/crm-workflow/taskFlow/formId/756585727382392842/businessId/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - procName: 跟进记录
+      inUse: false
+表单查看布局查询:
+  method: GET
+  route: /apis/crm-web/module/func/756585727382392842/code/view
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - children:
+      - code: suoshukehu
+        componentId: 9
+        extendJson:
+          reference: customer
+          fields:
+          - code: customerName
+            name: 客户名称
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 19
+        deleted: false
+        tenantId: '10235'
+        name: 所属客户
+        id: '756585730700087499'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinleixing
+        componentId: 4
+        extendJson:
+          items:
+          - id: 1
+            label: 现场拜访
+            selected: false
+          - id: 2
+            label: 电话沟通
+            selected: false
+          - id: 3
+            label: 微信联系
+            selected: false
+          - id: 4
+            label: 其他
+            selected: false
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 16
+        deleted: false
+        tenantId: '10235'
+        name: 跟进类型
+        id: '756585730700087495'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: shoujihao
+        componentId: 16
+        extendJson:
+          default:
+            type: 0
+            value: ''
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 22
+        deleted: false
+        tenantId: '10235'
+        name: 手机号
+        id: '765171332185985024'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: lianxiren
+        componentId: 1
+        extendJson:
+          length: 1000
+          lines: 5
+          default: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 20
+        deleted: false
+        tenantId: '10235'
+        name: 联系人
+        id: '756585730700087534'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshijiancong
+        componentId: 8
+        extendJson:
+          dateFormat: YYYY-MM-DD HH:mm
+          default:
+            type: 1
+            value: 2020-07-22 10:42
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 14
+        deleted: false
+        tenantId: '10235'
+        name: 跟进时间从
+        id: '756585730700087493'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshijianzhi
+        componentId: 8
+        extendJson:
+          dateFormat: YYYY-MM-DD HH:mm
+          default:
+            type: 0
+            value: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 15
+        deleted: false
+        tenantId: '10235'
+        name: 跟进时间至
+        id: '756585730700087494'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshuoming
+        componentId: 2
+        extendJson:
+          length: 1000
+          lines: 5
+          default: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 1
+        sequence: 17
+        deleted: false
+        tenantId: '10235'
+        name: 跟进说明
+        id: '756585730700087496'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: fujian
+        componentId: 12
+        extendJson:
+          maxSize: 5
+        description:
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 18
+        deleted: false
+        tenantId: '10235'
+        name: 附件
+        id: '756585730700087497'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      expend: true
+      title: 基本信息
+    - children:
+      - code: bianhao1
+        componentId: 3
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value:
+          type: 0
+          digit: 0
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 23
+        deleted: false
+        tenantId: '10235'
+        name: 数量1
+        id: '765171381825572864'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: bianhao2
+        componentId: 3
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value: ''
+          type: 0
+          digit: 0
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 24
+        deleted: false
+        tenantId: '10235'
+        name: 数量2
+        id: '765171410980179968'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: diqu
+        componentId: 14
+        extendJson: {}
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 25
+        deleted: false
+        tenantId: '10235'
+        name: 地区
+        id: '765171443070799872'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: jiage
+        componentId: 17
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value: ''
+          digit: 2
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 26
+        deleted: false
+        tenantId: '10235'
+        name: 价格
+        id: '765171485114503168'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      expend: true
+      title: 跟进附属
+表单第一条数据各字段值查询:
+  method: GET
+  route: /apis/crm-web/module/756585727382392842/
+  data:
+    autoReference: true
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      _createDept: '756585370497454080'
+      _createUser: '756574317326995456'
+      _modifyDept:
+      _modifyUser:
+      _principal: '756574317326995456'
+      bianhao1: '10'
+      bianhao2: '5'
+      diqu:
+      - '110000'
+      - '110100'
+      - '110101'
+      fujian: []
+      genjinleixing: 现场拜访
+      genjinshijiancong: 2020-10-12 11:21
+      genjinshijianzhi: 2020-10-12 00:00
+      genjinshuoming: 刚接触
+      jiage: '1'
+      lianxiren: 张三
+      shoujihao: '18005162880'
+      suoshukehu: '756597488315666432'
+      _details: []
+表单编辑布局查询:
+  method: GET
+  route: /apis/crm-web/module/func/756585727382392842/code/edit
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - children:
+      - code: suoshukehu
+        componentId: 9
+        extendJson:
+          reference: customer
+          fields:
+          - code: customerName
+            name: 客户名称
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 19
+        deleted: false
+        tenantId: '10235'
+        name: 所属客户
+        id: '756585730700087499'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinleixing
+        componentId: 4
+        extendJson:
+          items:
+          - id: 1
+            label: 现场拜访
+            selected: false
+          - id: 2
+            label: 电话沟通
+            selected: false
+          - id: 3
+            label: 微信联系
+            selected: false
+          - id: 4
+            label: 其他
+            selected: false
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 16
+        deleted: false
+        tenantId: '10235'
+        name: 跟进类型
+        id: '756585730700087495'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: shoujihao
+        componentId: 16
+        extendJson:
+          default:
+            type: 0
+            value: ''
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 22
+        deleted: false
+        tenantId: '10235'
+        name: 手机号
+        id: '765171332185985024'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: lianxiren
+        componentId: 1
+        extendJson:
+          length: 1000
+          lines: 5
+          default: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 20
+        deleted: false
+        tenantId: '10235'
+        name: 联系人
+        id: '756585730700087534'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshijiancong
+        componentId: 8
+        extendJson:
+          dateFormat: YYYY-MM-DD HH:mm
+          default:
+            type: 1
+            value: 2020-07-22 10:42
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 14
+        deleted: false
+        tenantId: '10235'
+        name: 跟进时间从
+        id: '756585730700087493'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshijianzhi
+        componentId: 8
+        extendJson:
+          dateFormat: YYYY-MM-DD HH:mm
+          default:
+            type: 0
+            value: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 15
+        deleted: false
+        tenantId: '10235'
+        name: 跟进时间至
+        id: '756585730700087494'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: genjinshuoming
+        componentId: 2
+        extendJson:
+          length: 1000
+          lines: 5
+          default: ''
+        description:
+        type: 0
+        repeated: false
+        required: true
+        master: 0
+        salve: 0
+        layout: 1
+        sequence: 17
+        deleted: false
+        tenantId: '10235'
+        name: 跟进说明
+        id: '756585730700087496'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: fujian
+        componentId: 12
+        extendJson:
+          maxSize: 5
+        description:
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 18
+        deleted: false
+        tenantId: '10235'
+        name: 附件
+        id: '756585730700087497'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      expend: true
+      title: 基本信息
+    - children:
+      - code: bianhao1
+        componentId: 3
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value:
+          type: 0
+          digit: 0
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 23
+        deleted: false
+        tenantId: '10235'
+        name: 数量1
+        id: '765171381825572864'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: bianhao2
+        componentId: 3
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value: ''
+          type: 0
+          digit: 0
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 24
+        deleted: false
+        tenantId: '10235'
+        name: 数量2
+        id: '765171410980179968'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: diqu
+        componentId: 14
+        extendJson: {}
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 25
+        deleted: false
+        tenantId: '10235'
+        name: 地区
+        id: '765171443070799872'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      - code: jiage
+        componentId: 17
+        extendJson:
+          length: 18
+          default:
+            type: 0
+            value: ''
+          digit: 2
+        description: ''
+        type: 0
+        repeated: false
+        required: false
+        master: 0
+        salve: 0
+        layout: 0
+        sequence: 26
+        deleted: false
+        tenantId: '10235'
+        name: 价格
+        id: '765171485114503168'
+        placeholder: ''
+        moduleId: '756585727382392842'
+        codeSequenceId:
+      expend: true
+      title: 跟进附属
+第一条数据编辑保存:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/save
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      _modifyDept: '756585370497454080'
+      _modifyUser: '756574317326995456'
+      _principal: '756574317326995456'
+      bianhao1: '10'
+      bianhao2: '5'
+      diqu:
+      - '110000'
+      - '110100'
+      - '110101'
+      fujian: []
+      genjinleixing: 现场拜访
+      genjinshijiancong: 2020-10-12 11:21
+      genjinshijianzhi: 2020-10-12 00:00
+      genjinshuoming: 刚接触
+      jiage: '1'
+      lianxiren: 张三1
+      shoujihao: '18005162880'
+      suoshukehu: '756597488315666432'
+      _details: []
+第一条数据的流程状态查询:
+  method: GET
+  route: /apis/crm-workflow/taskFlow/formId/756585727382392842/businessId/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - procName: 跟进记录
+      inUse: false
+第一条数据发起流程:
+  method: POST
+  route: /apis/crm-workflow/taskFlow/start
+  data:
+    businessId: ''
+    formId: '756585727382392842'
+    procDefId: flowable-1600775255472:3:b28555e7-fcc9-11ea-be7a-7020840caef4
+    taskName: 跟进记录
+    var: {}
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第一条数据的流程状态id查询:
+  method: GET
+  route: /apis/crm-workflow/taskFlow/businessId/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - taskName: 跟进记录
+      formId: '756585727382392842'
+第一条数据的第一个流程状态详细:
+  method: GET
+  route: /apis/crm-workflow/taskFlow/taskFlowInst/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      mainFormId: '756585727382392842'
+      mainFormName: 跟进记录
+      canHandle: true
+      containSplit: false
+      list:
+      - formId: '756585727382392842'
+        formName: 跟进记录
+        formLayoutCode: new
+        handleName:
+        businessId:
+        isBack: 0
+        curTask: true
+      - formId: '756585727382392839'
+        formName: 回款记录
+        taskId:
+        formLayoutCode: new
+        handleName:
+        businessId:
+        isBack: 0
+        curTask: false
+      status: 0
+      stopReason:
+      handlers:
+      - 系统管理员
+      cc:
+第一条数据的第一个流程流程转办taskid查询:
+  method: POST
+  route: /apis/crm-workflow/manage/turnTaskList
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - taskDefName: 跟进记录
+第一条数据的第一个流程流程转办（给测试人员）:
+  method: POST
+  route: /apis/crm-workflow/manage/turnTask
+  data:
+  - assigneeList:
+    - u_758028041194934272
+    taskId: 7714ba83-0c56-11eb-be7a-7020840caef4
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第一条数据的第一个流程流程终止:
+  method: POST
+  route: /apis/crm-workflow/workflow/task/undo
+  data:
+    procInstId: 7714454b-0c56-11eb-be7a-7020840caef4
+    undoMsg: 终止
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第一条数据的数据分配（分配给测试人员）:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/assign-personnel
+  data:
+    currentUserId: '756574317326995456'
+    id: ''
+    newUserId: '758028041194934272'
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第一条数据的分配发送消息:
+  method: GET
+  route: /apis/crm-workflow/workflow/sendAllocationMsg
+  data:
+    code: genjinjilu
+    allocationUser: 758028041194934272
+    businessId: 765265038201196544
+    proDefId: flowable-1600775255472:3:b28555e7-fcc9-11ea-be7a-7020840caef4
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+流程终止并且分配给别人后查询第一条数据列表:
+  method: GET
+  route: /apis/crm-web/module/756585727382392842/
+  data:
+    autoReference: true
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      _createDept: '756585370497454080'
+      _createUser: '756574317326995456'
+      _modifyDept: '756585370497454080'
+      _modifyUser: '756574317326995456'
+      _principal: '758028041194934272'
+      bianhao1: '10'
+      bianhao2: '5'
+      diqu:
+      - '110000'
+      - '110100'
+      - '110101'
+      fujian: []
+      genjinleixing: 现场拜访
+      genjinshijiancong: 2020-10-12 11:21
+      genjinshijianzhi: 2020-10-12 00:00
+      genjinshuoming: 刚接触
+      jiage: '1'
+      lianxiren: 张三1
+      shoujihao: '18005162880'
+      suoshukehu: '756597488315666432'
+      _dealStatus: 已终止
+      _modifyUserReference:
+        _id: '756574317326995456'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        email:
+        identity: 主管
+        phone: '13025414025'
+        roleIds:
+        - '756585370497454081'
+        sex: 女
+        status: 正常
+        truename: 系统管理员
+        username: henacs3
+        lianxiren: 测试
+        youxiang: ''
+        superAdmin: '1'
+        SHOW_INFO: 系统管理员
+      suoshukehuReference:
+        _id: '756597488315666432'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _details: []
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        adminDivision:
+        - '110000'
+        - '110100'
+        - '110101'
+        customerName: 测试用户
+        status: 正式客户
+        syncToDz: 是
+        taxpayerCode: '151241245621235'
+        taxpayerType: 增值税一般纳税人
+        _applicant:
+        SHOW_INFO: 测试用户
+      _principalReference:
+        _id: '758028041194934272'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        identity: 普通员工
+        password: '{bcrypt}$2a$10$46gKcwuIBquvgwI3FjLtqeaGVrTmmk90n.qzXU25ka4XttKE3AzOC'
+        phone: '18005162221'
+        roleIds:
+        - '756585370497454081'
+        sex: 男
+        status: 正常
+        truename: 测试人员
+        username: cs1123
+        youxiang: ''
+        SHOW_INFO: 测试人员
+      _modifyDeptReference:
+        _id: '756585370497454080'
+        _createDept: '756585380370845696'
+        _createUser: '756574317326995456'
+        _modifyUser: '756574317326995456'
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptName: api测试
+        parentId: '0'
+        _modifyDept: '756585370497454080'
+        SHOW_INFO: api测试
+      _createDeptReference:
+        _id: '756585370497454080'
+        _createDept: '756585380370845696'
+        _createUser: '756574317326995456'
+        _modifyUser: '756574317326995456'
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptName: api测试
+        parentId: '0'
+        _modifyDept: '756585370497454080'
+        SHOW_INFO: api测试
+      _createUserReference:
+        _id: '756574317326995456'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        email:
+        identity: 主管
+        phone: '13025414025'
+        roleIds:
+        - '756585370497454081'
+        sex: 女
+        status: 正常
+        truename: 系统管理员
+        username: henacs3
+        lianxiren: 测试
+        youxiang: ''
+        superAdmin: '1'
+        SHOW_INFO: 系统管理员
+      _details: []
+删除第二条表单数据:
+  method: DELETE
+  route: /apis/crm-web/module/genjinjilu/
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第三条数据添加团队成员:
+  method: PUT
+  route: /apis/crm-web/module/756585727382392842/
+  data:
+    - '758028041194934272'
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: []
+第三条数据删除添加的团队成员:
+  method: PUT
+  route: /apis/crm-web/module/756585727382392842/
+  data:
+    memberId: 758028041194934272
+  headers: {}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+第三条数据查询团队成员添加结果:
+  method: GET
+  route: /apis/crm-web/module/756585727382392842/
+  data:
+    autoReference: true
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      _createDept: '756585370497454080'
+      _createUser: '756574317326995456'
+      _principal: '756574317326995456'
+      bianhao1: '5'
+      bianhao2: '5'
+      diqu:
+      - '140000'
+      - '140300'
+      - '140302'
+      fujian: []
+      genjinleixing: 其他
+      genjinshijiancong: 2020-10-12 11:26
+      genjinshijianzhi: 2020-10-12 00:00
+      genjinshuoming: 谈话
+      jiage: '100'
+      lianxiren: 王五
+      shoujihao: '18005162881'
+      suoshukehu: '756597488315666432'
+      _teamMember: []
+      _modifyUserReference:
+        _id: '756574317326995456'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        email:
+        identity: 主管
+        phone: '13025414025'
+        roleIds:
+        - '756585370497454081'
+        sex: 女
+        status: 正常
+        truename: 系统管理员
+        username: henacs3
+        lianxiren: 测试
+        youxiang: ''
+        superAdmin: '1'
+        SHOW_INFO: 系统管理员
+      suoshukehuReference:
+        _id: '756597488315666432'
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _details: []
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        adminDivision:
+        - '110000'
+        - '110100'
+        - '110101'
+        customerName: 测试用户
+        status: 正式客户
+        syncToDz: 是
+        taxpayerCode: '151241245621235'
+        taxpayerType: 增值税一般纳税人
+        _applicant:
+        SHOW_INFO: 测试用户
+      _principalReference:
+        _createDept: '756585370497454080'
+        _createUser: '756574317326995456'
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        email:
+        identity: 主管
+        phone: '13025414025'
+        roleIds:
+        - '756585370497454081'
+        sex: 女
+        status: 正常
+        truename: 系统管理员
+        username: henacs3
+        lianxiren: 测试
+        youxiang: ''
+        superAdmin: '1'
+        SHOW_INFO: 系统管理员
+      _teamMemberReference: []
+      _modifyDeptReference:
+        _createDept: '756585380370845696'
+        _createUser: '756574317326995456'
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptName: api测试
+        parentId: '0'
+        SHOW_INFO: api测试
+      _createDeptReference:
+        _createDept: '756585380370845696'
+        _createUser: '756574317326995456'
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptName: api测试
+        parentId: '0'
+        SHOW_INFO: api测试
+      _createUserReference:
+        _modifyDept:
+        _modifyUser:
+        _principal: '756574317326995456'
+        _tenantId: '10235'
+        deptIds: '756585370497454080'
+        email:
+        identity: 主管
+        phone: '13025414025'
+        roleIds:
+        - '756585370497454081'
+        sex: 女
+        status: 正常
+        truename: 系统管理员
+        username: henacs3
+        lianxiren: 测试
+        youxiang: ''
+        superAdmin: '1'
+        SHOW_INFO: 系统管理员
+      _details: []
+结束再查询一次表单数据:
+  method: POST
+  route: /apis/crm-web/module/genjinjilu/list
+  data:
+    field: ''
+    order: ''
+    pageIndex: 1
+    pageSize: 10
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 2
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept: api测试
+        _modifyUser: 系统管理员
+        _principal: 系统管理员
+        bianhao1: '5'
+        bianhao2: '5'
+        diqu:
+        - '140000'
+        - '140300'
+        - '140302'
+        fujian: []
+        genjinleixing: 其他
+        genjinshijiancong: 2020-10-12 11:26
+        genjinshijianzhi: 2020-10-12 00:00
+        genjinshuoming: 谈话
+        jiage: '100'
+        lianxiren: 王五
+        shoujihao: '18005162881'
+        suoshukehu: 测试用户
+        _teamMember: []
+        _teamMemberReference: []
+        _principalReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _createDeptReference:
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _modifyUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          _modifyDept: '756585370497454080'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _modifyUserReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        suoshukehuReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _details: []
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          adminDivision:
+          - '110000'
+          - '110100'
+          - '110101'
+          customerName: 测试用户
+          status: 正式客户
+          syncToDz: 是
+          taxpayerCode: '151241245621235'
+          taxpayerType: 增值税一般纳税人
+          _applicant:
+          SHOW_INFO: 测试用户
+        _modifyDeptReference:
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          SHOW_INFO: api测试
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept: api测试
+        _modifyUser: 系统管理员
+        _principal: 测试人员
+        bianhao1: '10'
+        bianhao2: '5'
+        diqu:
+        - '110000'
+        - '110100'
+        - '110101'
+        fujian: []
+        genjinleixing: 现场拜访
+        genjinshijiancong: 2020-10-12 11:21
+        genjinshijianzhi: 2020-10-12 00:00
+        genjinshuoming: 刚接触
+        jiage: '1'
+        lianxiren: 张三1
+        shoujihao: '18005162880'
+        suoshukehu: 测试用户
+        _teamMember: []
+        _dealStatus: 已终止
+        _teamMemberReference: []
+        _principalReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          identity: 普通员工
+          password: '{bcrypt}$2a$10$46gKcwuIBquvgwI3FjLtqeaGVrTmmk90n.qzXU25ka4XttKE3AzOC'
+          phone: '18005162221'
+          roleIds:
+          - '756585370497454081'
+          sex: 男
+          status: 正常
+          truename: 测试人员
+          username: cs1123
+          youxiang: ''
+          SHOW_INFO: 测试人员
+        _createDeptReference:
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          SHOW_INFO: api测试
+        _createUserReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        _modifyUserReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptIds: '756585370497454080'
+          email:
+          identity: 主管
+          phone: '13025414025'
+          roleIds:
+          - '756585370497454081'
+          sex: 女
+          status: 正常
+          truename: 系统管理员
+          username: henacs3
+          lianxiren: 测试
+          youxiang: ''
+          superAdmin: '1'
+          SHOW_INFO: 系统管理员
+        suoshukehuReference:
+          _createDept: '756585370497454080'
+          _createUser: '756574317326995456'
+          _details: []
+          _modifyDept:
+          _modifyUser:
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          adminDivision:
+          - '110000'
+          - '110100'
+          - '110101'
+          customerName: 测试用户
+          status: 正式客户
+          syncToDz: 是
+          taxpayerCode: '151241245621235'
+          taxpayerType: 增值税一般纳税人
+          _applicant:
+          SHOW_INFO: 测试用户
+        _modifyDeptReference:
+          _createDept: '756585380370845696'
+          _createUser: '756574317326995456'
+          _principal: '756574317326995456'
+          _tenantId: '10235'
+          deptName: api测试
+          parentId: '0'
+          SHOW_INFO: api测试
+
+
+

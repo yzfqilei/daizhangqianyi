@@ -83,10 +83,23 @@ def insert_module_data(is_login):
         r_in = a.request(csurl, 'POST', json=jdata, headers=head)
         dataid_list.append(json.loads(r_in.text)['data']['_id'])
     yield dataid_list
-    # csurl_de = '/apis/crm-web/module/genjinjilu/'
-    # for de_id in dataid_list:
-    #     a.request(csurl_de + de_id, 'DELETE', headers=head)
-    # print('delete success')
+    csurl_de = '/apis/crm-web/module/genjinjilu/'
+    for de_id in dataid_list:
+        a.request(csurl_de + de_id, 'DELETE', headers=head)
+    print('delete success')
+
+
+@pytest.fixture(scope='session')
+def query_sysuser(is_login):
+    """查询人员列表数据"""
+    rooturl = get_root_urls()
+    csurl = '/apis/crm-web/module/sysUser/list'
+    a = RestClient(rooturl)
+    jdata = {"conditions": {"status": "正常"}, "pageIndex": 1, "pageSize": 10000}
+    head = {'access-token': is_login[0], 'refresh-token': is_login[1], 'Content-Type': 'application/json;charset=UTF-8'}
+    r_in = a.request(csurl, 'POST', json=jdata, headers=head)
+    sysuser_list = json.loads(r_in.text)['data']
+    return sysuser_list
 
 
 if __name__ == '__main__':
