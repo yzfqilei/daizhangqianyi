@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # coding:utf-8
 
-
 import json
 import allure
 import pytest
@@ -19,7 +18,6 @@ wd = WriteFileData()
 result = result_base.ResultBase()
 rooturl = get_root_url.get_root_urls()
 a = RestClient(rooturl)
-
 
 
 @pytest.mark.usefixtures('is_login')
