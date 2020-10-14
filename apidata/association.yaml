@@ -1,0 +1,183 @@
+#客户模块创建关联模块
+查询关联模块（客户模块 -- 测试用户）:
+  method: GET
+  route: /apis/crm-web/module/756585727382392843/associations
+  data:
+    permissions: view,new
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - id: '765589829252681731'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392842'
+      associationDetailModuleId:
+      associationModuleCode: genjinjilu
+      associationModuleName: 跟进记录
+      sequence: 1
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829244293120'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392835'
+      associationDetailModuleId:
+      associationModuleCode: order
+      associationModuleName: 订单
+      sequence: 2
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829248487424'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392837'
+      associationDetailModuleId:
+      associationModuleCode: gongshangzhuce
+      associationModuleName: 工商注册
+      sequence: 3
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829248487425'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392838'
+      associationDetailModuleId:
+      associationModuleCode: dailijizhang
+      associationModuleName: 代理记账
+      sequence: 4
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681728'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392839'
+      associationDetailModuleId:
+      associationModuleCode: huikuanjilu
+      associationModuleName: 回款记录
+      sequence: 5
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681729'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392840'
+      associationDetailModuleId:
+      associationModuleCode: kaipiaoshenqing
+      associationModuleName: 开票申请
+      sequence: 6
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681730'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392841'
+      associationDetailModuleId:
+      associationModuleCode: lianxiren
+      associationModuleName: 联系人
+      sequence: 7
+      checked: false
+      manyLink: false
+      linked: false
+添加关联模块显示（跟进记录）:
+  method: POST
+  route: /apis/crm-web/module/756585727382392843/association
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+取消关联模块显示（跟进记录）:
+  method: POST
+  route: /apis/crm-web/module/756585727382392843/association
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+再次查询关联模块（客户模块 -- 测试用户）:
+  method: GET
+  route: /apis/crm-web/module/756585727382392843/associations
+  data:
+    permissions: view,new
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+    - id: '765589829252681731'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392842'
+      associationDetailModuleId:
+      associationModuleCode: genjinjilu
+      associationModuleName: 跟进记录
+      sequence: 1
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829244293120'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392835'
+      associationDetailModuleId:
+      associationModuleCode: order
+      associationModuleName: 订单
+      sequence: 2
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829248487424'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392837'
+      associationDetailModuleId:
+      associationModuleCode: gongshangzhuce
+      associationModuleName: 工商注册
+      sequence: 3
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829248487425'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392838'
+      associationDetailModuleId:
+      associationModuleCode: dailijizhang
+      associationModuleName: 代理记账
+      sequence: 4
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681728'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392839'
+      associationDetailModuleId:
+      associationModuleCode: huikuanjilu
+      associationModuleName: 回款记录
+      sequence: 5
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681729'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392840'
+      associationDetailModuleId:
+      associationModuleCode: kaipiaoshenqing
+      associationModuleName: 开票申请
+      sequence: 6
+      checked: false
+      manyLink: false
+      linked: false
+    - id: '765589829252681730'
+      moduleId: '756585727382392843'
+      associationModuleId: '756585727382392841'
+      associationDetailModuleId:
+      associationModuleCode: lianxiren
+      associationModuleName: 联系人
+      sequence: 7
+      checked: false
+      manyLink: false
+      linked: false
