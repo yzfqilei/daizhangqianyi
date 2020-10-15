@@ -25,7 +25,6 @@ a = RestClient(rooturl)
 @pytest.mark.usefixtures("is_login","preset_module_data")
 @allure.feature("模块菜单表头用例")
 class Test_module_title():
-
     @allure.story("设置’联系人‘查询字段")
     def test001_set_contact_search(self):
         func_name = sys._getframe().f_code.co_name
@@ -104,5 +103,71 @@ class Test_module_title():
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
         a = RestClient(rooturl)
         res = a.request(url=csurl, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    @allure.story("创建筛选：数量1等于数量2")
+    def test010_create_screen_equal(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+        #获取筛选id
+        dict = json.loads(res.text)
+        data = dict['data']
+        equal_id = data['id']
+        wd.write_yaml(yaml_path, 'variable', 'equal_id', equal_id)
+
+    @allure.story("筛选：数量1等于数量2，展示筛选结果")
+    def test011_screen_result(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    @allure.story("删除筛选：数量1等于数量2")
+    def test012_del_equal(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        url = csurl + rd.load_yaml_value(yaml_path,'variable','equal_id')
+        res = a.request(url=url, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    @allure.story("创建筛选：数量1不等于数量2")
+    def test013_create_screen_neq(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+        #获取筛选id
+        dict = json.loads(res.text)
+        data = dict['data']
+        neq_id = data['id']
+        wd.write_yaml(yaml_path, 'variable', 'neq_id', neq_id)
+
+    @allure.story("筛选：数量1不等于数量2，展示筛选结果")
+    def test014_screen_result(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        res = a.request(url=csurl, method=method, json=yamlvalue['data'], headers=headers)
+        check_codes_msg(res, yamlvalue, mainkey)
+        check_datas(res, yamlvalue)
+
+    @allure.story("删除筛选：数量1不等于数量2")
+    def test015_del_neq(self):
+        func_name = sys._getframe().f_code.co_name
+        csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('test_module_title.yaml', func_name)
+        a = RestClient(rooturl)
+        url = csurl + rd.load_yaml_value(yaml_path, 'variable', 'neq_id')
+        res = a.request(url=url, method=method, json=yamlvalue['data'], headers=headers)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
