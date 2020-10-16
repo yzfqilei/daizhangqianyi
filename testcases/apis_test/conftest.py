@@ -70,7 +70,7 @@ def user_moduleid(is_login):
     return json.loads(r.text)['data'][0]['id']
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def insert_module_data(is_login):
     """批量插入跟进记录表单数据"""
     module_datas = get_datas('module_datas.yaml')
@@ -102,7 +102,7 @@ def query_sysuser(is_login):
     return sysuser_list
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def preset_module_data(is_login):
     """批量插入跟进记录表单数据"""
     module_datas = get_datas('preset_data.yaml')
