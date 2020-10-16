@@ -20,25 +20,26 @@
     code: 0
     msg:
     data:
-      componentName: "测试卡片"
+      dataModuleName: 客户
+      dataModuleCode: customer
+      relatedDataModuleId:
+      relatedDataModuleName:
+      relatedDataModuleCode: ''
+      componentName: 测试卡片
+      pageResult:
       componentType: 1
       conditionType: 1
       conditions: []
-      dataModuleCode: "customer"
-      dataModuleName: "客户"
-      pageResult:
-      relatedDataModuleCode: ""
-      relatedDataModuleId:
-      relatedDataModuleName:
-      statisticsData:
-      - value: 1
       statisticsFields:
-      - moduleFieldCode: ""
+      - moduleFieldCode: ''
         moduleCode: customer
         moduleFieldName: 客户
         aggregator: count
       statisticsLevelSort: 0
+      relatedForeignField: ''
       statisticsMeasure: []
+      statisticsData:
+      - value: 2
 
 首页删除卡片:
   method: DELETE
@@ -72,19 +73,19 @@
     code: 0
     msg:
     data:
-      componentName: "客户"
+      componentName: 客户
       componentType: 2
       conditionType: 0
       conditions: []
-      dataModuleCode: "customer"
-      dataModuleName: "客户"
+      dataModuleCode: customer
+      dataModuleName: 客户
       from:
       panelId:
       panelLocation:
-      relatedDataModuleCode: ""
+      relatedDataModuleCode: ''
       relatedDataModuleId:
       relatedDataModuleName:
-      relatedForeignField: ""
+      relatedForeignField: ''
       statisticsFields: []
       statisticsLevelSort: 0
       statisticsMeasure: []

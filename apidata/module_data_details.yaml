@@ -248,8 +248,6 @@
       list:
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _modifyUser:
         _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '5'
@@ -271,8 +269,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           adminDivision:
@@ -290,8 +286,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -312,19 +306,15 @@
           _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _modifyUser: '756574317326995456'
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -343,8 +333,6 @@
           SHOW_INFO: 系统管理员
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _modifyUser:
         _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '10'
@@ -366,8 +354,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           adminDivision:
@@ -385,8 +371,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -407,19 +391,15 @@
           _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _modifyUser: '756574317326995456'
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -438,8 +418,6 @@
           SHOW_INFO: 系统管理员
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _modifyUser:
         _principal: 系统管理员
         bianhao1: '10'
         bianhao2: '5'
@@ -461,8 +439,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           adminDivision:
@@ -480,8 +456,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -502,19 +476,15 @@
           _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _modifyUser: '756574317326995456'
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -894,8 +864,6 @@
     data:
       _createDept: '756585370497454080'
       _createUser: '756574317326995456'
-      _modifyDept:
-      _modifyUser:
       _principal: '756574317326995456'
       bianhao1: '10'
       bianhao2: '5'
@@ -1207,8 +1175,6 @@
     code: 0
     msg:
     data:
-      _modifyDept: '756585370497454080'
-      _modifyUser: '756574317326995456'
       _principal: '756574317326995456'
       bianhao1: '10'
       bianhao2: '5'
@@ -1376,8 +1342,6 @@
     data:
       _createDept: '756585370497454080'
       _createUser: '756574317326995456'
-      _modifyDept: '756585370497454080'
-      _modifyUser: '756574317326995456'
       _principal: '758028041194934272'
       bianhao1: '10'
       bianhao2: '5'
@@ -1399,8 +1363,6 @@
         _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptIds: '756585370497454080'
@@ -1422,8 +1384,6 @@
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
         _details: []
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         adminDivision:
@@ -1441,8 +1401,6 @@
         _id: '758028041194934272'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptIds: '756585370497454080'
@@ -1461,30 +1419,24 @@
         _id: '756585370497454080'
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
-        _modifyUser: '756574317326995456'
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptName: api测试
         parentId: '0'
-        _modifyDept: '756585370497454080'
         SHOW_INFO: api测试
       _createDeptReference:
         _id: '756585370497454080'
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
-        _modifyUser: '756574317326995456'
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptName: api测试
         parentId: '0'
-        _modifyDept: '756585370497454080'
         SHOW_INFO: api测试
       _createUserReference:
         _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptIds: '756585370497454080'
@@ -1568,8 +1520,6 @@
         _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptIds: '756585370497454080'
@@ -1641,8 +1591,6 @@
         parentId: '0'
         SHOW_INFO: api测试
       _createUserReference:
-        _modifyDept:
-        _modifyUser:
         _principal: '756574317326995456'
         _tenantId: '10235'
         deptIds: '756585370497454080'
@@ -1681,8 +1629,6 @@
       list:
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept: api测试
-        _modifyUser: 系统管理员
         _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '5'
@@ -1704,8 +1650,6 @@
         _principalReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1725,18 +1669,14 @@
         _createDeptReference:
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _modifyUser: '756574317326995456'
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1756,8 +1696,6 @@
         _modifyUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1778,8 +1716,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           adminDivision:
@@ -1803,8 +1739,6 @@
           SHOW_INFO: api测试
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept: api测试
-        _modifyUser: 系统管理员
         _principal: 测试人员
         bianhao1: '10'
         bianhao2: '5'
@@ -1827,8 +1761,6 @@
         _principalReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1854,8 +1786,6 @@
         _createUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1875,8 +1805,6 @@
         _modifyUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           deptIds: '756585370497454080'
@@ -1897,8 +1825,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
           adminDivision:
