@@ -1,6 +1,6 @@
 #存储参数
 variable:
-  mapping_id: '765507379679858688'
+  mapping_id: '768074224807055360'
 
 #映射用例
 test001_create_mapping:
