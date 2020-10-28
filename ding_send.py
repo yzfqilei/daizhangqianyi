@@ -49,7 +49,7 @@ def DingTalkSend():
     print(d)
     f.close()
     retries_run = d.get('launch_retries_run')  # 运行总数
-    print('运行总数:{}'.format(retries_run))
+    print('运行总数：{}'.format(retries_run))
     status_passed = d.get('launch_status_passed')  # 通过数量
     print('通过数量：{}'.format(status_passed))
     status_failed = d.get('launch_status_failed')  # 不通过数量
@@ -68,10 +68,10 @@ def DingTalkSend():
     con = {"msgtype": "text",
            "text": {
                "content": "CRM接口自动化脚本执行完成。"
-                          "\n测试概述:"
-                          "\n运行总数:" + retries_run +
-                          "\n通过数量:" + status_passed +
-                          "\n失败数量:" + status_failed +
+                          "\n测试概述："
+                          "\n运行总数：" + retries_run +
+                          "\n通过数量：" + status_passed +
+                          "\n失败数量：" + status_failed +
                           "\n通过率：" + pass_percent +
                           "\n执行时间：" + run_time_for +
                           "\n构建地址：\n" + job_url +
