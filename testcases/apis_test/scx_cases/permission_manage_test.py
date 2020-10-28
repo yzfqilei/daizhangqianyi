@@ -257,8 +257,8 @@ class TestPermissionManage(object):
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("permission_manage.yaml", "角色添加人员")
         data = {"roleId": "%s" % getattr(result, 'ceshi_role_id'), "userIds": ["%s" % getattr(result, 'ceshi_user_id')]}
         r = a.request(csurl, method, json=data, headers=head)
-        convert_json_to_yaml(r.text, yaml_path, mainkey)
-        # check_codes_msg(r, yamlvalue, mainkey)
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
+        check_codes_msg(r, yamlvalue, mainkey)
         # check_datas(r, yamlvalue)
 
     @allure.story("角色修改人员--测试人员修改为系统管理员角色")
