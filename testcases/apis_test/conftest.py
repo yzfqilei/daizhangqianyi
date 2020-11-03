@@ -3,12 +3,14 @@
 import json
 import pytest
 import os
+import arrow
+from common import mysql_operate
 from common.read_data import ReadFileData
 import requests
 from common.write_data import WriteFileData
 from common.get_root_url import get_root_urls
 from core.rest_client import RestClient
-from core.get_module_datas import get_datas
+from core.get_module_datas import get_datas, get_pre_data
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
@@ -73,7 +75,7 @@ def user_moduleid(is_login):
 @pytest.fixture(scope='class')
 def insert_module_data(is_login):
     """批量插入跟进记录表单数据"""
-    module_datas = get_datas('module_datas.yaml')
+    module_datas = get_pre_data('module_datas.yaml', 'data')
     rooturl = get_root_urls()
     csurl = '/apis/crm-web/module/genjinjilu/insert'
     a = RestClient(rooturl)
@@ -105,7 +107,7 @@ def query_sysuser(is_login):
 @pytest.fixture(scope='class')
 def preset_module_data(is_login):
     """批量插入跟进记录表单数据"""
-    module_datas = get_datas('preset_data.yaml')
+    module_datas = get_pre_data('preset_data.yaml', 'data')
     rooturl = get_root_urls()
     csurl = '/apis/crm-web/module/genjinjilu/insert'
     a = RestClient(rooturl)
@@ -119,6 +121,34 @@ def preset_module_data(is_login):
     for de_id in dataid_list:
         a.request(csurl_de + de_id, 'DELETE', headers=head)
     print('delete success')
+
+
+@pytest.fixture(scope='class')
+def pre_company_data():
+    """前置插入企业看板（客户数量和员工价值）数据"""
+    utc = arrow.now()
+    lastnt = utc.shift(months=-1)  # 取上个月
+    ym = int(lastnt.format("YYYYMM"))
+    ntime = utc.format("YYYY-MM-DD HH:mm:ss")
+    cus_datas = get_pre_data("pre_qy_datas.yaml", "customer_num")
+    personel_data = get_pre_data("pre_qy_datas.yaml", "personel_value")
+    sql_cus = cus_datas % (ym, ym, ym, ntime, ym, ntime, ntime)
+    sql_per = personel_data % (ym, ym)
+    sql_list_cus = sql_cus.split(';')
+    sql_list_per = sql_per.split(';')
+    all_sql_list = sql_list_cus + sql_list_per
+    db = mysql_operate.MysqlDb("yzf_crm_bi")
+    for sql in all_sql_list:
+        if sql:
+            db.execute_db(sql)
+    yield
+    delete_cus_datas = get_pre_data("pre_qy_datas.yaml", "delete_customer_num")
+    delete_per_datas = get_pre_data("pre_qy_datas.yaml", "delete_personel_value")
+    update_qz_datas = get_pre_data("pre_qy_datas.yaml", "update_qz")
+    db.execute_db(delete_cus_datas)  # 删除预置客户数量数据
+    db.execute_db(delete_per_datas)  # 删除预置员工价值数据
+    db.execute_db(update_qz_datas) # 还原权重比重为默认值
+
 
 if __name__ == '__main__':
     is_login()

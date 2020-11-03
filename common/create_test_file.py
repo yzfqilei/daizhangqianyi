@@ -5,7 +5,7 @@ import os
 from common.path_conf import TEST_PATH, DATA_DIR
 from common.read_data import ReadFileData
 from common.case_template import Case_Templates
-from common.utils import create_file,write_file
+from common.utils import create_file, write_file
 
 
 def generate_case(feature, yaml_name):
@@ -23,20 +23,25 @@ def generate_case(feature, yaml_name):
     # mkdir(feature_path)
 
     # 读取yaml文件,写入用例方法内容
-    rd = ReadFileData()
-    yaml_all = rd.load_yaml(os.path.join(DATA_DIR, yaml_name))
-    all_api_items = yaml_all.items()
-    n = 0
-    for k, v in all_api_items:
-        n = n + 1
-        yaml_title = k
-        method = v['method']
-        yaml_data = v['data']
-        num = str(n).zfill(2)
-        commoncase = ct.case_templates_common(yaml_title, method, yaml_data, num)
-        write_file(test_path, commoncase)
-    print('文件生成完毕')
+    try:
+        rd = ReadFileData()
+        yaml_all = rd.load_yaml(os.path.join(DATA_DIR, yaml_name))
+        all_api_items = yaml_all.items()
+        n = 0
+        for k, v in all_api_items:
+            n = n + 1
+            yaml_title = k
+            method = v['method']
+            yaml_data = v['data']
+            num = str(n).zfill(2)
+            commoncase = ct.case_templates_common(yaml_title, method, yaml_data, num)
+            write_file(test_path, commoncase)
+        print('文件生成完毕')
+    except Exception as e:
+        print(e)
+        os.remove(test_path)  # 如果有异常，删除之前创建的文件
+        print('文件生成失败，已自动删除')
 
 
 if __name__ == '__main__':
-    generate_case('模块管理', 'personal_center.yaml')
+    generate_case('模块管理', 'company_datas.yaml')

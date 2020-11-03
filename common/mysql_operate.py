@@ -18,9 +18,10 @@ DB_CONF = {
 
 class MysqlDb():
 
-    def __init__(self, db_conf=DB_CONF):
+    def __init__(self, db1="yzf_crm"):
+        DB_CONF['database'] = db1
         # 通过字典拆包传递配置信息，建立数据库连接
-        self.conn = pymysql.connect(**db_conf, autocommit=True)
+        self.conn = pymysql.connect(**DB_CONF, autocommit=True)
         # 通过 cursor() 创建游标对象，并让查询结果以字典格式输出
         self.cur = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
 
@@ -55,7 +56,6 @@ class MysqlDb():
             self.conn.rollback()
 
 
-db = MysqlDb(DB_CONF)
-
 if __name__ == '__main__':
+    db = MysqlDb("yzf_crm_bi")
     print(db.select_db("select *from crm_company"))
