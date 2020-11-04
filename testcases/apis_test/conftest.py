@@ -4,7 +4,7 @@ import json
 import pytest
 import os
 import arrow
-from common import mysql_operate
+from common.mysql_operate import db
 from common.read_data import ReadFileData
 import requests
 from common.write_data import WriteFileData
@@ -137,7 +137,6 @@ def pre_company_data():
     sql_list_cus = sql_cus.split(';')
     sql_list_per = sql_per.split(';')
     all_sql_list = sql_list_cus + sql_list_per
-    db = mysql_operate.MysqlDb("yzf_crm_bi")
     for sql in all_sql_list:
         if sql:
             db.execute_db(sql)
