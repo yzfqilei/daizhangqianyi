@@ -58,9 +58,8 @@ def DingTalkSend():
     print('通过率：{}'.format(pass_percent))
     run_time = d.get('launch_time_duration')  # 执行时间
     s = str(run_time)[:-3]
-    ms = str(run_time)[-3:]
-    run_time_for = '{}s{}ms'.format(s, ms)
-    print('执行时间：{}s{}ms'.format(s, ms))
+    run_time_for = '{}s'.format(s)
+    print('执行时间：{}s'.format(s))
 
     # 钉钉推送
     webhook = data.load_ini(ini_pt + 'setting.ini')['dingding']['webhook']
