@@ -54,30 +54,37 @@ def DingTalkSend():
     print('通过数量：{}'.format(status_passed))
     status_failed = d.get('launch_status_failed')  # 不通过数量
     print('通过数量：{}'.format(status_failed))
-    pass_percent = '{:.2%}'.format(int(status_passed) / (int(status_passed) + int(status_failed)))  # 通过率
+    pass_percent = '{:.2%}'.format(int(status_passed) / int(retries_run))  # 通过率
     print('通过率：{}'.format(pass_percent))
     run_time = d.get('launch_time_duration')  # 执行时间
-    ms = str(run_time)[-3:]
     s = str(run_time)[:-3]
+    ms = str(run_time)[-3:]
     run_time_for = '{}s{}ms'.format(s, ms)
     print('执行时间：{}s{}ms'.format(s, ms))
 
     # 钉钉推送
     webhook = data.load_ini(ini_pt + 'setting.ini')['dingding']['webhook']
     url = webhook  # webhook
-    con = {"msgtype": "text",
-           "text": {
-               "content": "CRM接口自动化脚本执行完成。"
-                          "\n测试概述："
-                          "\n运行总数：" + retries_run +
-                          "\n通过数量：" + status_passed +
-                          "\n失败数量：" + status_failed +
-                          "\n通过率：" + pass_percent +
-                          "\n执行时间：" + run_time_for +
-                          "\n构建地址：\n" + job_url +
-                          "\n报告地址：\n" + report_url
-           }
-           }
+    if retries_run:
+        con = {"msgtype": "text",
+               "text": {
+                   "content": "CRM接口自动化脚本执行完成。"
+                              "\n测试概述："
+                              "\n运行总数：" + retries_run +
+                              "\n通过数量：" + status_passed +
+                              "\n失败数量：" + status_failed +
+                              "\n通过率：" + pass_percent +
+                              "\n执行时间：" + run_time_for +
+                              "\n构建地址：\n" + job_url +
+                              "\n报告地址：\n" + report_url
+               }
+               }
+    else:
+        con = {"msgtype": "text",
+               "text": {
+                   "content": "自动化执行报错，无用例执行，请检查。"
+               }
+               }
     urllib3.disable_warnings()
     http = urllib3.PoolManager()
     jd = json.dumps(con)
