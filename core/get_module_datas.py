@@ -15,5 +15,14 @@ def get_datas(filename):
     return yamlvalue
 
 
+def get_pre_data(filename, dataname):
+    """取模块预置datas方法"""
+    datass = ReadFileData()
+    yaml_path = os.path.join(path_conf.BASE_DIR, "api_pre_data", filename)
+    yaml_data = datass.load_yaml(yaml_path)
+    yamlvalue = yaml_data[dataname]
+    return yamlvalue
+
+
 if __name__ == '__main__':
-    print(get_datas('module_datas.yaml'))
+    print(get_pre_data('pre_qy_datas.yaml', "personel_value"))
