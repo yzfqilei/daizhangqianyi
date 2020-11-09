@@ -292,7 +292,7 @@
       dataModuleName:
       id:
       pageResult:
-      relatedDataModuleCode:
+      relatedDataModuleCode: ""
       relatedDataModuleId:
       relatedDataModuleName:
       relatedForeignField:

@@ -49,9 +49,8 @@ class TestStatistics(object):
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                     "subjectLevel": ""}], "conditionType": 1, "conditions": {}, "from": 0,
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'huanxingid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
@@ -67,9 +66,8 @@ class TestStatistics(object):
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                     "subjectLevel": ""}], "conditionType": 1, "conditions": {}, "from": 0,
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -107,13 +105,12 @@ class TestStatistics(object):
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
                 "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
-                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
+                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "fieldsOrderType": 0, "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": 0}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                     "subjectLevel": 0}], "conditionType": 1, "conditions": {}, "from": 0,
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'zhuzhuangid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
@@ -126,13 +123,12 @@ class TestStatistics(object):
                 "dataModuleCode": "sysUser",
                 "relatedDataModuleCode": "", "componentType": 4, "statisticsLevelSort": 1,
                 "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
-                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
+                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "fieldsOrderType": 0, "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": 0}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                     "subjectLevel": 0}], "conditionType": 1, "conditions": {}, "from": 0,
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
@@ -158,16 +154,15 @@ class TestStatistics(object):
     def test12(self, user_moduleid):
         """新增线性图"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "新增线性图")
-        data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
-                "dataModuleCode": "sysUser",
-                "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "username", "sysUser", 1],
-                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
+        data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图", "dataModuleCode": "sysUser",
+                 "relatedDataModuleCode": "", "componentType": 5, "statisticsLevelSort": 1,
+                 "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                 "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "fieldsOrderType": 0, "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
-                "statisticsMeasure": [
-                    {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                 "statisticsMeasure": [
+                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
+                      "subjectLevel": 0}], "conditionType": 1, "conditions": {}, "from": 0,
+                 "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         setattr(result, 'xianxingid', json.loads(r.text)['data'])
         check_codes_msg(r, yamlvalue, mainkey)
@@ -178,14 +173,14 @@ class TestStatistics(object):
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("statistics.yaml", "线性图预览")
         data = {"statisticsMenuId": "%s" % getattr(result, 'menuid'), "componentName": "线性图",
                 "dataModuleCode": "sysUser",
-                "componentType": 5, "statisticsMeasure0": ["人员.用户名", "用户名", "truename", "sysUser", 1],
-                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "statisticsFields": [
+                "relatedDataModuleCode": "", "componentType": 5, "statisticsLevelSort": 1,
+                "statisticsMeasure1": ["人员.用户名", "用户名", "username", "sysUser", 1],
+                "fields": ["人员.总数,总数,sysUser,人员,sysUser"], "fieldsOrderType": 0, "statisticsFields": [
                 {"aggregator": "count", "moduleFieldCode": "", "moduleFieldName": "", "moduleCode": "sysUser"}],
                 "statisticsMeasure": [
                     {"moduleCode": "sysUser", "moduleFieldName": "用户名", "moduleFieldCode": "username", "fieldType": 1,
-                     "subjectLevel": ""}], "conditionType": 1, "conditions": [], "from": 0,
-                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "panelLocation": "",
-                "id": ""}
+                     "subjectLevel": 0}], "conditionType": 1, "conditions": {}, "from": 0,
+                "dataModuleId": "%s" % user_moduleid, "relatedDataModuleId": "", "panelId": "", "layout": 0, "id": ""}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
