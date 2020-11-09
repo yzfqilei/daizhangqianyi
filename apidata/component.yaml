@@ -12,7 +12,7 @@
 
 首页查看卡片:
   method: POST
-  route: /apis/crm-web/statistics/component/exeStatistics
+  route: /apis/crm-web/statistics/component/panelType/1/panelId/
   data:
   headers: {Content-Type: application/json}
   expectcode: 200
@@ -28,7 +28,7 @@
       componentName: 测试卡片
       pageResult:
       componentType: 1
-      conditionType: 1
+      conditionType: 0
       conditions: []
       statisticsFields:
       - moduleFieldCode: ''

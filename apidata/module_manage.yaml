@@ -1031,7 +1031,6 @@
       layout: 0
       required: false
       repeated: false
-      sequence: 16
       extendJson:
         default: ''
         length: 18

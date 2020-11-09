@@ -47,10 +47,9 @@ class TestPanel(object):
     def test03(self, customer_moduleid):
         """首页新增卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页新增卡片")
-        data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "panelLocation": 0,
-                "componentType": 1,
-                "componentName": "测试卡片", "conditionType": 1, "dataModuleName": "客户", "dataModuleCode": "customer",
-                "dataModuleId": "%s" % customer_moduleid, "conditions": [],
+        data = {"from": 1, "id": 0, "panelId": "%s" % getattr(result, 'panelid'), "componentType": 1,
+                "componentName": "测试卡片", "dataModuleName": "客户", "dataModuleCode": "customer",
+                "dataModuleId": "%s" % customer_moduleid,
                 "statisticsFields": [{"aggregator": "count", "moduleFieldCode": ""}]}
         r = a.request(csurl, method, json=data, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
@@ -60,9 +59,7 @@ class TestPanel(object):
     def test04(self):
         """首页查看卡片"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("component.yaml", "首页查看卡片")
-        data = {"componentId": "%s" % getattr(result, 'component_id_kp'), "from": 1,
-                "panelId": "%s" % getattr(result, 'panelid')}
-        r = a.request(csurl, method, json=data, headers=head)
+        r = a.request(csurl + getattr(result, 'panelid'), method, headers=head)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 
