@@ -1,7 +1,7 @@
 #存储参数
 variable:
-  equal_id: '768468188802453504'
-  neq_id: '768468191151263744'
+  equal_id: '774345251459567616'
+  neq_id: '774345254152310784'
 
 #菜单表头测试用例
 test001_set_contact_search:
@@ -49,8 +49,8 @@ test003_search_contact_exist:
   expectresult:
     code: 0
     msg:
-    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '3', bianhao2: '1', diqu: ['140000', '140300', '140302'], fujian: [], genjinleixing: 其他, genjinshuoming: 谈话, jiage: '100', lianxiren: 孙三, shoujihao: '13833333333', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员,
-            username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}, _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_id: '756574317326995456', _createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '3', bianhao2: '1', diqu: ['140000', '140300', '140302'], fujian: [], genjinleixing: 其他, genjinshuoming: 谈话, jiage: '100', lianxiren: 孙三, shoujihao: '13833333333', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员},
+          _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_id: '756574317326995456', _createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
 
 test004_set_phone_search:
   method: POST
@@ -93,8 +93,8 @@ test006_search_phone_exist:
   expectresult:
     code: 0
     msg:
-    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '1', bianhao2: '3', diqu: ['110000', '110100', '110101'], fujian: [], genjinleixing: 现场拜访, genjinshuoming: 刚接触, jiage: '1', lianxiren: 赵一, shoujihao: '13811111111', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员,
-            username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}, _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '1', bianhao2: '3', diqu: ['110000', '110100', '110101'], fujian: [], genjinleixing: 现场拜访, genjinshuoming: 刚接触, jiage: '1', lianxiren: 赵一, shoujihao: '13811111111', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员},
+          _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
 
 test007_set_number1_search:
   method: POST
@@ -137,8 +137,8 @@ test009_search_number1_exist:
   expectresult:
     code: 0
     msg:
-    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '1', bianhao2: '3', diqu: ['110000', '110100', '110101'], fujian: [], genjinleixing: 现场拜访, genjinshuoming: 刚接触, jiage: '1', lianxiren: 赵一, shoujihao: '13811111111', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员,
-            username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}, _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
+    data: {totalCount: 1, pageSize: 10, totalPage: 1, currPage: 1, list: [{_createDept: api测试, _createUser: 系统管理员, _principal: 系统管理员, bianhao1: '1', bianhao2: '3', diqu: ['110000', '110100', '110101'], fujian: [], genjinleixing: 现场拜访, genjinshuoming: 刚接触, jiage: '1', lianxiren: 赵一, shoujihao: '13811111111', suoshukehu: 测试用户, suoshukehuReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _details: [], _principal: '756574317326995456', _tenantId: '10235', adminDivision: ['110000', '110100', '110101'], customerName: 测试用户, status: 正式客户, syncToDz: 是, taxpayerCode: '151241245621235', taxpayerType: 增值税一般纳税人, SHOW_INFO: 测试用户}, _principalReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员},
+          _createDeptReference: {_createDept: '756585380370845696', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptName: api测试, parentId: '0', _modifyDept: '756585370497454080', SHOW_INFO: api测试}, _createUserReference: {_createDept: '756585370497454080', _createUser: '756574317326995456', _principal: '756574317326995456', _tenantId: '10235', deptIds: '756585370497454080', identity: 主管, phone: '13025414025', roleIds: ['756585370497454081'], sex: 女, status: 正常, truename: 系统管理员, username: henacs3, lianxiren: 测试, superAdmin: '1', SHOW_INFO: 系统管理员}}]}
 
 test010_create_screen_equal:
   method: POST
@@ -149,7 +149,7 @@ test010_create_screen_equal:
   expectresult:
     code: 0
     msg:
-    data: {filterName: 数量1等于数量2, conditionType: 1, filterFields: [{fieldId: '765171381825572864', fieldCode: bianhao1, fieldType: 3, operator: '=', compareType: 2, compareFieldCode: bianhao2, field: {tenantId: '10235', moduleId: '756585727382392842', name: 数量1, code: bianhao1, type: 0, componentId: 3, layout: 0, required: false, repeated: false, master: 0, sequence: 23, extendJson: {default: {type: 0}, length: 18, type: 0, digit: 0}, deleted: false}}]}
+    data: {filterName: 数量1等于数量2, conditionType: 1, fields: [{fieldCode: bianhao1, fieldType: 3, operator: '=', compareType: 2, compareFieldCode: bianhao2, field: {tenantId: '10235', moduleId: '756585727382392842', name: 数量1, code: bianhao1, type: 0, componentId: 3, layout: 0, master: 0, sequence: 23, deleted: false}}]}
 
 test011_screen_result:
   method: POST
@@ -195,7 +195,7 @@ test013_create_screen_neq:
   expectresult:
     code: 0
     msg:
-    data: {filterName: 数量1不等于数量2, conditionType: 1, filterFields: [{fieldId: '765171381825572864', fieldCode: bianhao1, fieldType: 3, operator: <>, compareType: 2, compareFieldCode: bianhao2, field: {tenantId: '10235', moduleId: '756585727382392842', name: 数量1, code: bianhao1, type: 0, componentId: 3, layout: 0, required: false, repeated: false, master: 0, sequence: 23, extendJson: {default: {type: 0}, length: 18, type: 0, digit: 0}, deleted: false}}]}
+    data: {filterName: 数量1不等于数量2, conditionType: 1, fields: [{fieldCode: bianhao1, fieldType: 3, operator: <>, compareType: 2}]}
 
 test014_screen_result:
   method: POST
