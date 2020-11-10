@@ -1,7 +1,7 @@
 #存储参数
 variable:
-  equal_id: '774345251459567616'
-  neq_id: '774345254152310784'
+  equal_id: '775663658700247040'
+  neq_id: '775663661514625024'
 
 #菜单表头测试用例
 test001_set_contact_search:
@@ -149,7 +149,7 @@ test010_create_screen_equal:
   expectresult:
     code: 0
     msg:
-    data: {filterName: 数量1等于数量2, conditionType: 1, fields: [{fieldCode: bianhao1, fieldType: 3, operator: '=', compareType: 2, compareFieldCode: bianhao2, field: {tenantId: '10235', moduleId: '756585727382392842', name: 数量1, code: bianhao1, type: 0, componentId: 3, layout: 0, master: 0, sequence: 23, deleted: false}}]}
+    data: {filterName: 数量1等于数量2, conditionType: 1}
 
 test011_screen_result:
   method: POST
@@ -195,7 +195,7 @@ test013_create_screen_neq:
   expectresult:
     code: 0
     msg:
-    data: {filterName: 数量1不等于数量2, conditionType: 1, fields: [{fieldCode: bianhao1, fieldType: 3, operator: <>, compareType: 2}]}
+    data: {filterName: 数量1不等于数量2, conditionType: 1}
 
 test014_screen_result:
   method: POST
