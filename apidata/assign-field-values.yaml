@@ -315,3 +315,81 @@
           conditions: []
           logicOperator: ''
         logicOperator: OR
+指定字段值触发（开票申请新增 -- 指定值12）:
+  method: POST
+  route:
+  - /apis/crm-web/module/kaipiaoshenqing/insert
+  - /apis/crm-web/module/kaipiaoshenqing/list
+  - /apis/crm-web/module/kaipiaoshenqing/
+  data:
+    dingdanmingcheng:
+    fuwuxiangmu:
+    kaipiaojine: ''
+    kaipiaoqijian: '2020-12-01 18:18:56'
+    kaipiaozhuangtai: 已开票
+    kehumingcheng: '756597488315666432'
+    liuchengzhidingrenyuan: []
+    zhidingrenyuan1:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyTime:
+        _modifyUser:
+        _principal: 系统管理员
+        dingdanmingcheng:
+        fuwuxiangmu:
+        kaipiaojine: '12'
+        kaipiaozhuangtai: 已开票
+        kehumingcheng: 测试用户
+        liuchengzhidingrenyuan: []
+        zhidingrenyuan1:
+指定字段值不触发（开票申请新增 -- 指定值12）:
+  method: POST
+  route:
+  - /apis/crm-web/module/kaipiaoshenqing/insert
+  - /apis/crm-web/module/kaipiaoshenqing/list
+  - /apis/crm-web/module/kaipiaoshenqing/
+  data:
+    dingdanmingcheng:
+    fuwuxiangmu:
+    kaipiaojine: ''
+    kaipiaoqijian: '2020-12-01 18:18:56'
+    kaipiaozhuangtai: 未开票
+    kehumingcheng: '756597488315666432'
+    liuchengzhidingrenyuan: []
+    zhidingrenyuan1:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+      totalCount: 1
+      pageSize: 10
+      totalPage: 1
+      currPage: 1
+      list:
+      - _createDept: api测试
+        _createUser: 系统管理员
+        _modifyDept:
+        _modifyTime:
+        _modifyUser:
+        _principal: 系统管理员
+        dingdanmingcheng:
+        fuwuxiangmu:
+        kaipiaojine: ''
+        kaipiaozhuangtai: 未开票
+        kehumingcheng: 测试用户
+        liuchengzhidingrenyuan: []
+        zhidingrenyuan1:
