@@ -202,27 +202,26 @@
       list:
       - userId: '756574317326995456'
         userName: 系统管理员
-        evaDate: 202010
-        totalScore: '1.95'
+        totalScore: 0.15
         userRank: 1
         rankChange: 0
         detailList:
         - dimension: 2
           demensionDesc: 平均账套复杂度
-          maxValue: '60.00'
-          minValue: '40.00'
-          avgValue: '50.00'
-          userValue: '60.00'
+          maxValue: '0.00'
+          minValue: '0.00'
+          avgValue: '0.00'
+          userValue: '0.00'
           userRank: '1'
-          userScore: '12.00'
+          userScore: 0.0
         - dimension: 1
           demensionDesc: 处理账套数
-          maxValue: '2.00'
+          maxValue: '1.00'
           minValue: '1.00'
-          avgValue: '1.50'
+          avgValue: '1.00'
           userValue: '1.00'
-          userRank: '2'
-          userScore: '0.20'
+          userRank: '1'
+          userScore: 0.2
         - dimension: 3
           demensionDesc: 员工薪资区间
           maxValue:
@@ -230,7 +229,7 @@
           avgValue:
           userValue:
           userRank: '1'
-          userScore: '0.00'
+          userScore: 0.0
         - dimension: 5
           demensionDesc: 是否主管会计
           maxValue:
@@ -238,7 +237,7 @@
           avgValue:
           userValue: 是
           userRank:
-          userScore: '0.75'
+          userScore: 0.75
         - dimension: 4
           demensionDesc: 员工业务水平
           maxValue: '0.50'
@@ -246,30 +245,29 @@
           avgValue: '0.50'
           userValue: '0.50'
           userRank: '1'
-          userScore: '0.00'
+          userScore: 0.0
       - userId: '758028041194934272'
         userName: 测试人员
-        evaDate: 202010
-        totalScore: '1.08'
+        totalScore: 0.0
         userRank: 2
         rankChange: 0
         detailList:
         - dimension: 2
           demensionDesc: 平均账套复杂度
-          maxValue: '60.00'
-          minValue: '40.00'
-          avgValue: '50.00'
-          userValue: '40.00'
-          userRank: '2'
-          userScore: '8.00'
+          maxValue: '0.00'
+          minValue: '0.00'
+          avgValue: '0.00'
+          userValue: '0.00'
+          userRank: '1'
+          userScore: 0.0
         - dimension: 1
           demensionDesc: 处理账套数
-          maxValue: '2.00'
+          maxValue: '1.00'
           minValue: '1.00'
-          avgValue: '1.50'
-          userValue: '2.00'
-          userRank: '1'
-          userScore: '0.40'
+          avgValue: '1.00'
+          userValue: '0.00'
+          userRank: '2'
+          userScore: 0.0
         - dimension: 3
           demensionDesc: 员工薪资区间
           maxValue:
@@ -277,7 +275,7 @@
           avgValue:
           userValue:
           userRank: '1'
-          userScore: '0.00'
+          userScore: 0.0
         - dimension: 5
           demensionDesc: 是否主管会计
           maxValue:
@@ -285,12 +283,12 @@
           avgValue:
           userValue: 否
           userRank:
-          userScore: '0.30'
+          userScore: 0.3
         - dimension: 4
           demensionDesc: 员工业务水平
           maxValue: '0.50'
           minValue: '0.50'
           avgValue: '0.50'
-          userValue: '0.50'
+          userValue: '0.00'
           userRank: '1'
-          userScore: '0.00'
+          userScore: 0.0
