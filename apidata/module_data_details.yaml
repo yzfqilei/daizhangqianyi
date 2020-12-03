@@ -282,7 +282,6 @@
           syncToDz: 是
           taxpayerCode: '151241245621235'
           taxpayerType: 增值税一般纳税人
-          _applicant:
           SHOW_INFO: 测试用户
         _principalReference:
           _id: '756574317326995456'
@@ -373,7 +372,6 @@
           syncToDz: 是
           taxpayerCode: '151241245621235'
           taxpayerType: 增值税一般纳税人
-          _applicant:
           SHOW_INFO: 测试用户
         _principalReference:
           _id: '756574317326995456'
@@ -464,7 +462,6 @@
           syncToDz: 是
           taxpayerCode: '151241245621235'
           taxpayerType: 增值税一般纳税人
-          _applicant:
           SHOW_INFO: 测试用户
         _principalReference:
           _id: '756574317326995456'
@@ -1418,7 +1415,6 @@
         syncToDz: 是
         taxpayerCode: '151241245621235'
         taxpayerType: 增值税一般纳税人
-        _applicant:
         SHOW_INFO: 测试用户
       _principalReference:
         _id: '758028041194934272'
@@ -1582,7 +1578,6 @@
         syncToDz: 是
         taxpayerCode: '151241245621235'
         taxpayerType: 增值税一般纳税人
-        _applicant:
         SHOW_INFO: 测试用户
       _principalReference:
         _createDept: '756585370497454080'
@@ -1766,7 +1761,6 @@
           syncToDz: 是
           taxpayerCode: '151241245621235'
           taxpayerType: 增值税一般纳税人
-          _applicant:
           SHOW_INFO: 测试用户
         _modifyDeptReference:
           _createDept: '756585380370845696'
@@ -1881,7 +1875,6 @@
           syncToDz: 是
           taxpayerCode: '151241245621235'
           taxpayerType: 增值税一般纳税人
-          _applicant:
           SHOW_INFO: 测试用户
         _modifyDeptReference:
           _createDept: '756585380370845696'
