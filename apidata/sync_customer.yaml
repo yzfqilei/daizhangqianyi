@@ -123,7 +123,6 @@
         syncToDz: 是
         taxpayerCode: '151241245621235'
         taxpayerType: 增值税一般纳税人
-        _applicant:
         _modifyUserReference:
           _id: '756574317326995456'
           _createDept: '756585370497454080'

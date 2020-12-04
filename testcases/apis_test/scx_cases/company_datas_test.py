@@ -15,6 +15,8 @@ from common.convert import convert_json_to_yaml
 from core.common_params import get_common_params
 from core.checkresult import check_codes_msg, check_datas
 
+#由于大数据没有实时推送每个月数据，该用例暂时搁置
+
 reportpath = path_conf.REPORT_PATH
 wd = WriteFileData()
 result = result_base.ResultBase()
