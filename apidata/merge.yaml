@@ -1,8 +1,11 @@
 #存储参数
 variable:
-  merge_id: '765516362700427264'
+  merge_id: '784493230736674816'
 
-#归集用例
+#存储数据id用来批量清除数据
+ids:
+  order: []
+  huikuanjilu: []
 test001_create_merge:
   method: POST
   route: /apis/crm-web/merge/config
@@ -72,3 +75,114 @@ test007_delete_merge:
     code: 0
     msg:
     data:
+
+insert_order_data:
+  method: POST
+  route: /apis/crm-web/module/order/insert
+  headers: {Content-Type: application/json}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanmingcheng: 测试订单1, chanpinmingcheng: 仅记账, qianyueriqi: '2020-12-02 14:32:27', serviceStart: 2020-12, serviceEnd: 2020-12, serviceCycle: '1', dingdanjine: '0', zengsongyuefen: '', shijiyuepingjunfeiyong: '', shoukuanfangshi: !!null '', shoukuanzhouqi: !!null '', fuwudiqu: [], yihuikuanjine: '', yikaipiaojine: '', beizhu: '', fujian: []}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanmingcheng: 测试订单1}
+
+insert_huikuanjilu_data0:
+  method: POST
+  route: /apis/crm-web/module/huikuanjilu/insert
+  headers: {Content-Type: application/json}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:49:20', huikuanjine: '34', shijihuikuanriqi: '2020-12-02 14:49:20', shijihuikuanjine: '34', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '34'}
+
+insert_huikuanjilu_data1:
+  method: POST
+  route: /apis/crm-web/module/huikuanjilu/insert
+  headers: {Content-Type: application/json}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: '43', shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: '43', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '43'}
+
+insert_huikuanjilu_data2:
+  method: POST
+  route: /apis/crm-web/module/huikuanjilu/insert
+  headers: {Content-Type: application/json}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: '100', shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: '100', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '100'}
+
+test008_add_source_condition:
+  method: POST
+  route: /apis/crm-web/merge/config/condition
+  headers: {Content-Type: application/json}
+  data: {id: '756585731039825921', sourceConditions: {compareType: 1, compareFieldCode: !!null '', module: '', field: !!null '', refField: !!null '', fieldType: !!null '', operator: !!null '', dateUnit: !!null '', value: !!null '', conditions: [{compareType: 1, compareFieldCode: '0000000', module: huikuanjilu, field: shijihuikuanjine, refField: !!null '', fieldType: 3, operator: <, value: '100', conditions: [], logicOperator: !!null ''}], logicOperator: AND}, conditionType: 1}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+test009_add_target_condition:
+  method: POST
+  route: /apis/crm-web/merge/config/condition
+  headers: {Content-Type: application/json}
+  data: {id: '756585731039825921', targetConditions: {compareType: 1, compareFieldCode: !!null '', module: '', field: !!null '', refField: !!null '', fieldType: !!null '', operator: !!null '', dateUnit: !!null '', value: !!null '', conditions: [{compareType: 1, compareFieldCode: !!null '', module: order, field: dingdanmingcheng, refField: !!null '', fieldType: 1, operator: IN, value: 测试订单1, conditions: [], logicOperator: !!null ''}], logicOperator: OR}, conditionType: 2}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+test010_merge_sum:
+  method: POST
+  route: /apis/crm-web/merge/config
+  headers: {Content-Type: application/json}
+  data: {sourceModuleId: '756585727382392839', targetModuleId: '756585727382392835', sourceFieldId: '756585730700087519', targetFieldId: '756585730700087435', referenceFieldId: '756585730700087437', mergeType: 2, targetFieldEditable: 0, executeNow: 1, id: '756585731039825921', mergeTriggerAdd: 1, mergeTriggerDelete: 1, mergeTriggerUpdate: 1}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data: {tenantId: '10235', sourceModuleId: '756585727382392839', sourceModuleCode: huikuanjilu, sourceFieldId: '756585730700087519', sourceFieldCode: shijihuikuanjine}
+
+test011_merge_result:
+  method: POST
+  route: /apis/crm-web/module/order/list
+  headers: {Content-Type: application/json}
+  data: {field: '', order: '', pageSize: 10, pageIndex: 1}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+
+delete_datas:
+  method: DELETE
+  route: /apis/crm-web/module/
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+
+test_012_delete_all_datas:
+  method: GET
+  route:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
