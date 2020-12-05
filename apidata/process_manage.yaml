@@ -1,7 +1,27 @@
+#参数保存
+procInsId:
+
+approval_id:
+
+
+
+
+
+
 #流程管理
 search_process:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
+  data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+
+get_process_data:
+  method: POST
+  route: /apis/crm-workflow/workflow/my/approval
   data:
   headers: {Content-Type: application/json}
   expectcode: 200
@@ -19,6 +39,7 @@ test001_create_approval_flow:
     code: 0
     msg:
     data:
+
 
 test002_create_work_flow:
   method: POST
@@ -44,9 +65,8 @@ test003_search_process:
       pageSize: 10
       currPage: 1
       list:
-      - id: '756586102441250878'
+      - id: '774309733170548779'
         name: work_flow
-
 test004_screen_all:
   method: GET
   route: /apis/crm-workflow/workflow/procDefs?name=&type&status&formId&pageIndex=1&pageSize=10
@@ -138,7 +158,7 @@ test011_screen_status_all:
 test012_start_approval:
   method: POST
   route: /apis/crm-workflow/workflow/procDef/
-  data: {"document":{"dingdanmingcheng":null,"kehumingcheng":"756597488315666432","fuwuxiangmu":null,"kaipiaojine":"999","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","zhidingrenyuan1":null,"liuchengzhidingrenyuan":[]},"formId":"756585727382392840","variables":{"dingdanmingcheng":null,"kehumingcheng":"756597488315666432","fuwuxiangmu":null,"kaipiaojine":"999","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","zhidingrenyuan1":null}}
+  data: {document: {dingdanmingcheng: !!null '', kehumingcheng: '756597488315666432', fuwuxiangmu: !!null '', kaipiaojine: '999', kaipiaoqijian: 2020-10, kaipiaozhuangtai: 已开票, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: []}, formId: '756585727382392840', variables: {dingdanmingcheng: !!null '', kehumingcheng: '756597488315666432', fuwuxiangmu: !!null '', kaipiaojine: '999', kaipiaoqijian: 2020-10, kaipiaozhuangtai: 已开票, zhidingrenyuan1: !!null ''}}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
@@ -149,7 +169,7 @@ test012_start_approval:
 test013_agree_approval:
   method: POST
   route: /apis/crm-workflow/workflow/task/complete
-  data: {"variables":{"kehumingcheng":"756597488315666432","dingdanmingcheng":null,"fuwuxiangmu":null,"kaipiaojine":"999.00","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","_approval":"同意","zhidingrenyuan1":null},"document":{"kehumingcheng":"756597488315666432","dingdanmingcheng":null,"fuwuxiangmu":null,"kaipiaojine":"999.00","kaipiaoqijian":"2020-10","kaipiaozhuangtai":"已开票","_approval":"同意","zhidingrenyuan1":null,"liuchengzhidingrenyuan":[]},"handler":"","taskIdList":["f4657043-0abc-11eb-be7a-7020840caef4"]}
+  data: {variables: {kehumingcheng: '756597488315666432', dingdanmingcheng: !!null '', fuwuxiangmu: !!null '', kaipiaojine: '999.00', kaipiaoqijian: 2020-10, kaipiaozhuangtai: 已开票, _approval: 同意, zhidingrenyuan1: !!null ''}, document: {kehumingcheng: '756597488315666432', dingdanmingcheng: !!null '', fuwuxiangmu: !!null '', kaipiaojine: '999.00', kaipiaoqijian: 2020-10, kaipiaozhuangtai: 已开票, _approval: 同意, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: []}, handler: '', taskIdList: [f4657043-0abc-11eb-be7a-7020840caef4]}
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
@@ -172,6 +192,16 @@ test013_delete_approval_flow:
   method: DELETE
   route: /apis/crm-workflow/workflow/procDef/
   data:
+  headers: {Content-Type: application/json}
+  expectcode: 200
+  expectresult:
+    code: 0
+    msg:
+    data:
+
+test014_delete_approval_flow_data:
+  method: POST
+  route: /apis/crm-workflow/manage/delete/procInst
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
