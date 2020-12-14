@@ -248,8 +248,6 @@
       list:
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '5'
         diqu:
@@ -266,12 +264,9 @@
         shoujihao: '18005162881'
         suoshukehu: 测试用户
         suoshukehuReference:
-          _id: '756597488315666432'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _principal: '756574317326995456'
           adminDivision:
           - '110000'
           - '110100'
@@ -283,11 +278,8 @@
           taxpayerType: 增值税一般纳税人
           SHOW_INFO: 测试用户
         _principalReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -303,21 +295,15 @@
           superAdmin: '1'
           SHOW_INFO: 系统管理员
         _createDeptReference:
-          _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
           _modifyUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -334,8 +320,6 @@
           SHOW_INFO: 系统管理员
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '10'
         diqu:
@@ -352,12 +336,9 @@
         shoujihao: '18005162881'
         suoshukehu: 测试用户
         suoshukehuReference:
-          _id: '756597488315666432'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _principal: '756574317326995456'
           adminDivision:
           - '110000'
           - '110100'
@@ -369,11 +350,8 @@
           taxpayerType: 增值税一般纳税人
           SHOW_INFO: 测试用户
         _principalReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -389,21 +367,15 @@
           superAdmin: '1'
           SHOW_INFO: 系统管理员
         _createDeptReference:
-          _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
           _modifyUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -420,8 +392,6 @@
           SHOW_INFO: 系统管理员
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
-        _principal: 系统管理员
         bianhao1: '10'
         bianhao2: '5'
         diqu:
@@ -438,12 +408,9 @@
         shoujihao: '18005162880'
         suoshukehu: 测试用户
         suoshukehuReference:
-          _id: '756597488315666432'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _principal: '756574317326995456'
           adminDivision:
           - '110000'
           - '110100'
@@ -455,11 +422,8 @@
           taxpayerType: 增值税一般纳税人
           SHOW_INFO: 测试用户
         _principalReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -475,21 +439,15 @@
           superAdmin: '1'
           SHOW_INFO: 系统管理员
         _createDeptReference:
-          _id: '756585370497454080'
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
           _modifyUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
-          _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -867,8 +825,6 @@
     data:
       _createDept: '756585370497454080'
       _createUser: '756574317326995456'
-      _modifyDept:
-      _principal: '756574317326995456'
       bianhao1: '10'
       bianhao2: '5'
       diqu:
@@ -1179,9 +1135,7 @@
     code: 0
     msg:
     data:
-      _modifyDept: '756585370497454080'
       _modifyUser: '756574317326995456'
-      _principal: '756574317326995456'
       bianhao1: '10'
       bianhao2: '5'
       diqu:
@@ -1308,7 +1262,7 @@
   route: /apis/crm-web/module/genjinjilu/assign-personnel
   data:
     currentUserId: '756574317326995456'
-    id: ''
+    ids: []
     newUserId: '758028041194934272'
   headers: {Content-Type: application/json}
   expectcode: 200
@@ -1343,9 +1297,7 @@
     data:
       _createDept: '756585370497454080'
       _createUser: '756574317326995456'
-      _modifyDept: '756585370497454080'
       _modifyUser: '756574317326995456'
-      _principal: '758028041194934272'
       bianhao1: '10'
       bianhao2: '5'
       diqu:
@@ -1363,11 +1315,8 @@
       suoshukehu: '756597488315666432'
       _dealStatus: 已终止
       _modifyUserReference:
-        _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         email:
         identity: 主管
@@ -1383,12 +1332,9 @@
         superAdmin: '1'
         SHOW_INFO: 系统管理员
       suoshukehuReference:
-        _id: '756597488315666432'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
         _details: []
-        _modifyDept:
-        _principal: '756574317326995456'
         adminDivision:
         - '110000'
         - '110100'
@@ -1400,11 +1346,8 @@
         taxpayerType: 增值税一般纳税人
         SHOW_INFO: 测试用户
       _principalReference:
-        _id: '758028041194934272'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         identity: 普通员工
         password: '{bcrypt}$2a$10$46gKcwuIBquvgwI3FjLtqeaGVrTmmk90n.qzXU25ka4XttKE3AzOC'
@@ -1418,31 +1361,22 @@
         youxiang: ''
         SHOW_INFO: 测试人员
       _modifyDeptReference:
-        _id: '756585370497454080'
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
         _modifyUser: '756574317326995456'
-        _principal: '756574317326995456'
         deptName: api测试
         parentId: '0'
-        _modifyDept: '756585370497454080'
         SHOW_INFO: api测试
       _createDeptReference:
-        _id: '756585370497454080'
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
         _modifyUser: '756574317326995456'
-        _principal: '756574317326995456'
         deptName: api测试
         parentId: '0'
-        _modifyDept: '756585370497454080'
         SHOW_INFO: api测试
       _createUserReference:
-        _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         email:
         identity: 主管
@@ -1503,7 +1437,6 @@
     data:
       _createDept: '756585370497454080'
       _createUser: '756574317326995456'
-      _principal: '756574317326995456'
       bianhao1: '5'
       bianhao2: '5'
       diqu:
@@ -1521,11 +1454,8 @@
       suoshukehu: '756597488315666432'
       _teamMember: []
       _modifyUserReference:
-        _id: '756574317326995456'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _modifyDept:
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         email:
         identity: 主管
@@ -1541,11 +1471,9 @@
         superAdmin: '1'
         SHOW_INFO: 系统管理员
       suoshukehuReference:
-        _id: '756597488315666432'
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
         _details: []
-        _principal: '756574317326995456'
         adminDivision:
         - '110000'
         - '110100'
@@ -1559,7 +1487,6 @@
       _principalReference:
         _createDept: '756585370497454080'
         _createUser: '756574317326995456'
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         email:
         identity: 主管
@@ -1578,20 +1505,16 @@
       _modifyDeptReference:
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
-        _principal: '756574317326995456'
         deptName: api测试
         parentId: '0'
         SHOW_INFO: api测试
       _createDeptReference:
         _createDept: '756585380370845696'
         _createUser: '756574317326995456'
-        _principal: '756574317326995456'
         deptName: api测试
         parentId: '0'
         SHOW_INFO: api测试
       _createUserReference:
-        _modifyDept:
-        _principal: '756574317326995456'
         deptIds: '756585370497454080'
         email:
         identity: 主管
@@ -1628,9 +1551,7 @@
       list:
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept: api测试
         _modifyUser: 系统管理员
-        _principal: 系统管理员
         bianhao1: '5'
         bianhao2: '5'
         diqu:
@@ -1651,8 +1572,6 @@
         _principalReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -1671,16 +1590,12 @@
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
           _modifyUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -1698,8 +1613,6 @@
         _modifyUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -1718,8 +1631,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _principal: '756574317326995456'
           adminDivision:
           - '110000'
           - '110100'
@@ -1733,15 +1644,12 @@
         _modifyDeptReference:
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
           SHOW_INFO: api测试
       - _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept: api测试
         _modifyUser: 系统管理员
-        _principal: 测试人员
         bianhao1: '10'
         bianhao2: '5'
         diqu:
@@ -1763,8 +1671,6 @@
         _principalReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           identity: 普通员工
           password: '{bcrypt}$2a$10$46gKcwuIBquvgwI3FjLtqeaGVrTmmk90n.qzXU25ka4XttKE3AzOC'
@@ -1780,15 +1686,12 @@
         _createDeptReference:
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
           SHOW_INFO: api测试
         _createUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -1806,8 +1709,6 @@
         _modifyUserReference:
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
-          _principal: '756574317326995456'
           deptIds: '756585370497454080'
           email:
           identity: 主管
@@ -1826,8 +1727,6 @@
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
           _details: []
-          _modifyDept:
-          _principal: '756574317326995456'
           adminDivision:
           - '110000'
           - '110100'
@@ -1841,7 +1740,6 @@
         _modifyDeptReference:
           _createDept: '756585380370845696'
           _createUser: '756574317326995456'
-          _principal: '756574317326995456'
           deptName: api测试
           parentId: '0'
           SHOW_INFO: api测试

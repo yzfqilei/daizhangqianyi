@@ -207,7 +207,7 @@ class TestModuleDataDetails(object):
         """第一条数据的数据分配（分配给测试人员）"""
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("module_data_details.yaml",
                                                                                "第一条数据的数据分配（分配给测试人员）")
-        yamlvalue['data']['id'] = insert_module_data[0]
+        yamlvalue['data']['ids'].append(insert_module_data[0])
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
