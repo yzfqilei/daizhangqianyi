@@ -1,6 +1,6 @@
 #存储参数
 variable:
-  merge_id: '784493230736674816'
+  merge_id: '788774995085103104'
 
 #存储数据id用来批量清除数据
 ids:
@@ -80,7 +80,7 @@ insert_order_data:
   method: POST
   route: /apis/crm-web/module/order/insert
   headers: {Content-Type: application/json}
-  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanmingcheng: 测试订单1, chanpinmingcheng: 仅记账, qianyueriqi: '2020-12-02 14:32:27', serviceStart: 2020-12, serviceEnd: 2020-12, serviceCycle: '1', dingdanjine: '0', zengsongyuefen: '', shijiyuepingjunfeiyong: '', shoukuanfangshi: !!null '', shoukuanzhouqi: !!null '', fuwudiqu: [], yihuikuanjine: '', yikaipiaojine: '', beizhu: '', fujian: []}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanmingcheng: 测试订单1, chanpinmingcheng: 仅记账, qianyueriqi: '2020-12-02 14:32:27', serviceStart: 2020-12, serviceEnd: 2020-12, serviceCycle: '1', dingdanjine: 0.0, zengsongyuefen: '', shijiyuepingjunfeiyong: '', shoukuanfangshi: !!null '', shoukuanzhouqi: !!null '', fuwudiqu: [], yihuikuanjine: '', yikaipiaojine: '', beizhu: '', fujian: []}
   expectcode: 200
   expectresult:
     code: 0
@@ -91,34 +91,34 @@ insert_huikuanjilu_data0:
   method: POST
   route: /apis/crm-web/module/huikuanjilu/insert
   headers: {Content-Type: application/json}
-  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:49:20', huikuanjine: '34', shijihuikuanriqi: '2020-12-02 14:49:20', shijihuikuanjine: '34', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, yujihuikuanriqi: '2020-12-02 14:49:20', huikuanjine: 34.0, shijihuikuanriqi: '2020-12-02 14:49:20', shijihuikuanjine: 34.0, huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '34'}
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, huikuanjine: 34.0}
 
 insert_huikuanjilu_data1:
   method: POST
   route: /apis/crm-web/module/huikuanjilu/insert
   headers: {Content-Type: application/json}
-  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: '43', shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: '43', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: 43.0, shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: 43.0, huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '43'}
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, huikuanjine: 43.0}
 
 insert_huikuanjilu_data2:
   method: POST
   route: /apis/crm-web/module/huikuanjilu/insert
   headers: {Content-Type: application/json}
-  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: '100', shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: '100', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
+  data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, yujihuikuanriqi: '2020-12-02 14:50:01', huikuanjine: 100.0, shijihuikuanriqi: '2020-12-02 14:50:01', shijihuikuanjine: '100', huikuanzhuangtai: 待确认, zhidingrenyuan1: !!null '', liuchengzhidingrenyuan: [], dingdanmingcheng: ''}
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: '0', huikuanjine: '100'}
+    data: {kehumingcheng: '756597488315666432', fuwuxiangmu: 代理记账, dingdanjine: 0.0, huikuanjine: 100.0}
 
 test008_add_source_condition:
   method: POST
