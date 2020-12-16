@@ -259,7 +259,7 @@
         genjinshijiancong: 2020-10-12 11:26
         genjinshijianzhi: 2020-10-12 00:00
         genjinshuoming: 谈话
-        jiage: '100'
+        jiage: 100.0
         lianxiren: 王五
         shoujihao: '18005162881'
         suoshukehu: 测试用户
@@ -331,7 +331,7 @@
         genjinshijiancong: 2020-10-12 11:24
         genjinshijianzhi: 2021-11-01 00:00
         genjinshuoming: 谈话中
-        jiage: '10'
+        jiage: 10.0
         lianxiren: 李四
         shoujihao: '18005162881'
         suoshukehu: 测试用户
@@ -403,7 +403,7 @@
         genjinshijiancong: 2020-10-12 11:21
         genjinshijianzhi: 2020-10-12 00:00
         genjinshuoming: 刚接触
-        jiage: '1'
+        jiage: 1.0
         lianxiren: 张三
         shoujihao: '18005162880'
         suoshukehu: 测试用户
@@ -836,7 +836,7 @@
       genjinshijiancong: 2020-10-12 11:21
       genjinshijianzhi: 2020-10-12 00:00
       genjinshuoming: 刚接触
-      jiage: '1'
+      jiage: 1.0
       lianxiren: 张三
       shoujihao: '18005162880'
       suoshukehu: '756597488315666432'
@@ -1147,7 +1147,7 @@
       genjinshijiancong: 2020-10-12 11:21
       genjinshijianzhi: 2020-10-12 00:00
       genjinshuoming: 刚接触
-      jiage: '1'
+      jiage: 1.0
       lianxiren: 张三1
       shoujihao: '18005162880'
       suoshukehu: '756597488315666432'
@@ -1309,7 +1309,7 @@
       genjinshijiancong: 2020-10-12 11:21
       genjinshijianzhi: 2020-10-12 00:00
       genjinshuoming: 刚接触
-      jiage: '1'
+      jiage: 1.0
       lianxiren: 张三1
       shoujihao: '18005162880'
       suoshukehu: '756597488315666432'
@@ -1448,7 +1448,7 @@
       genjinshijiancong: 2020-10-12 11:26
       genjinshijianzhi: 2020-10-12 00:00
       genjinshuoming: 谈话
-      jiage: '100'
+      jiage: 100.0
       lianxiren: 王五
       shoujihao: '18005162881'
       suoshukehu: '756597488315666432'
@@ -1563,7 +1563,7 @@
         genjinshijiancong: 2020-10-12 11:26
         genjinshijianzhi: 2020-10-12 00:00
         genjinshuoming: 谈话
-        jiage: '100'
+        jiage: 100.0
         lianxiren: 王五
         shoujihao: '18005162881'
         suoshukehu: 测试用户
@@ -1661,7 +1661,7 @@
         genjinshijiancong: 2020-10-12 11:21
         genjinshijianzhi: 2020-10-12 00:00
         genjinshuoming: 刚接触
-        jiage: '1'
+        jiage: 1.0
         lianxiren: 张三1
         shoujihao: '18005162880'
         suoshukehu: 测试用户

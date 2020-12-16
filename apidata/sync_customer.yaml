@@ -46,7 +46,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
@@ -68,7 +67,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
@@ -90,7 +88,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
@@ -111,7 +108,6 @@
       - _id: '756597488315666432'
         _createDept: api测试
         _createUser: 系统管理员
-        _modifyDept:
         _modifyUser: 系统管理员
         _principal: 系统管理员
         adminDivision:
@@ -127,7 +123,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
@@ -149,7 +144,6 @@
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'
@@ -176,13 +170,11 @@
           _tenantId: '10235'
           deptName: api测试
           parentId: '0'
-          _modifyDept: '756585370497454080'
           SHOW_INFO: api测试
         _createUserReference:
           _id: '756574317326995456'
           _createDept: '756585370497454080'
           _createUser: '756574317326995456'
-          _modifyDept:
           _modifyUser:
           _principal: '756574317326995456'
           _tenantId: '10235'

@@ -118,10 +118,13 @@ class TestAssignFieldValues(object):
         # 查询数据
         cx_r = a.request(csurl[1], method, json=cx_data, headers=head)
         # convert_json_to_yaml(cx_r.text, yaml_path, mainkey)
-        check_codes_msg(cx_r, yamlvalue, mainkey)
-        check_datas(cx_r, yamlvalue)
-        #删除数据
-        sc_r = a.request(csurl[2] + _id ,'delete',headers=head)
+        try:
+            check_codes_msg(cx_r, yamlvalue, mainkey)
+            check_datas(cx_r, yamlvalue)
+        except Exception as e:
+            print(e)
+        # 删除数据
+        sc_r = a.request(csurl[2] + _id, 'delete', headers=head)
         if sc_r.status_code == 200:
             print("开票申请删除数据成功")
         else:
