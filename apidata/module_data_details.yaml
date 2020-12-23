@@ -518,7 +518,7 @@
     data: []
 第一条数据流程id查询:
   method: GET
-  route: /apis/crm-workflow/taskFlow/formId/756585727382392842/businessId/
+  route: /apis/crm-workflow/taskFlow/1/formId/756585727382392842/businessId/
   data:
   headers: {Content-Type: application/json}
   expectcode: 200
@@ -1154,7 +1154,7 @@
       _details: []
 第一条数据的流程状态查询:
   method: GET
-  route: /apis/crm-workflow/taskFlow/formId/756585727382392842/businessId/
+  route: /apis/crm-workflow/taskFlow/1/formId/756585727382392842/businessId/
   data:
   headers: {Content-Type: application/json}
   expectcode: 200
@@ -1166,13 +1166,13 @@
       inUse: false
 第一条数据发起流程:
   method: POST
-  route: /apis/crm-workflow/taskFlow/start
+  route: /apis/crm-workflow/general/flow/start
   data:
     businessId: ''
     formId: '756585727382392842'
     procDefId: flowable-1600775255472:3:b28555e7-fcc9-11ea-be7a-7020840caef4
     taskName: 跟进记录
-    var: {}
+    type: 1
   headers: {Content-Type: application/json}
   expectcode: 200
   expectresult:
