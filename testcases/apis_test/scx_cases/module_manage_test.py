@@ -29,6 +29,7 @@ class TestModuleManage(object):
         csurl, method, head, yamlvalue, yaml_path, mainkey = get_common_params("module_manage.yaml", "添加模块")
         r = a.request(csurl, method, json=yamlvalue['data'], headers=head)
         setattr(result, 'update_dict', json.loads(r.text)['data'])
+        # convert_json_to_yaml(r.text, yaml_path, mainkey)
         check_codes_msg(r, yamlvalue, mainkey)
         check_datas(r, yamlvalue)
 

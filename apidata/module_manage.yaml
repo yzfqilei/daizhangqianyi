@@ -22,6 +22,9 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
+      sequence: 17
+      updateUser:
+      updateTime:
       deleted:
       moduleType:
       enabled:
@@ -88,25 +91,37 @@
         method:
         url:
       fields:
-      - name: ID
+      - moduleCode:
+        name: ID
         code: _id
         type: 1
         componentId: 1
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 1
         extendJson: {}
         deleted: false
-      - name: 创建时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 创建时间
         code: _createTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 2
         extendJson:
           default:
@@ -114,14 +129,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted: false
-      - name: 创建人
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 创建人
         code: _createUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 3
         extendJson:
           reference: sysUser
@@ -129,14 +152,22 @@
           - code: truename
             name: 姓名
         deleted: false
-      - name: 创建人部门
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 创建人部门
         code: _createDept
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 4
         extendJson:
           reference: dept
@@ -144,14 +175,22 @@
           - code: deptName
             name: 部门名称
         deleted: false
-      - name: 最近分配时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 最近分配时间
         code: _distributeTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 5
         extendJson:
           default:
@@ -159,14 +198,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted: false
-      - name: 最近分配人员
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 最近分配人员
         code: _distributor
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 6
         extendJson:
           reference: sysUser
@@ -174,14 +221,22 @@
           - code: truename
             name: 姓名
         deleted: false
-      - name: 修改时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 修改时间
         code: _modifyTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 7
         extendJson:
           default:
@@ -189,14 +244,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted: false
-      - name: 修改人
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 修改人
         code: _modifyUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 8
         extendJson:
           reference: sysUser
@@ -204,29 +267,46 @@
           - code: truename
             name: 姓名
         deleted: false
-      - name: 修改人部门
-        code: _modifyDept
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 合并状态
+        code: _mergeType
         type: 1
-        componentId: 9
+        componentId: 4
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 9
         extendJson:
-          reference: dept
-          fields:
-          - code: deptName
-            name: 部门名称
+          items:
+          - label: 未合并
+            selected: true
+          - label: 已合并
+            selected: false
         deleted: false
-      - name: 负责人
-        code: _principal
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 合并人
+        code: _mergeUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 10
         extendJson:
           reference: sysUser
@@ -234,30 +314,115 @@
           - code: truename
             name: 姓名
         deleted: false
-      - name: 申请人
-        code: _applicant
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 合并时间
+        code: _mergeTime
         type: 1
-        componentId: 9
+        componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master: 0
+        codeSequenceId:
         sequence: 11
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 修改人部门
+        code: _modifyDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 12
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 负责人
+        code: _principal
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 13
         extendJson:
           reference: sysUser
           fields:
           - code: truename
             name: 姓名
         deleted: false
-      - name: 审批意见
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 申请人
+        code: _applicant
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 14
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 审批意见
         code: _approval
         type: 1
         componentId: 6
+        placeholder:
         description:
         layout: 0
         required: true
         repeated: false
-        sequence: 12
+        master: 0
+        codeSequenceId:
+        sequence: 15
         extendJson:
           items:
           - sequence: 1
@@ -269,31 +434,173 @@
             value: ''
             selected:
         deleted: false
-      - name: 审批说明
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 审批说明
         code: _approvalComment
         type: 1
         componentId: 2
+        placeholder:
         description:
         layout: 1
         required: false
         repeated: false
-        sequence: 13
+        master: 0
+        codeSequenceId:
+        sequence: 16
         extendJson:
           default: ''
           length: 50
           lines: 0
         deleted: false
-      - name: 处理状态
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 处理状态
         code: _dealStatus
         type: 1
         componentId: 1
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        sequence: 14
+        master: 0
+        codeSequenceId:
+        sequence: 17
         extendJson: {}
         deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 当前状态
+        code: _curStatus
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 18
+        extendJson: {}
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 当前节点
+        code: _curTaskDef
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 19
+        extendJson: {}
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 当前处理人
+        code: _curHandle
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 20
+        extendJson: {}
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 最近处理人
+        code: _recentHandle
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 21
+        extendJson: {}
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 最近处理时间
+        code: _recentHandleTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 22
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode:
+        name: 团队成员
+        code: _teamMember
+        type: 1
+        componentId: 10
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master: 0
+        codeSequenceId:
+        sequence: 23
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted: false
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
 修改模块名称（测试模块1）:
   method: POST
   route: /apis/crm-web/module/update
@@ -496,6 +803,9 @@
       parentModuleId: '0'
       detailModuleId:
       mainFieldId: '0'
+      sequence: 17
+      updateUser:
+      updateTime:
       deleted: false
       moduleType:
       enabled:
@@ -529,25 +839,37 @@
         method:
         url:
       fields:
-      - name: ID
+      - moduleCode: ceshimokuai
+        name: ID
         code: _id
         type: 1
         componentId: 1
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 1
         extendJson: {}
         deleted:
-      - name: 创建时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 创建时间
         code: _createTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 2
         extendJson:
           default:
@@ -555,14 +877,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - name: 创建人
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 创建人
         code: _createUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 3
         extendJson:
           reference: sysUser
@@ -570,14 +900,22 @@
           - code: truename
             name: 姓名
         deleted:
-      - name: 创建人部门
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 创建人部门
         code: _createDept
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 4
         extendJson:
           reference: dept
@@ -585,14 +923,22 @@
           - code: deptName
             name: 部门名称
         deleted:
-      - name: 最近分配时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 最近分配时间
         code: _distributeTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 5
         extendJson:
           default:
@@ -600,14 +946,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - name: 最近分配人员
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 最近分配人员
         code: _distributor
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 6
         extendJson:
           reference: sysUser
@@ -615,14 +969,22 @@
           - code: truename
             name: 姓名
         deleted:
-      - name: 修改时间
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 修改时间
         code: _modifyTime
         type: 1
         componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 7
         extendJson:
           default:
@@ -630,14 +992,22 @@
             value: ''
           dateFormat: YYYY-MM-DD HH:mm:ss
         deleted:
-      - name: 修改人
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 修改人
         code: _modifyUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 8
         extendJson:
           reference: sysUser
@@ -645,29 +1015,46 @@
           - code: truename
             name: 姓名
         deleted:
-      - name: 修改人部门
-        code: _modifyDept
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 合并状态
+        code: _mergeType
         type: 1
-        componentId: 9
+        componentId: 4
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 9
         extendJson:
-          reference: dept
-          fields:
-          - code: deptName
-            name: 部门名称
+          items:
+          - label: 未合并
+            selected: true
+          - label: 已合并
+            selected: false
         deleted:
-      - name: 负责人
-        code: _principal
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 合并人
+        code: _mergeUser
         type: 1
         componentId: 9
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 10
         extendJson:
           reference: sysUser
@@ -675,30 +1062,115 @@
           - code: truename
             name: 姓名
         deleted:
-      - name: 申请人
-        code: _applicant
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 合并时间
+        code: _mergeTime
         type: 1
-        componentId: 9
+        componentId: 8
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
+        master:
+        codeSequenceId:
         sequence: 11
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 修改人部门
+        code: _modifyDept
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 12
+        extendJson:
+          reference: dept
+          fields:
+          - code: deptName
+            name: 部门名称
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 负责人
+        code: _principal
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 13
         extendJson:
           reference: sysUser
           fields:
           - code: truename
             name: 姓名
         deleted:
-      - name: 审批意见
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 申请人
+        code: _applicant
+        type: 1
+        componentId: 9
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 14
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 审批意见
         code: _approval
         type: 1
         componentId: 6
+        placeholder:
         description:
         layout: 0
         required: true
         repeated: false
-        sequence: 12
+        master:
+        codeSequenceId:
+        sequence: 15
         extendJson:
           items:
           - sequence: 1
@@ -710,31 +1182,173 @@
             value: ''
             selected:
         deleted:
-      - name: 审批说明
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 审批说明
         code: _approvalComment
         type: 1
         componentId: 2
+        placeholder:
         description:
         layout: 1
         required: false
         repeated: false
-        sequence: 13
+        master:
+        codeSequenceId:
+        sequence: 16
         extendJson:
           default: ''
           length: 50
           lines: 0
         deleted:
-      - name: 处理状态
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 处理状态
         code: _dealStatus
         type: 1
         componentId: 1
+        placeholder:
         description:
         layout: 0
         required: false
         repeated: false
-        sequence: 14
+        master:
+        codeSequenceId:
+        sequence: 17
         extendJson: {}
         deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 当前状态
+        code: _curStatus
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 18
+        extendJson: {}
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 当前节点
+        code: _curTaskDef
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 19
+        extendJson: {}
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 当前处理人
+        code: _curHandle
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 20
+        extendJson: {}
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 最近处理人
+        code: _recentHandle
+        type: 1
+        componentId: 1
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 21
+        extendJson: {}
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 最近处理时间
+        code: _recentHandleTime
+        type: 1
+        componentId: 8
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 22
+        extendJson:
+          default:
+            type: 0
+            value: ''
+          dateFormat: YYYY-MM-DD HH:mm:ss
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
+      - moduleCode: ceshimokuai
+        name: 团队成员
+        code: _teamMember
+        type: 1
+        componentId: 10
+        placeholder:
+        description:
+        layout: 0
+        required: false
+        repeated: false
+        master:
+        codeSequenceId:
+        sequence: 23
+        extendJson:
+          reference: sysUser
+          fields:
+          - code: truename
+            name: 姓名
+        deleted:
+        createUser:
+        createTime:
+        updateUser:
+        updateTime:
 添加功能:
   method: POST
   route: /apis/crm-web/module/func/save
