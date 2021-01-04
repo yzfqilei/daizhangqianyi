@@ -50,15 +50,29 @@ test004_modify_user_info:
     data: {username: henacs3, truename: 系统管理员_m, sex: 男}
 
 test005_modify_conpany_info:
-  method: POST
-  route: /apis/crm-web/company/saveOrUpdate
-  data: {companyId: '10235', companyName: api测试, simpleName: !!null '', dzCompanyId: '631125285013688320', area: !!null '', contacts: 系统管理员, contactsPhone: '13025414025', remark: !!null '', status: 0, companyType: 0, deleted: 0, creator: null ''}
-  headers: {Content-Type: application/json}
+  method: PUT
+  route: /apis/crm-web/company/10235
+  data: {"companyId":"10235","companyName":"api测试","simpleName":null,"dzCompanyId":"756574006257258496","contacts":"系统管理员","contactsPhone":"13025414025","remark":测试,"status":0,"companyType":0,"taxCode":null,"logo":null,"allowSettingLogo":0,"deleted":0,"creator":null,"createTime":"2020-09-18 18:40:09"}
+  headers:
+    Content-Type: application/json
   expectcode: 200
   expectresult:
     code: 0
     msg:
-    data: '10235'
+    data:
+      companyId: "10235"
+      companyName: api测试
+      simpleName: null
+      area: null
+      contacts: 系统管理员
+      contactsPhone: "13025414025"
+      remark: 测试
+      status: 0
+      companyType: 0
+      taxCode: null
+      logo: null
+      allowSettingLogo: 0
+
 
 test006_change_phone_number:
   method: PUT
@@ -79,14 +93,13 @@ test007_read_notice:
     code: 0
     msg:
     data:
-      id: '7486013228'
+      id: '3651707540'
       type: 1
       msg: a_test_message
-      data: kgcjedi
+      data: bkjaied
       receiver:
       readFlag: true
       creator: '756574317326995456'
-
 test008_set_notice_read:
   method: PATCH
   route: /apis/crm-notice/notices/read-flag

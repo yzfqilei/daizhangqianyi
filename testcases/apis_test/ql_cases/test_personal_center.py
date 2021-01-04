@@ -74,6 +74,7 @@ class Test_personal_center():
         csurl, method, headers, yamlvalue, yaml_path, mainkey = get_common_params('personal_center.yaml', func_name)
         r = RestClient(rooturl)
         res = r.request(csurl, method, json=yamlvalue['data'], headers=headers)
+        print('*************************************',res.text)
         check_codes_msg(res, yamlvalue, mainkey)
         check_datas(res, yamlvalue)
 
