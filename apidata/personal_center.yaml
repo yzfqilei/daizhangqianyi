@@ -52,7 +52,7 @@ test004_modify_user_info:
 test005_modify_conpany_info:
   method: PUT
   route: /apis/crm-web/company/10235
-  data: {"companyId":"10235","companyName":"api测试","simpleName":null,"dzCompanyId":"756574006257258496","contacts":"系统管理员","contactsPhone":"13025414025","remark":测试,"status":0,"companyType":0,"taxCode":null,"logo":null,"allowSettingLogo":0,"deleted":0,"creator":null,"createTime":"2020-09-18 18:40:09"}
+  data: {"companyId":"10235","companyName":"api测试","simpleName":"测试","dzCompanyId":"756574006257258496","contacts":"系统管理员","contactsPhone":"13025414025","remark":测试,"status":0,"companyType":0,"taxCode":null,"logo":null,"allowSettingLogo":0,"deleted":0,"creator":null,"createTime":"2020-09-18 18:40:09"}
   headers:
     Content-Type: application/json
   expectcode: 200
@@ -62,7 +62,7 @@ test005_modify_conpany_info:
     data:
       companyId: "10235"
       companyName: api测试
-      simpleName: null
+      simpleName: "测试"
       area: null
       contacts: 系统管理员
       contactsPhone: "13025414025"
